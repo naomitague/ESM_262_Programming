@@ -9,10 +9,10 @@ navbar:
       href: index.html
     - text: "Topics"
       menu:
-        - text: "Topic 1: Add a new site page"
+        - text: "Topic 1: Programming Basics and Best Practices"
           href: topic_1.html
-        - text: "Topic 2: Update site title & subtitle"
-          href: topic_1.html
+        - text: "Topic 2: Modularity"
+          href: lectures/Class2_modularity.html
         - text: "Topic 3: Add images"
           href: topic_3.html
         - text: "Topic 4: Change the theme"
@@ -33,8 +33,7 @@ navbar:
       href: assignments.html
     - text: "Resources"
       href: resources.html
-    - icon: fab fa-github
-      href: https://github.com/allisonhorst/meds-distill-template
+
 output:
   distill::distill_article:
     toc: true

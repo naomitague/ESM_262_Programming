@@ -32,10 +32,9 @@ From ESM  206 you already have a GitHub account, but if not
 
 Make sure you include this in the initial survey on Gauchospace
 
-- There is a lot of information on the web that you can use to refresh / learn to take advantage of **Git**
-- [Software Carpentry tutorial: Version Control with Git](https://swcarpentry.github.io/git-novice/)
+- There is a lot of information on the web that you can use to refresh / learn to take advantage of **Git** . This one is pretty much all you need to know for this course
+
 - [Happy Git and GitHub for the useR](http://happygitwithr.com/)
-- Introduction to Open Data Science, [chapter 4: GitHub](http://ohi-science.org/data-science-training/github.html#github)
 
 
 If you need more help with Git let us know and we will set a time for a tutorial :)
