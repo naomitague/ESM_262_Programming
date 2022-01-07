@@ -1,7 +1,7 @@
-name: "meds-distill-template"
+name: "ESM232"
 title: "ESM 232"
 description: |
-  MEDS Courses distill template
+  ESM 232 Webpage
 output_dir: "docs"
 navbar:
   right:
@@ -32,7 +32,12 @@ navbar:
     - text: "Assignments"
       href: assignments.html
     - text: "Resources"
-      href: resources.html
+      menu:
+        - text: "Topic 1: Programming Basics and Best Practices"
+          href: topic_1_resource.html
+        - text: "Topic 2: Modularity"
+          href: topic_2_resource.html
+
 
 output:
   distill::distill_article:

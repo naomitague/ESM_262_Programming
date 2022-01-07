@@ -87,26 +87,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>ESM 232: Course resources</title>
+  <title>ESM 232: Course resources - Lecture 2</title>
   
   
   
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="ESM 232: Course resources"/>
+  <meta property="og:title" content="ESM 232: Course resources - Lecture 2"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="ESM 232"/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="ESM 232: Course resources"/>
+  <meta property="twitter:title" content="ESM 232: Course resources - Lecture 2"/>
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Course resources"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Course resources - Lecture 2"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2462,7 +2462,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Course resources","authors":[]}
+{"title":"Course resources - Lecture 2","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2494,10 +2494,17 @@ Topics
 </div>
 </div>
 <a href="assignments.html">Assignments</a>
-<a href="resources.html">Resources</a>
-<a href="https://github.com/allisonhorst/meds-distill-template">
-<i class="fab fa-github" aria-hidden="true"></i>
-</a>
+<div class="nav-dropdown">
+<button class="nav-dropbtn">
+Resources
+ 
+<span class="down-arrow">&#x25BE;</span>
+</button>
+<div class="nav-dropdown-content">
+<a href="topic_1_resource.html">Topic 1: Programming Basics and Best Practices</a>
+<a href="topic_2_resource.html">Topic 2: Modularity</a>
+</div>
+</div>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
 </nav>
@@ -2507,7 +2514,7 @@ Topics
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Course resources</h1>
+<h1>Course resources - Lecture 2</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2519,32 +2526,175 @@ Topics
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#r">R</a></li>
-<li><a href="#git">Git</a></li>
+<li><a href="#assignment-2---to-submit">Assignment 2 - To Submit</a></li>
+<li><a href="#review-for-class">Review for class</a><ul>
+<li><a href="#steps-in-program-design">STEPS IN Program Design</a></li>
+<li><a href="#a-simple-function-example">A simple function example</a></li>
+<li><a href="#implementing-functions-in-r">Implementing Functions in R</a></li>
+<li><a href="#implementing-functions-in-r-1">Implementing Functions in R</a><ul>
+<li><a href="#heres-our-example">Here’s our example</a></li>
+</ul></li>
+<li><a href="#using-the-function-and-scoping">Using the function and scoping</a></li>
+<li><a href="#scoping">Scoping</a></li>
+<li><a href="#some-conventions-helpful-later-in-the-course">Some conventions (helpful later in the course)</a></li>
+</ul></li>
 </ul>
 </nav>
 </div>
-<p style="color: #ba5e00">
-<b>Some Useful Resource for this Course:</b>
-</p>
-<h2 id="r">R</h2>
-<p>So that we all are working with the same code make sure you have the most recent version of</p>
+<h1 id="assignment-2---to-submit">Assignment 2 - To Submit</h1>
+<p>With your group, think of an example program that you might want to design that is complex enough to involve several modules</p>
 <ul>
-<li><p><strong>R (4.0.3 )</strong></p></li>
-<li><p><strong>RStudio (1.3.1093)</strong> installed,</p></li>
+<li><p>write a contract for the overall program (input, output, parameters)</p></li>
+<li><p>break the program in to modules (naming them appropriately), wrate a contract for each one</p></li>
+<li><p>create a diagram that shows how these modules would be put together to go from inputs to output for the overall program (you can use whatever tools you like to create this)</p></li>
+<li><p>summarize this in an Rmarkdown document</p></li>
+<li><p>select a group member and use their group repository</p></li>
+<li><p><span style="color: maroon;">Add the link to your remote repository and name of this Rmarkdown file on Gauchospace as GROUP submission for Assignment 1b </span></p></li>
 </ul>
-<p>You will also need the following libraries to get started</p>
-<pre><code>**tidyverse**</code></pre>
-<h2 id="git">Git</h2>
-<p><strong>GitHub</strong></p>
-<p>From ESM 206 you already have a GitHub account, but if not <a href="https://github.com/join">request a GitHub account</a>.</p>
-<p>Make sure you include this in the initial survey on Gauchospace</p>
+<h1 id="review-for-class">Review for class</h1>
+<h2 id="steps-in-program-design">STEPS IN Program Design</h2>
+<ol type="1">
+<li>Clearly define your goal in words/figures as precisely as possible what do you want your program to do
 <ul>
-<li><p>There is a lot of information on the web that you can use to refresh / learn to take advantage of <strong>Git</strong> . This one is pretty much all you need to know for this course</p></li>
-<li><p><a href="http://happygitwithr.com/">Happy Git and GitHub for the useR</a></p></li>
+<li>decide on modules</li>
+<li>for each module, write a contract - inputs, outputs and what it will do</li>
+</ul></li>
+<li>Implement AND document as you go</li>
+<li>Test</li>
+<li>Refine</li>
+<li>Test again</li>
+<li>Create User Documentation and Distribute</li>
+</ol>
+<hr />
+<h2 id="a-simple-function-example">A simple function example</h2>
+<p>Contract</p>
+<p><em>Input</em>: Reservoir height (m) and flow rate (m3/sec) (as a single value in time or a time series)</p>
+<p><em>Output</em>: Instantaneous power generation (W/s) (as a single value or value for each reservoir height and flow rate combination)</p>
+<p><em>Parameters</em>: K_{Eff} reservoir efficiency, ρ (density of water), g (acceleration due to gravity)</p>
+<p>What the function will do - compute power using the following equation - <em>body</em> of the function</p>
+<p><span class="math inline">\(P = ρ * h * r * g * K_{Eff}\)</span></p>
+<p>P is Power in watts, ρ is the density of water (~1000 <span class="math inline">\(kg/m^3\)</span>), h is height in meters, r is flow rate in cubic meters per second, g is acceleration due to gravity of 9.8 <span class="math inline">\(m/s^2\)</span>, <span class="math inline">\(K_{Eff}\)</span> is a coefficient of efficiency ranging from 0 to 1.</p>
+<hr />
+<h2 id="implementing-functions-in-r">Implementing Functions in R</h2>
+<p>Format for a basic function in R</p>
+<p>#’ documentation that describes inputs, outputs and what the function does</p>
+<p>FUNCTION NAME = function(inputs, parameters) {</p>
+<p>body of the function (manipulation of inputs)</p>
+<p>return(values to return)</p>
+<p>}</p>
+<h2 id="implementing-functions-in-r-1">Implementing Functions in R</h2>
+<p>In R, inputs and parameters are treated the same; but it is useful to think about them separately in designing the model - collectively they are sometimes referred to as arguments</p>
+<p>ALWAYS USE Meaningful names for your function, its parameters and variables calculated within the function</p>
+<ul>
+<li><p>In R we combine inputs/parameters in the first line of the function definition</p></li>
+<li><p>we can provide “default” values that can be overwritten by the function user</p></li>
+<li><p>Body includes all calculations between { and }</p>
+<ul>
+<li>anything inside the body is not “seen” by the workspace so you can re-use variables</li>
+</ul></li>
+<li><p><em>return</em> tells R what the output is</p></li>
 </ul>
-<p>If you need more help with Git let us know and we will set a time for a tutorial :)</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h3 id="heres-our-example">Here’s our example</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># function definition</span>
+<span class='va'>power_gen_orig</span> <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>height</span>, <span class='va'>flow</span>, <span class='va'>rho</span><span class='op'>=</span><span class='fl'>1000</span>, <span class='va'>g</span><span class='op'>=</span><span class='fl'>9.8</span>, <span class='va'>Keff</span><span class='op'>=</span><span class='fl'>0.8</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='va'>result</span> <span class='op'>=</span> <span class='va'>rho</span> <span class='op'>*</span> <span class='va'>height</span> <span class='op'>*</span> <span class='va'>flow</span> <span class='op'>*</span> <span class='va'>g</span> <span class='op'>*</span> <span class='va'>Keff</span>
+<span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='va'>result</span><span class='op'>)</span>
+<span class='op'>}</span>
+</code></pre>
+</div>
+</div>
+<hr />
+<h2 id="using-the-function-and-scoping">Using the function and scoping</h2>
+<p>To use the function we substitute “actual” values for each argument (parameter and inputs) (unless there are defaults)</p>
+<p>R assumes that arguments are in the order that they were specified in the function definition - unless you refer to them by name</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>power_gen_orig</span><span class='op'>(</span><span class='fl'>20</span>,<span class='fl'>1</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 156800</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>power_gen_orig</span><span class='op'>(</span>height<span class='op'>=</span><span class='fl'>20</span>, flow<span class='op'>=</span><span class='fl'>1</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 156800</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>power_gen_orig</span><span class='op'>(</span>flow<span class='op'>=</span><span class='fl'>1</span>, height<span class='op'>=</span><span class='fl'>20</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 156800</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># change the defaults</span>
+<span class='co'># what if efficiencies is less</span>
+
+<span class='fu'>power_gen_orig</span><span class='op'>(</span><span class='fl'>20</span>,<span class='fl'>1</span>, Keff<span class='op'>=</span><span class='fl'>0.2</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 39200</code></pre>
+</div>
+<hr />
+<h2 id="scoping">Scoping</h2>
+<p>The scope of a variable in a program defines where it can be “seen” Variables defined inside a function cannot be “seen” outside of that function</p>
+<p>There are advantages to this - the interior of the building block does not ‘interfere’ with other parts of the program</p>
+<p>See below</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># specifying function name without () shows code</span>
+<span class='co'># try it for internal R functions</span>
+<span class='va'>power_gen_orig</span>
+</code></pre>
+</div>
+<pre><code>function(height, flow, rho=1000, g=9.8, Keff=0.8) {
+result = rho * height * flow * g * Keff
+return(result)
+}
+&lt;bytecode: 0x7feda9de8bb0&gt;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># use the function and save the results</span>
+<span class='va'>reservoir1</span> <span class='op'>=</span> <span class='fu'>power_gen_orig</span><span class='op'>(</span>height<span class='op'>=</span><span class='fl'>4</span>, flow<span class='op'>=</span><span class='fl'>7</span><span class='op'>)</span>
+
+<span class='va'>reservoir2</span> <span class='op'>=</span> <span class='fu'>power_gen_orig</span><span class='op'>(</span>height<span class='op'>=</span><span class='fl'>4</span>, flow<span class='op'>=</span><span class='fl'>7</span>, Keff<span class='op'>=</span><span class='fl'>0.2</span><span class='op'>)</span>
+
+<span class='co'># note that internal variables are not defined so these R statements will FAIL</span>
+<span class='va'>height</span>
+</code></pre>
+</div>
+<pre><code>Error in eval(expr, envir, enclos): object &#39;height&#39; not found</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>Keff</span>
+</code></pre>
+</div>
+<pre><code>Error in eval(expr, envir, enclos): object &#39;Keff&#39; not found</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>results</span>
+</code></pre>
+</div>
+<pre><code>Error in eval(expr, envir, enclos): object &#39;results&#39; not found</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># only the outputs are in your workspace</span>
+<span class='va'>reservoir1</span>
+</code></pre>
+</div>
+<pre><code>[1] 219520</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>reservoir2</span>
+</code></pre>
+</div>
+<pre><code>[1] 54880</code></pre>
+</div>
+<hr />
+<h2 id="some-conventions-helpful-later-in-the-course">Some conventions (helpful later in the course)</h2>
+<ul>
+<li><p>Always write your function in a text editor and then copy into R</p></li>
+<li><p>By convention we name files with functions in them by the name of the function.R e.g. <strong>power_gen.R</strong></p></li>
+<li><p>you can have R read a text file by source(“power_gen.R”) - make sure you are in the right working directory</p></li>
+<li><p>keep organized by keeping all functions in a subdirectory called <em>R</em></p></li>
+<li><p>Include comments both in the body of the function and at the top - there is a particular style of adding comments to the top of the function that we will use later to generate automatic documentation - so useful to start to follow it, more or less, now - see <strong>power_gen.R</strong> for the style</p></li>
+<li><p>Eventually we will want our function to be part of a package (a library of many functions) - to create a package you must use this convention (name.R) place all function in a directory called “R”</p></li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -2552,6 +2702,15 @@ Topics
 <div class="d-appendix">
 </div>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
