@@ -1,6 +1,8 @@
 ---
-title: "EDS 123: Optional MEDS Template"
-description: "A minimal website skeleton and theme for MEDS course with distill (by RStudio)"
+title: "ESM 232 Computing for Environmental Science"
+description: Introduction to computing for data management and analysis for environmental
+  applications. The course provides MESM students with the basic computing and programming
+  skills used in data science.
 site: distill::distill_website
 ---
 
@@ -15,91 +17,80 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
-```{r, out.width = "100%", fig.cap = "Update this image by dropping your new image into the img folder of the project, then open the index.Rmd & change the path to point to the new image. Image: Mississippi River south of Memphis, TN, from USGS shared on Unsplash (https://unsplash.com/photos/35Z2ylLRCO8)."}
+```{r, out.width = "100%", fig.cap = "Growing skills"}
 
-# UPDATE IMAGE HERE 
-# or copy/paste this code elsewhere, updating the file path, to add other images to your site!
-knitr::include_graphics("img/usgs_sat.jpeg")
+
+knitr::include_graphics("img/tree_me.jpeg")
 ```
 
-## Welcome to the MEDS distill template
+## Welcome ESM 262
 
-Welcome to the MEDS Course Website template! This template is made with [distill](https://rstudio.github.io/distill/), a package to build lightweight and robust websites in R. This method for creating a course website may make the most sense for MEDS teachers who are familiar with RStudio, R Markdown, git and GitHub (or who want to learn!). For those of you who do *not* want to create your website with distill in R, but still want a course website, check out [Course-in-a-Box](https://course-in-a-box.p2pu.org/) to create a site with no prior coding experience.
 
-For those wanting to take the distill/R websites path: this template acts as both a starting point for your site, and place to learn basics ways to customize it (different topics currently populate the different modules, which I expect teachers will replace with different weeks or lessons or topics as useful for your courses). 
 
-### Some starting points:
+### How class will work:
 
-- Follow along with the "Getting started with the MEDS distill template" (COMING SOON) instructions to set up your own distill website. Please reach out to Allison for help getting your website started, and submit problems and suggestions as issues [here](https://github.com/allisonhorst/meds-distill-template). 
+Before each class, I will give you an Rmarkdown document to review, 
+In class I will provide some lecture materials, and we will briefly go through the Rmarkdown document, I'll answer questions and add some additional comments, then we will do an in class exercise
+Assignments will usually evolve from this exercise.
 
-- The "Weekly materials" section of this template site can be updated with your course materials, but also in this template serves the additional purpose of showing you how to customize some things on your page.
+All materials will be available on this website
 
-- See the [EDS 212 Website](https://allisonhorst.github.io/EDS_212_essential-math/) for an example of what a customized live course site can look like using this template.
-
-<p style="color: #ba5e00"><b>TO UPDATE THIS PAGE:</b> Open and edit the <b>index.Rmd</b> file, in the project root, to delete this placeholder text and customize with your own!</p>
 
 ## Course description
 
-<p style="color: #ba5e00"><b>NOTE:</b> A lot of this home page information can be directly from your syllabus.</p>
+ESM 262 is an introduction to computing for environmental applications. The course provides practical training in software design best practices. Topics include  programming language concepts; modular program design; data structures and flow control, version control, testing, documentation and reproducibility. The course features **R** for programming, **Git** for version control, **Markdown** for workflow, and **GitHub** for collaboration and publishing, but many concepts would be applicable in other software design tools.
+Class will include a mix of lectures and hands-on examples, using students' own computers.
 
-Add your course description here.
+-   **Lectures:** MW 9:30 AM - 10:45 AM (Bren Hall 1510)
 
 ## Teaching team
 
-**Instructor:** Mike Wazowski (wazowski\@monstersinc.org)
+**Instructor:** Naomi Tague (www.tagueteamlab.org)
 
--   **Office:** Closet 100
 -   **Office hours:** Friday 9pm - 11pm
+-     **email** (tague@ucsb.edu)
 
-**Teaching assistant:** Boo (boo\@monstersinc.org)
+**Teaching assistant:** Louis Graup
 
--   **Office:** Boo's Room
+
 -   **Office hours:** Saturday 7am - 8am
+-   **email** (lgraup@bren.ucsb.edu)
 
-## Important links
 
--   Link to full course syllabus (here is the [MEDS optional syllabus template](https://docs.google.com/document/d/1b2CElvwKk-haEA1axY5KvTEBbiSPUf7dIRUNX7gCI6w/edit?usp=sharing))
-
--   Link to Code of Conduct (Bren / UCSB)
-
--   Link to course GitHub Classroom, other essential resources
-
-## Weekly course schedule
-
--   **Lectures:** MW 8am - 9:15am (Warehouse Room 1)
--   **Labs:** Th 10am - 12pm (Warehouse Room 2)
 
 ## Learning objectives
 
-Condimentum id venenatis a condimentum. Ultricies mi quis hendrerit dolor magna eget est. Turpis egestas maecenas pharetra convallis. Sem nulla pharetra diam sit amet. Diam volutpat commodo sed egestas egestas fringilla. Mauris in aliquam sem fringilla ut morbi tincidunt augue interdum. Ornare massa eget egestas purus viverra accumsan in.
 
--   Vulputate eu scelerisque felis imperdiet proin.
--   Euismod nisi porta lorem mollis aliquam.
--   Urna molestie at elementum eu facilisis sed odio morbi quis.
--   Convallis a cras semper auctor neque. Semper quis lectus nulla at volutpat diam ut venenatis tellus.
 
 ## Course requirements
 
 ### Computing
 
--   Minimum device requirements
+-   Make sure you have installed git, R, R-studio
 
--   Software requirements
+-   Please bring your laptop to class
 
--   Account requirements
+-   Make sure you have a Github account
 
-### Textbook
+### Assignments
 
--   Required textbook / information
+There will be 6 short assignment (more or less one for each class). You will usually have time to work on the assignment in class and most will be in groups. We'll evaluate your assignments by pulling the GitHub repository that they live in.
 
-### Other requirements
+To set this up:
 
--   Anything else
--   Important for students to know
+1. Create a single private git hub repo to hold all of your assignments (and nothing else!).
+2. Invite Will (LouisGraup`) and Naomi (`naomitague`) to collaborate on this repo.
 
-## Tentative topics
+Then, for each assignment:
 
-| Week | Lecture topics | Lab topics |
+1. Put your solution, and all the files needed to run it, in its own folder within the repo.
+2. Submit the URL of the folder on Gauchospace
+
+
+
+## Weekly Schedule
+
+| Class | Lecture topics | Lab topics |
 |------|----------------|------------|
 | 1    | Topics         | Topics     |
 | 2    | Topics         | Topics     |

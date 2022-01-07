@@ -1,5 +1,5 @@
 name: "meds-distill-template"
-title: "EDS 123"
+title: "ESM 232"
 description: |
   MEDS Courses distill template
 output_dir: "docs"
@@ -12,7 +12,7 @@ navbar:
         - text: "Topic 1: Add a new site page"
           href: topic_1.html
         - text: "Topic 2: Update site title & subtitle"
-          href: topic_2.html
+          href: topic_1.html
         - text: "Topic 3: Add images"
           href: topic_3.html
         - text: "Topic 4: Change the theme"

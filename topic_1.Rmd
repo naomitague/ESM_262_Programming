@@ -1,56 +1,136 @@
 ---
-title: "Topic 1: Add/remove a site page"
+title: "Topic 1: Programming: Basics and Best Practices"
+
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
 ```
 
-**NOTE:** There are 10 toy Topic sections here, expecting that some teachers may want to have one page per week (for a 10 week course). You are encouraged to structure your course **however works best for your class**. All of your course information could be on a single page, or you might have a different number of topics, or organize weekly, or any other organization that works for you.
 
-<p style="color: #ba5e00"><b>TO UPDATE THIS PAGE:</b> Open and edit the <b>topic_1.Rmd</b> file, in the project root, to delete this placeholder text and customize with your own!</p>
+## Protocols and Guidance on how to best use this class
 
-## Add a site page
+*  Learning to program is hard and I may not always explain in a way that is accessible to you - So if you don't understand something *ASK* , you will help me to learn how to explain (or find an answer if I don't know it) and you will help others
 
-### The quick version: 
+* Programming gets better with practice and play - Don't just read the Rmarkdown - try the code, try variations on the ideas presented, make up stuff to try, get your feet wet 
 
-- Make a new R Markdown document, save
-- Add the rendered .html to _site.yaml so the page exists on the site
-- Build to see updated site
+* Programming means making mistakes, expect it, stay calm and try again - if you get frustrated step away and come back; be creative
 
-Below for a bit more detail...
 
-### Make each page an R Markdown document
+* Support each other 
+  * when working in groups, pay attention to your partner, if they are not at your skill level, help them learn - recognize that we all have different backgrounds
+  
+  
+* Be involved as network/community of programmers
+  * we will have two forums on *Gauchospace*
+   * **Questions and Answers** forum use this to ask and answer questions about course material 
+   * **Recommended Tools** forum use to to share stuff beyond what I present in class
+      * other ways of doing things
+      * cool, fun, useful tools in R or any other platform
+        
+  * Both Forums are accessible at the  top of the course Gauchospace site
+  
+  * You must post at least once to BOTH forums before the end of the course (but hopefully you will post more often)
 
-To make a new page:
 
-1. Within your website Project, create a new .Rmd (File > New File > R Markdown). Save it to the project root. For this example, let's say you've saved it as `new_page.Rmd.`
 
-2. In that .Rmd file, remove everything but the title (which you can change) from the YAML - that's the top section of the .Rmd, where by default it has title, author, date, etc.
+* If you are really struggling, reach out to Will or myself, we can help
+(or if you just want to chat about something ) 
 
-3. Update the .Rmd to contain whatever you want to have on that page. Don't know a lot about markdown? Considering switching over to the [Visual Editor in RStudio](https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/) (versions >= 1.4). 
 
-4. Save the .Rmd
 
-### Add it to your navigation bar
 
-5. Open the `_site.yml` file in your Project
 
-6. Add the information to the YAML navbar section, which will almost always be the text that you want to appear in the navigation bar, and the file name of the **knitted html** that will be automatically rendered to /docs when you Build your website. That would be `new_page.html` for this example (since the .Rmd it is rendered from is `new_page.Rmd`). So in the `_site.yml` I would need to add this to the navbar section: 
+## What we will learn - some  more details
 
-```
-    - text: "A new page!"
-      href: new_page.html
-```
+* Modular programming: Designing building blocks or functions
 
-**Note:** YAML is space & indentation specific. Follow the structure that already exists in this template to avoid YAML errors.
+* Data structures, operations and flow control (general programmings skills we use for manipulating data inside each block)
 
-How is the website finding the html? Notice in the `_site.yml` file, the `output_dir` is set to `docs`. That means when we press 'Build website' (in the Build tab in RStudio), our .Rmd pages are knitted to HTML & sent to the `_docs` folder. This is also important because when we deploy the site (make it live), we will want to deploy **from that docs folder** using GitHub pages.
+* Automated (or semi-automated) Tools for good programming practice
+  * testing
+  * documentation
+  * workflow for sharing programs/packages with others
+  
 
-Take a look at some other pages in this template (Resources, Assignments, etc.) to see the structure, & give it a shot!
+The course features **R** for programming, **Git** for version control, **Markdown** for workflow, and **GitHub** for collaboration and publishing, but many concepts would be applicable in other software design tools.
 
-## Delete/disappear a site page
 
-The safest thing to do if you don't want a page to *show up* is to remove it from the `_site.yml` navbar listings. That way, the material on the page still exists as a file in your project, but doesn't show up on the website -- don't delete a page file unless you are REALLY SURE that you're never going to want the material on that page ever again.
+
+
+## What is a program
+
+* A program is a set of instructions for a computer to follow
+* Programs are often used to manipulate data (in all type and formats you discussed last week)
+* Simple to complex
+
+    + scripts that you save in R-Markdown
+    + instructions to analyze relationships in census data and visualize them
+    + a model of global climate
+ 
+## Programming Languages
+
+* Programs can be written in many different languages (all have their strengths and weakness)
+* Languages expect instructions in a particular form (syntax) and then translate them to be readable by the computer
+* Languages have evolved to make it help users write programs that are easy to understand, re-use, extend, test, run quickly, use lots of data...
+
+## Programming Fundamentals
+
+* Operations (=,+,-,...concatenate, copy)
+* Data structures (simple variables, arrays, lists...) 
+* Control structures (if then, loops) 
+* Modules...Functions
+
+These concepts common to all languages through the syntax may be different
+
+
+
+
+## BREAKOUT GROUP TASK:
+  Based on whatever programming/coding experience you have had - come up with what you think are 4 best practices
+  Write them into an Rmarkdown document
+
+  
+## Best Practices for Software Development 
+
+
+* Wilson G, Aruliah DA, Brown CT, Chue Hong NP, Davis M, et al. (2014) Best Practices for Scientific Computing. PLoS Biol 12(1): e1001745. doi:10.1371/journal.pbio.1001745
+
+*  Blanton, B and Lenhardt, C 2014. A Scientist’s Perspective on Sustainable Scientific Software. Journal of Open Research Software 2(1):e17, DOI: http://dx.doi.org/10.5334/jors.ba
+
+[Alternative View](http://simpleprogrammer.com/2013/02/17/principles-are-timeless-best-practices-are-fads/)
+
+## Summary of Best Practices
+
+[Wilson et al, Summary Box](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745#pbio-1001745-box001)
+  
+
+## Common Coding/Software Engineering Issues
+
+* Unreadable code (hard to understand, easy to forget how it works, hard to find errors, hard to expand)
+* Overly complex, disorganized code (hard to find errors; hard to modify-expand)
+* Insufficient testing (both during development and after)
+* Not tracking code changes (multiple versions, which is correct?)
+
+
+## Automated Tools for Best Practices in Software Engineering
+
+Automated tools (really useful for more complex code development
+( note that GP’s often create programs > 100 lines of code)
+
+Automated documentation
+
+http://www.stack.nl/~dimitri/doxygen/
+
+http://roxygen.org/roxygen2-manual.pdf 
+
+Automated test case development
+
+http://r-pkgs.had.co.nz/tests.html
+
+
+Automated code evolution tracking (Version Control)
+https://github.com/
 
 
