@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
-```{r, out.width = "100%", fig.cap = "Growing skills"}
+```{r, out.width = "80%", out.height="70%",fig.cap = "Growing skills"}
 
 
 knitr::include_graphics("img/tree_me.jpeg")

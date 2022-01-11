@@ -2530,11 +2530,11 @@ Resources
 <li><a href="#review-for-class">Review for class</a><ul>
 <li><a href="#steps-in-program-design">STEPS IN Program Design</a></li>
 <li><a href="#a-simple-function-example">A simple function example</a></li>
-<li><a href="#implementing-functions-in-r">Implementing Functions in R</a></li>
-<li><a href="#implementing-functions-in-r-1">Implementing Functions in R</a><ul>
-<li><a href="#heres-our-example">Here’s our example</a></li>
+<li><a href="#implementing-functions-in-r---format">Implementing Functions in R - Format</a></li>
+<li><a href="#implementing-functions-in-r---details">Implementing Functions in R - Details</a><ul>
+<li><a href="#simple-example">Simple Example</a></li>
 </ul></li>
-<li><a href="#using-the-function-and-scoping">Using the function and scoping</a></li>
+<li><a href="#using-the-function">Using the function</a></li>
 <li><a href="#scoping">Scoping</a></li>
 <li><a href="#some-conventions-helpful-later-in-the-course">Some conventions (helpful later in the course)</a></li>
 </ul></li>
@@ -2575,14 +2575,14 @@ Resources
 <p><span class="math inline">\(P = ρ * h * r * g * K_{Eff}\)</span></p>
 <p>P is Power in watts, ρ is the density of water (~1000 <span class="math inline">\(kg/m^3\)</span>), h is height in meters, r is flow rate in cubic meters per second, g is acceleration due to gravity of 9.8 <span class="math inline">\(m/s^2\)</span>, <span class="math inline">\(K_{Eff}\)</span> is a coefficient of efficiency ranging from 0 to 1.</p>
 <hr />
-<h2 id="implementing-functions-in-r">Implementing Functions in R</h2>
+<h2 id="implementing-functions-in-r---format">Implementing Functions in R - Format</h2>
 <p>Format for a basic function in R</p>
 <p>#’ documentation that describes inputs, outputs and what the function does</p>
 <p>FUNCTION NAME = function(inputs, parameters) {</p>
 <p>body of the function (manipulation of inputs)</p>
 <p>return(values to return)</p>
 <p>}</p>
-<h2 id="implementing-functions-in-r-1">Implementing Functions in R</h2>
+<h2 id="implementing-functions-in-r---details">Implementing Functions in R - Details</h2>
 <p>In R, inputs and parameters are treated the same; but it is useful to think about them separately in designing the model - collectively they are sometimes referred to as arguments</p>
 <p>ALWAYS USE Meaningful names for your function, its parameters and variables calculated within the function</p>
 <ul>
@@ -2594,7 +2594,7 @@ Resources
 </ul></li>
 <li><p><em>return</em> tells R what the output is</p></li>
 </ul>
-<h3 id="heres-our-example">Here’s our example</h3>
+<h3 id="simple-example">Simple Example</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># function definition</span>
@@ -2606,7 +2606,7 @@ Resources
 </div>
 </div>
 <hr />
-<h2 id="using-the-function-and-scoping">Using the function and scoping</h2>
+<h2 id="using-the-function">Using the function</h2>
 <p>To use the function we substitute “actual” values for each argument (parameter and inputs) (unless there are defaults)</p>
 <p>R assumes that arguments are in the order that they were specified in the function definition - unless you refer to them by name</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -2650,7 +2650,7 @@ Resources
 result = rho * height * flow * g * Keff
 return(result)
 }
-&lt;bytecode: 0x7feda9de8bb0&gt;</code></pre>
+&lt;bytecode: 0x7fde8616e4c8&gt;</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># use the function and save the results</span>
 <span class='va'>reservoir1</span> <span class='op'>=</span> <span class='fu'>power_gen_orig</span><span class='op'>(</span>height<span class='op'>=</span><span class='fl'>4</span>, flow<span class='op'>=</span><span class='fl'>7</span><span class='op'>)</span>
