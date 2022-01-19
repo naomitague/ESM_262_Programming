@@ -1,0 +1,136 @@
+---
+title: "Topic 1: Programming: Basics and Best Practices"
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+
+## Protocols and Guidance on how to best use this class
+
+*  Learning to program is hard and I may not always explain in a way that is accessible to you - So if you don't understand something *ASK* , you will help me to learn how to explain (or find an answer if I don't know it) and you will help others
+
+* Programming gets better with practice and play - Don't just read the Rmarkdown - try the code, try variations on the ideas presented, make up stuff to try, get your feet wet 
+
+* Programming means making mistakes, expect it, stay calm and try again - if you get frustrated step away and come back; be creative
+
+
+* Support each other 
+  * when working in groups, pay attention to your partner, if they are not at your skill level, help them learn - recognize that we all have different backgrounds
+  
+  
+* Be involved as network/community of programmers
+  * we will have two forums on *Gauchospace*
+   * **Questions and Answers** forum use this to ask and answer questions about course material 
+   * **Recommended Tools** forum use to to share stuff beyond what I present in class
+      * other ways of doing things
+      * cool, fun, useful tools in R or any other platform
+        
+  * Both Forums are accessible at the  top of the course Gauchospace site
+  
+  * You must post at least once to BOTH forums before the end of the course (but hopefully you will post more often)
+
+
+
+* If you are really struggling, reach out to Will or myself, we can help
+(or if you just want to chat about something ) 
+
+
+
+
+
+## What we will learn - some  more details
+
+* Modular programming: Designing building blocks or functions
+
+* Data structures, operations and flow control (general programmings skills we use for manipulating data inside each block)
+
+* Automated (or semi-automated) Tools for good programming practice
+  * testing
+  * documentation
+  * workflow for sharing programs/packages with others
+  
+
+The course features **R** for programming, **Git** for version control, **Markdown** for workflow, and **GitHub** for collaboration and publishing, but many concepts would be applicable in other software design tools.
+
+
+
+
+## What is a program
+
+* A program is a set of instructions for a computer to follow
+* Programs are often used to manipulate data (in all type and formats you discussed last week)
+* Simple to complex
+
+    + scripts that you save in R-Markdown
+    + instructions to analyze relationships in census data and visualize them
+    + a model of global climate
+ 
+## Programming Languages
+
+* Programs can be written in many different languages (all have their strengths and weakness)
+* Languages expect instructions in a particular form (syntax) and then translate them to be readable by the computer
+* Languages have evolved to make it help users write programs that are easy to understand, re-use, extend, test, run quickly, use lots of data...
+
+## Programming Fundamentals
+
+* Operations (=,+,-,...concatenate, copy)
+* Data structures (simple variables, arrays, lists...) 
+* Control structures (if then, loops) 
+* Modules...Functions
+
+These concepts common to all languages through the syntax may be different
+
+
+
+
+## BREAKOUT GROUP TASK:
+  Based on whatever programming/coding experience you have had - come up with what you think are 4 best practices
+  Write them into an Rmarkdown document
+
+  
+## Best Practices for Software Development 
+
+
+* Wilson G, Aruliah DA, Brown CT, Chue Hong NP, Davis M, et al. (2014) Best Practices for Scientific Computing. PLoS Biol 12(1): e1001745. doi:10.1371/journal.pbio.1001745
+
+*  Blanton, B and Lenhardt, C 2014. A Scientist’s Perspective on Sustainable Scientific Software. Journal of Open Research Software 2(1):e17, DOI: http://dx.doi.org/10.5334/jors.ba
+
+[Alternative View](http://simpleprogrammer.com/2013/02/17/principles-are-timeless-best-practices-are-fads/)
+
+## Summary of Best Practices
+
+[Wilson et al, Summary Box](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745#pbio-1001745-box001)
+  
+
+## Common Coding/Software Engineering Issues
+
+* Unreadable code (hard to understand, easy to forget how it works, hard to find errors, hard to expand)
+* Overly complex, disorganized code (hard to find errors; hard to modify-expand)
+* Insufficient testing (both during development and after)
+* Not tracking code changes (multiple versions, which is correct?)
+
+
+## Automated Tools for Best Practices in Software Engineering
+
+Automated tools (really useful for more complex code development
+( note that GP’s often create programs > 100 lines of code)
+
+Automated documentation
+
+http://www.stack.nl/~dimitri/doxygen/
+
+http://roxygen.org/roxygen2-manual.pdf 
+
+Automated test case development
+
+http://r-pkgs.had.co.nz/tests.html
+
+
+Automated code evolution tracking (Version Control)
+https://github.com/
+
+

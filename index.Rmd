@@ -8,13 +8,6 @@ site: distill::distill_website
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-
-# Learn more about creating websites with Distill at:
-# https://rstudio.github.io/distill/website.html
-
-# Learn more about publishing to GitHub Pages at:
-# https://rstudio.github.io/distill/publish_website.html#github-pages
-
 ```
 
 ```{r, out.width = "80%", out.height="70%",fig.cap = "Growing skills"}
@@ -81,7 +74,20 @@ Class will include a mix of lectures and hands-on examples, using students' own 
 
 -   Make sure you have a Github account
 
-### Assignments
+## Course materials and how we will work
+
+All lecture materials will be available on this course website as well as assignments. (But you will submit assignments on Gauchospace)
+
+Prior to most classes,  I will ask you to study an Rmarkdown document (and often an example R-functions) before class
+Then at the beginning of class, I will **briefly** go over the document and we will discuss any questions. Occasionally I spend 10-15 minutes lecturing. We will spend most of the class working on practical applications of what was in the document.  This way we use the class time as a lab - where you can get guidance.  
+
+**this mean its essential for you to do the review before class **
+
+Why structure it this way?
+You learn to code by doing - not so much by watching others do!
+
+
+## Assignments
 
 There will be 6 short assignment (more or less one for each class). You will usually have time to work on the assignment in class and most will be in groups. We'll evaluate your assignments by pulling the GitHub repository that they live in.
 
@@ -94,7 +100,6 @@ Then, for each assignment:
 
 1. Put your solution, and all the files needed to run it, in its own folder within the repo.
 2. Submit the URL of the folder on Gauchospace
-
 
 
 ## Weekly Schedule

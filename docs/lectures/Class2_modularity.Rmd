@@ -213,7 +213,7 @@ I like  this free one accessible online from chrome
 With your group, think of an example program that you might want to design that is complex enough to involve several modules
 
 * write a contract for the overall program (input, output, parameters)
-* break the program in to modules (naming them appropriately), wrate a contract for each one
+* break the program in to modules (naming them appropriately), write a contract for each one
 * create a diagram that shows how these modules would be put together to go from inputs to output for the overall program (you can use diagram.net OR any other software - your choice!)
 
 ## Important

@@ -10,7 +10,7 @@ navbar:
     - text: "Topics"
       menu:
         - text: "Topic 1: Programming Basics and Best Practices"
-          href: topic_1.html
+          href: lectures/Class1_intro.html
         - text: "Topic 2: Modularity"
           href: lectures/Class2_modularity.html
         - text: "Topic 3: Add images"
