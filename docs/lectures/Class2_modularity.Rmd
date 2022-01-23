@@ -216,10 +216,16 @@ With your group, think of an example program that you might want to design that 
 * break the program in to modules (naming them appropriately), write a contract for each one
 * create a diagram that shows how these modules would be put together to go from inputs to output for the overall program (you can use diagram.net OR any other software - your choice!)
 
-## Important
+## Important - First Review Task
+
+Clone the following repository 
+
+[Example/Review Repo](https://github.com/naomitague/ESM_262_Examples.git)
+
+  - make sure this is in a completely separate directory from your assignments directory (git doesn't like two different repos in the same place!)
+  - find and go through *Rmarkdown/starting_functions.Rmd* BEFORE next class - play with it; come ready to ask questions in class
+
 
 Next class we will go through how to make a function in R
-Go through *starting_functions.Rmd* BEFORE next class - play with it; come ready to ask questions in class
-
 
 

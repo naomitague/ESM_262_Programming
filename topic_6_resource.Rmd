@@ -1,0 +1,29 @@
+---
+title: "Assignment 5"
+
+---
+
+# Assignment 5
+
+Working in a new group
+
+
+
+Write that function, save it in a .R file
+
+In an Rmarkdown document, generate some data to experiment with your function, create scenario where you repeat the function for each row in a data set (you can use this for inputs and/or parameters) - Similar to what we did for the autopower function when we ran it for multiple speeds (but you could do something over time, multiple climate inputs, multiple ages...depending on your function of course)
+
+Then generate a scenario where you repeat what you just did (for all rows) where you vary another a parameter using pmap (or a loop) - Similar to what we did when we  ran our autopower function for different cars and speeds - and then repeated the cars/speed scenarios for different drag coefficients
+
+Make sure you use good programming practices
+* provide details on the function contract at the top of the function - what are inputs/output their units format etc
+* understandable variables names
+* commenting through out so its easy to understand what you are doing
+* add error checking
+
+
+# Review for next class
+
+* DataTypes.Rmd
+* compute_simpson_index.R
+* computediversity.R

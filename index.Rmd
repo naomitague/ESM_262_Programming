@@ -55,14 +55,15 @@ Class will include a mix of lectures and hands-on examples, using students' own 
 
 ## Learning objectives
 
-- learn some coding/programming best practices (that will make your data science life easier - whatever you do!)
-  - modularity
+- 3 *BIG* concepts in programming are *modulariy*, *data structure*, *looping* - we will learns skills related to all three of these
+
+- learn and practice some coding/programming best practices (that will make your data science life easier - whatever you do!)
   - documentation
   - testing
-- gain familiarity with a few concepts that are part (in some way) of most programming languages (functions, looping, data types)
 
 - learn some new Rskills that are helpful for a wide variety of data science applications
-- learn how to code with partners
+
+- practice partner coding
 
 ## Course requirements
 

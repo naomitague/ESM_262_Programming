@@ -1,0 +1,19 @@
+---
+title: "Assignment 7"
+
+---
+
+# Assignment - Group
+
+Write a function that takes a vector of fish names and always returns three items
+* the most common fish, 
+* the rarest fish
+* the total number of fish
+AND
+ include an option (defaulted to FALSE) that if TRUE also returns a histogram of the number of each fish type, with a title giving the total number of fish caught.  Remember that you can save a graph as a variable.
+
+Create an Rmarkdown to demonstrate the use of your function with *fish.txt*
+
+# REVIEW for next class
+
+* creating_packages.RMD

@@ -1,0 +1,27 @@
+---
+title: "Assignment 4 _Topic 5"
+
+---
+
+Try this - make a random sample of fertilizer application, 10 values
+with mean of *5* and standard deviation of *0.5*
+
+(user *rnorm* function in R to do this)
+
+
+Create a random sample of mean annual growth of a crop due to climate variation, 10 values with mean  of *20*, standard deviation of *2*,
+
+Imagine that growth due to combined effects of climate and fertilize effects can be estimates as:
+
+$ 1.8*fertilizer^2-0.5*fertilizer + mean annual growth $
+
+Use a *for* loop to estimate combined growth for each of 10 samples
+
+(you can assume that samples are matched - so you will have 10 growth estimates - using your 10 fertilizer applications and 10 estimates of mean annual growth)
+
+Can you put together in a data structure that lets you plot growth against fertilizer?
+
+*No need to hand in*
+
+# Review for next class
+looping.Rmd

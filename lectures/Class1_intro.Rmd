@@ -75,12 +75,11 @@ The course features **R** for programming, **Git** for version control, **Markdo
 * Languages expect instructions in a particular form (syntax) and then translate them to be readable by the computer
 * Languages have evolved to make it help users write programs that are easy to understand, re-use, extend, test, run quickly, use lots of data...
 
-## Programming Fundamentals
+## Programming Fundamentals - "Big Ideas"
 
-* Operations (=,+,-,...concatenate, copy)
-* Data structures (simple variables, arrays, lists...) 
-* Control structures (if then, loops) 
-* Modules...Functions
+* Data structures (simple variables, arrays, lists...) - how do we organize data
+*  Basic Operations (=,+,-,...concatenate, copy)  to Control structures (if then, loops) - how do we manipulate data
+* Modules...Functions - how do we make all this efficient - especially when we want to similar types of things over an over
 
 These concepts common to all languages through the syntax may be different
 
