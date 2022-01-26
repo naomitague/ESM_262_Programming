@@ -126,7 +126,7 @@ What would be the function's contract - input/parameters? what will it do?
 Write a function to compute power, given a truck of m=31752 kg (parameters for a heavy truck) for a range of different highway speeds (30 m/s, 80 km/hr, 120 km/hr, 40 km/hr )
 Plot power as a function of speed
 Add a second line for lighter vehicle
-Remember to keep the function in its own file and then create a Rmarkdown to use the function
+Remember to keep the function in its own file, store it in a subdirectory called *R* and then create a Rmarkdown to use the function and store the Rmarkdown in a different directory
 
 Good Programming Practices:
 
@@ -134,6 +134,8 @@ Name variables so its easy to understand
 Include comments in the function and at the top to make it easy to understand
 Also include the comments in the Rmarkdown that you are using to run the function
 
+PART 2 - Review 
 
-
+Sampling_example.Rmd (no need to turn in anything but just try the example with your function)
+Error_checking.Rmd
 ---

@@ -1,0 +1,440 @@
+---
+title: 'Using functions with Data'
+author: "Naomi Tague"
+date: "January, 2020"
+output:
+  slidy_presentation:
+   highlight: pygments
+  html_document: default
+  pdf_document: default
+  ioslides_presentation:
+    highlight: pygments
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo =TRUE)
+
+library(tidyverse)
+library(purrr)
+library(ggpubr)
+```
+
+
+# Comments/Questions 
+
+
+
+# Review
+
+* We are using functions as a way to design modular programs (that might involve many functions that are linked together)
+
+* We always start with clearly defininng our goal for the whole program and each piece (and diagramming this if needed for programs made of multiple functions)
+
+* Always write your function in a text editor and then copy into R
+
+* By convention we name files with functions in them by the name of the function.R
+e.g. **power_gen_orig.R**
+
+* you can have R read a text file by source(“power_gen.R”) - make sure you are in the right working directory
+
+* keep organized by keeping all functions in a subdirectory called *R*
+
+*  Eventually we will want our function to be part of a package (a library of many functions) - to create a package you must use this convention (name.R) place all function in a directory called “R”
+
+
+
+
+```{r}
+
+source("R/power_gen_orig.R")
+```
+
+
+# Multiple inputs 
+
+For a function with more than one input  R can handle multiple values
+
+
+**IF** 
+
+* all (multiple) inputs have the same number of values 
+* all other inputs or parameters have a single value
+
+
+For other cases, additional instructions would need to be included in the function to help R understand what to do
+
+
+Consider our reservoir function  ( **R/power_gen_orig.R**)
+
+```{r sampling2}
+
+#source("R/power_gen_orig.R")
+
+power_gen_orig= function(height, flow, rho=1000, g=9.8, Keff=0.8) {
+  
+  # calculate power
+  result = rho * height * flow * g * Keff
+  return(result)
+}
+
+# single
+power_gen_orig(height=2, flow=2)
+
+# multiple heights
+# generate a structure to store results
+# consider all heights from 1 to 100
+
+resv_results = data.frame(height=seq(from=1, to=100))
+
+# compute power generated for EACH height
+resv_results$power = power_gen_orig(resv_results$height, flow=2)
+
+# plot
+ggplot(resv_results, aes(height, power))+geom_point(size=3)+labs(y="Power (KW)", x="Height (m)")
+
+# random combinations of height and flow
+# use rnorm to sample from a normal distribution
+resv_results$height = rnorm(mean=10, sd=2, n=100)
+resv_results$flow = rnorm(mean=20, sd=1, n=100)
+# compute power generated for EACH height
+resv_results$power = power_gen_orig(resv_results$height, flow=resv_results$flow)
+
+# plot
+ggplot(resv_results, aes(height, power, col=flow))+geom_point(size=3)+labs(y="Power (KW)", x="Height (m)")
+
+# Unequal lengths - this will "work" but inputs get recycled unclear what is happening
+# NOT recommended
+
+eheight = seq(from=1, to=50)
+eflow = runif(min=0.1, max=2, n=100)
+resv_result = power_gen_orig(eheight, eflow)
+
+# better
+eheight = seq(from=1, to=50)
+eflow = runif(min=0.1, max=2, n=50)
+resv_result = power_gen_orig(eheight, eflow)
+
+# another example of the problem of unequal length inputs
+power_gen_orig(eheight, eflow, g=c(9,10,11))
+
+#better
+g = runif(min=8, max=10, n=50)
+resv_result = power_gen_orig(eheight, eflow, g)
+ggplot(resv_results, aes(height, power, col=flow))+geom_point(size=3)+labs(y="Power (KW)", x="Height (m)")
+
+
+```
+
+# Error Checking
+
+What will your function do if user gives you garbage data, imagine that you have a function that computes microbial growth rates with temperature
+
+* Two options
+
+<span style="color:skyblue">
+1. error-checking (nice)
+</span>
+
+ if temperature < -100 or > 100
+ 
+*  set results to NA
+*  or exit function with a warming
+ 
+<span style="color:skyblue"> 
+2. assume user reads the contract :) return unrealistic values
+</span>
+
+if input -999.0, will still try to output growth rate
+ 
+ 
+ Error-checking is helpful if you are going to build a model made up of many functions- why?
+ 
+
+# How to add error checking
+
+Consider this example (I'm going to put the function definition inline for now so you can easily see it - later we will save to our R subdirectory for reuse)
+
+```{r eval=TRUE, echo=TRUE  }
+
+power_gen = function(height, flow, rho=1000, g=9.8, Keff=0.8) {
+  # make sure inputs are positive and if not set as NA so result will be NA
+   if (height < 0) height=NA
+  
+ # an alterative is to exit the function prematurely 
+  if (flow < 0) return("Flow cannot be less than 0")
+  #    return("Height cannot be less than 0")
+      
+  # calculate power
+    result = rho * height * flow * g * Keff
+  return(result)
+}
+
+power_gen(2,3)
+power_gen(-2,3)
+power_gen(2,-3)
+```
+
+
+While this works for a case with one height and one flow
+It will have problems if we use multiple heights - (a later topic)
+
+A better implementation if you think the function might be run for multiple heights - YES you can do that
+
+```{r eval=TRUE, echo=TRUE  }
+
+power_gen = function(height, flow, rho=1000, g=9.8, Keff=0.8) {
+  # make sure inputs are positive and if not set as NA so result will be NA
+   height = ifelse( (height < 0), NA, height)
+  
+ # an alterative is to exit the function prematurely 
+  flow = ifelse((flow < 0), return("flow must be greater than zero"), flow)
+
+  #    return("Height cannot be less than 0")
+      
+  # calculate power
+    result = rho * height * flow * g * Keff
+  return(result)
+}
+
+power_gen(2,3)
+power_gen(-2,3)
+power_gen(2,-3)
+
+
+# note that this works (calculates power for each height)
+power_gen(height=c(1,4,5), flow=2)
+
+# and this works (calculates power for each flow rate)
+power_gen(height=4, flow=c(2,4,5))
+
+# and this calculates power for each combination of flow and height
+power_gen(height=c(4,5,6), flow=c(2,4,6))
+
+# but this doesn't work - why?
+power_gen(height=c(4,5,6, 8, 9, 20), flow=c(2,4,6))
+
+# we could add error checking to test for this
+
+power_gen = function(height, flow, rho=1000, g=9.8, Keff=0.8) {
+  
+  # make sure we have same number of flow and height's so we can match them
+  if (length(height) != length(flow)) return(" number of heights is different from number of flows")
+  # make sure inputs are positive and if not set as NA so result will be NA
+   height = ifelse( (height < 0), NA, height)
+  
+ # an alterative is to exit the function prematurely 
+  flow = ifelse((flow < 0), return("flow must be greater than zero"), flow)
+
+  #    return("Height cannot be less than 0")
+      
+  # calculate power
+    result = rho * height * flow * g * Keff
+  return(result)
+}
+
+power_gen(height=c(4,5,6, 8, 9, 20), flow=c(2,4,6))
+power_gen(height=c(4,5,6), flow=c(2,4,6))
+```
+
+See **power_gen.R** for file with error checking
+
+Error checking is good practice - and combinded with good documentation - makes programming much much easier!
+
+
+
+
+
+# Steps for running your model over multiple inputs
+
+1. design a data structure to store results: sometimes this is automatic but not always
+2. generate the input data
+3. apply to the model
+
+
+
+# Consider our function that estimates the power required to keep a car moving at a given speed
+
+
+
+# Code
+
+```{r powerexample}
+
+#' Power Required by Speed
+#'
+#' This function determines the power required to keep a vehicle moving at 
+#' a given speed
+#' @param cdrag coefficient due to drag default=0.3 
+#' @param crolling coefficient due to rolling/friction default=0.015
+#' @param v vehicle speed (m/2)
+#' @param m vehicle mass (kg)
+#' @param A area of front of vehicle (m2)
+#' @param g acceleration due to gravity (m/s) default=9.8
+#' @param pair (kg/m3) default =1.2
+#' @return power (W)
+
+autopower = function(V, m, A, cdrag=0.3, crolling=0.015,pair=1.2,g=9.8) {
+  P = crolling*m*g*V + 1/2*A*pair*cdrag*V**3
+  return(P)
+}
+
+```
+
+I've also stored the autopower.R function as a file = using the recommended naming convention
+
+**autopower.R**
+
+
+# Generating data for the function and iterating over that data
+
+Two parts
+
+* Generate a data structure to store your results
+
+* Repeat application of your function over the data
+
+
+Example use: Imagine we want to see how much power is generated given scenario where we know the mean and standard deviation of vehicles speeds
+
+
+```{r sampling}
+
+source("../R/autopower.R")
+
+# generate sample speeds from a distribution
+nsample = 100
+speeds = rnorm(mean=25, sd=4, n=nsample)
+
+# Step 1  create data frame to store results 
+# how many simulations, what do you want to keep
+
+#create a dataframe that has rows for each model run
+# columns for height, flowrate and power estimate
+results = data.frame(speed=speeds, power=NA)
+
+head(results)
+
+# if you only have one input and everything else is the same, R is smart enough
+# to create a set of outputs
+results$power = autopower(V=speeds, A=25, m=20000)
+
+# ALWAYS look at your results to make sure it make sense
+ggplot(results, aes(speed, power/1000))+geom_point()+labs(x="speed in m/s", y="power in kW")
+ggplot(results, aes(x="Across Speed",y=power/1000))+geom_boxplot()+labs(y="power in kW")
+
+```
+
+# Looping (or repetition) 
+
+Looping - or repeating applying your function over multiple inputs is not always automatic 
+  * more complex scenarios - number of different values is not the same for all inputs
+    (e.g - you have 3 different speeds for 5 different cars (mass/Area))
+  * other programming languages
+
+Lets start with the basics of how you do repetition in programming in general
+often called looping
+
+```{r loop }
+
+# repeat statement
+a=0
+for (i in 1:5) {
+ a = a+i
+}
+a
+
+#if you want to keep track of a for each iteration
+# start with a data structure to hold the results - there will be 5 iterations
+
+a = rep(x=0, times=5)
+for (i in 1:5) {
+ a[i] = a[i]+i
+}
+a
+
+# lets say we wanted to look income minus expenses for net income
+# create some example
+
+income = runif(min=1000, max=5000, n=10)
+expenses = rnorm(mean=1500, sd=500, n=10)
+# it is possible that this approach could generate negative expenses
+expenses = ifelse(expenses < 0, 0, expenses)
+# normally we can just do
+net = income-expenses
+# lets make this a data frame for nice plotting
+account = data.frame(income=income, expenses=expenses, net = net)
+ggplot(account, aes(income, expenses))+geom_point()
+# lets add a year
+account$year = seq(from=2000, length.out=nrow(account))
+# we could have computed net with a for loop
+# sometimes we use NA to show we haven't computed it yet, so "initialize" as NA
+netloop = rep(NA, times=10)
+# alternatively we could add to account
+account$netloop=NA
+account
+# note I can use any variable I want to as a counter - notice how I'm now using columns of the 
+# data frame
+for (n in 1:10) {
+  account$netloop[n] = account$income[n]-account$expenses[n]
+}
+
+# as expected net and netloop are the same :)
+head(account)
+
+# why loop
+# what if we wanted to combine different rows in some way - 
+# for example, we wanted to carry forward from the previous year
+
+# so carryforward is current years net  plus last years net
+
+# note: we don't have to do the first year as we don't have carry forward
+# initialize our column to zero, start counter (n) at 2 instead of 1
+# make the first value equal to the net of first year
+account$carryforwardnet = 0
+account$carryforwardnet[1]=account$net[1]
+# now loop - looking backward one year to get previous years carry forward
+for (n in 2:10) {
+  account$carryforwardnet[n] = account$net[n]+account$carryforwardnet[n-1]
+}
+
+# plot - and use color to show current years contribution as positive or negative
+ggplot(account, aes(year, carryforwardnet, fill=net, group=year))+geom_col()+scale_fill_gradient(low="red", high="black")
+
+
+# another example - find the maximum speed from a set of speeds - lets make up an example
+# by sampling from a random uniform distribution
+speeds = runif(min=0, max=100, n=300)
+
+maxspeed=0
+for ( i  in 1:length(speeds)) {
+  maxspeed = ifelse(speeds[i] > maxspeed, speeds[i], maxspeed)
+}
+
+maxspeed
+max(speeds)
+
+
+```
+
+
+Try this - make a random sample of fertilizer application, 10 values
+with mean of *5* and standard deviation of *0.5*
+
+(user *rnorm* function in R to do this)
+
+
+Create a random sample of mean annual growth of a crop due to climate variation, 10 values with mean  of *20*, standard deviation of *2*,
+
+Imagine that growth due to combined effects of climate and fertilize effects can be estimates as:
+
+$ 1.8*fertilizer^2-0.5*fertilizer + mean annual growth $
+
+Use a *for* loop to estimate combined growth for each of 10 samples
+
+(you can assume that samples are matched - so you will have 10 growth estimates - using your 10 fertilizer applications and 10 estimates of mean annual growth)
+
+Can you put together in a data structure that lets you plot growth against fertilizer?
+
+
+# Do this on your own
+# Review looping.Rmd - its a long one
