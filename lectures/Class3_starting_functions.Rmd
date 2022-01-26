@@ -31,7 +31,7 @@ e.g. **power_gen_orig.R**
 ```{r  examples, echo=TRUE, include=TRUE}
 
 # first set your working directory to just above the R directory
-source("R/power_gen_orig.R")
+source("../R/power_gen_orig.R")
 
 # to see the code
 power_gen_orig

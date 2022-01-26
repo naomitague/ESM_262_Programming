@@ -1,6 +1,5 @@
 ---
-title: "Topic 1: Programming: Basics and Best Practices"
-
+title: 'Topic 1: Programming: Basics and Best Practices'
 ---
 
 ```{r setup, include=FALSE}
