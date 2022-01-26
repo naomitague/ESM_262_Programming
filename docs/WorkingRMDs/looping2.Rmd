@@ -1,0 +1,99 @@
+---
+title: "looping2"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+#  <span style="color:blue"> A bit more on Looping 
+
+
+
+# Loops can be "nested" on loop inside the other
+
+Example: Calculate NPV for
+
+* a range of different interest rates and 
+* a range of damages 
+* that may be incurred 10 years in the future
+
+Steps
+
+* define inputs (interest rates, damages)
+* define output (NPV)
+* write the function
+* create a data structure to store results where we vary both interest rates and damages
+* use nested for loops to fill in the data structure
+
+Try it first...
+
+
+```{r npvfor, echo=FALSE}
+
+# write a function to compute npv
+source("R/compute_NPV.R")
+compute_NPV
+compute_NPV(20, discount=0.01, time=20)
+
+
+#generate some input
+damages = c(25,33,91,24)
+# sensitivity to discount rate
+discount_rates = seq(from=0.01, to=0.04, by=0.005)
+yr=10
+
+# compute some npv's for different discount rates
+# first generate a dataframe to store results
+npvs = as.data.frame(matrix(nrow=length(damages), ncol=length(discount_rates)))
+
+# now use a for loop to populate
+ for (i in 1:length(damages)) {
+         for (j in 1:length(discount_rates)) {
+       npvs[i,j]= compute_NPV(value=damages[i],       discount=discount_rates[j],time=yr )
+
+         }
+ }
+ npvs
+ 
+ 
+ #some data wrangling
+colnames(npvs)=discount_rates
+rownames(npvs)=damages
+ npvs
+ 
+
+ npvsg =npvs %>% pivot_longer(cols=everything(),names_to="dis", values_to="npv")
+ head(npvsg)
+ ggplot(npvsg, aes(x=npv, col=as.factor(dis)))+geom_density(size=2)+scale_color_brewer(type="seq", name="Discount")
+ 
+ # how about summing all the damages
+ npv.total =npvsg %>% group_by(dis) %>% summarize(t=sum(npv))
+ ggplot(npv.total, aes(dis,t, fill=dis))+geom_col() + labs(x="Discount Rate", y="Total ($)")
+
+ 
+ # we could also do this with sapply
+ #generate some input
+damages = c(25,33,91,24)
+# sensitivity to discount rate
+discount_rates = seq(from=0.01, to=0.04, by=0.005)
+yr=10
+
+# with purr family, map_dfc runs the function for each value and returns as a data frame 
+npvs = damages %>% map_dfc(compute_NPV, time=10, discount=discount_rates)
+
+# with apply (s apply is for a sequence)
+alternate_npvs = sapply(damages, compute_NPV, time=10, discount=discount_rates)
+
+ npvsg =npvs %>% pivot_longer(cols=everything(),names_to="dis", values_to="npv")
+ head(npvsg)
+ ggplot(npvsg, aes(x=npv, col=as.factor(dis)))+geom_density(size=2)+scale_color_brewer(type="seq", name="Discount")
+ 
+ # how about summing all the damages
+ npv.total =npvsg %>% group_by(dis) %>% summarize(t=sum(npv))
+ ggplot(npv.total, aes(dis,t, fill=dis))+geom_col() + labs(x="Discount Rate", y="Total ($)")
+
+ 
+ 
+```

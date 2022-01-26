@@ -87,26 +87,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>ESM 232: Topic 10: Inserting tables</title>
+  <title>ESM 232: Assignment 3</title>
   
   
   
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="ESM 232: Topic 10: Inserting tables"/>
+  <meta property="og:title" content="ESM 232: Assignment 3"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="ESM 232"/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="ESM 232: Topic 10: Inserting tables"/>
+  <meta property="twitter:title" content="ESM 232: Assignment 3"/>
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Topic 10: Inserting tables"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Assignment 3"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2462,7 +2462,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Topic 10: Inserting tables","authors":[]}
+{"title":"Assignment 3","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2505,7 +2505,7 @@ Assignments
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Topic 10: Inserting tables</h1>
+<h1>Assignment 3</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2517,24 +2517,28 @@ Assignments
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#use-the-visual-editor">Use the Visual Editor</a></li>
-<li><a href="#other-options">Other options</a></li>
+<li><a href="#to-turn-n">To turn n</a></li>
+<li><a href="#part-2---review-for-class">PART 2 - Review for class</a></li>
 </ul>
 </nav>
 </div>
-<p style="color: #ba5e00">
-<p><b>TO UPDATE THIS PAGE:</b> Open and edit the <b>topic_10.Rmd</b> file, in the project root, to delete this placeholder text and customize with your own!</p>
-</p>
-<h2 id="use-the-visual-editor">Use the Visual Editor</h2>
-<p>If you want to create a table in your R Markdown from scratch that is easily editable (e.g., a table of Assignment due dates or something), it might be easiest to just make the thing manually right in your R Markdown document.</p>
-<p>To do that, I strongly recommend using the RStudio Visual Editor (in RStudio versions &gt;= 1.4), which has an easy-to-use Table maker similar to what you’d see in Word or Google Docs.</p>
-<ol type="1">
-<li>Open the .Rmd in which you want to add the table</li>
-<li>Switch over to the visual editor by clicking on the compass-looking icon in the top right of your .Rmd screen, to the right of the ‘Run’ and ‘Publish’ buttons (hover text is “Switch to visual markdown editor”)</li>
-<li>In the Visual Editor menu, click on Table, then in the dropdown Menu click ‘Insert Table’…and create &amp; populate your new table like you would normally in non-markdown tools</li>
-</ol>
-<h2 id="other-options">Other options</h2>
-<p>There are a bunch of different ways to add &amp; format tables in R Markdown (see several of <em>many</em> options in David Keyes’ post on <a href="https://rfortherestofus.com/2019/11/how-to-make-beautiful-tables-in-r/">Making Beautiful Tables in R</a>). I think most of them are most useful when you’re trying to make a finalized table with data in it, but if you really want to beautify your website tables there are options.</p>
+<h1 id="to-turn-n">To turn n</h1>
+<p>One of the equations used to compute automobile fuel efficiency is as follows this is the power required to keep a car moving at a given speed is as follows:</p>
+<p><span class="math inline">\(Pb = crolling * m *g *V + \frac{1}{2} * A*p_{air}*c_{drag}*V^3\)</span></p>
+<p>where crolling and cdrag are rolling and aerodynamic resistive coefficients, typical values are 0.015 and 0.3, respectively.</p>
+<ul>
+<li><p>V: is vehicle speed (assuming no headwind) in m/s (or mps) m: is vehicle mass in kg</p></li>
+<li><p>A is surface area of car <span class="math inline">\((m^2)\)</span></p></li>
+<li><p><em>g</em>: is acceleration due to gravity <span class="math inline">\((9.8 m/s^2 )\)</span></p></li>
+<li><p>p_air = density of air <span class="math inline">\((1.2kg/m^3 )\)</span></p></li>
+<li><p>Pb is power in Watts</p></li>
+</ul>
+<p>What would be the function’s contract - input/parameters? what will it do?</p>
+<p>Write a function to compute power, given a truck of m=31752 kg (parameters for a heavy truck) for a range of different highway speeds (30 m/s, 80 km/hr, 120 km/hr, 40 km/hr ) Plot power as a function of speed Add a second line for lighter vehicle Remember to keep the function in its own file, store it in a subdirectory called <em>R</em> and then create a Rmarkdown to use the function and store the Rmarkdown in a different directory</p>
+<p>Good Programming Practices:</p>
+<p>Name variables so its easy to understand Include comments in the function and at the top to make it easy to understand Also include the comments in the Rmarkdown that you are using to run the function</p>
+<h1 id="part-2---review-for-class">PART 2 - Review for class</h1>
+<p>Sampling_example.Rmd (no need to turn in anything but just try the example with your function)</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
@@ -2543,6 +2547,15 @@ Assignments
 <div class="d-appendix">
 </div>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->

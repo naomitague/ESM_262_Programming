@@ -87,26 +87,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>ESM 232: Topic 10: Inserting tables</title>
+  <title>ESM 232: Assignment 4</title>
   
   
   
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="ESM 232: Topic 10: Inserting tables"/>
+  <meta property="og:title" content="ESM 232: Assignment 4"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="ESM 232"/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="ESM 232: Topic 10: Inserting tables"/>
+  <meta property="twitter:title" content="ESM 232: Assignment 4"/>
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Topic 10: Inserting tables"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Assignment 4"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2462,7 +2462,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Topic 10: Inserting tables","authors":[]}
+{"title":"Assignment 4","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2505,7 +2505,7 @@ Assignments
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Topic 10: Inserting tables</h1>
+<h1>Assignment 4</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2517,24 +2517,25 @@ Assignments
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#use-the-visual-editor">Use the Visual Editor</a></li>
-<li><a href="#other-options">Other options</a></li>
+<li><a href="#assignment-4">Assignment 4</a></li>
+<li><a href="#to-review-for-next-class">To Review for next class</a></li>
 </ul>
 </nav>
 </div>
-<p style="color: #ba5e00">
-<p><b>TO UPDATE THIS PAGE:</b> Open and edit the <b>topic_10.Rmd</b> file, in the project root, to delete this placeholder text and customize with your own!</p>
-</p>
-<h2 id="use-the-visual-editor">Use the Visual Editor</h2>
-<p>If you want to create a table in your R Markdown from scratch that is easily editable (e.g., a table of Assignment due dates or something), it might be easiest to just make the thing manually right in your R Markdown document.</p>
-<p>To do that, I strongly recommend using the RStudio Visual Editor (in RStudio versions &gt;= 1.4), which has an easy-to-use Table maker similar to what you’d see in Word or Google Docs.</p>
-<ol type="1">
-<li>Open the .Rmd in which you want to add the table</li>
-<li>Switch over to the visual editor by clicking on the compass-looking icon in the top right of your .Rmd screen, to the right of the ‘Run’ and ‘Publish’ buttons (hover text is “Switch to visual markdown editor”)</li>
-<li>In the Visual Editor menu, click on Table, then in the dropdown Menu click ‘Insert Table’…and create &amp; populate your new table like you would normally in non-markdown tools</li>
-</ol>
-<h2 id="other-options">Other options</h2>
-<p>There are a bunch of different ways to add &amp; format tables in R Markdown (see several of <em>many</em> options in David Keyes’ post on <a href="https://rfortherestofus.com/2019/11/how-to-make-beautiful-tables-in-r/">Making Beautiful Tables in R</a>). I think most of them are most useful when you’re trying to make a finalized table with data in it, but if you really want to beautify your website tables there are options.</p>
+<h1 id="assignment-4">Assignment 4</h1>
+<p>Working in the groups that you used to build your existing autopower function;</p>
+<ul>
+<li><p>add some error checking to your function; save in its own file as usual</p></li>
+<li><p>In an Rmarkdown document, using the cars that I generated in class (see Class4_Using_functions_with_data.Rmd on Gauchospace),</p></li>
+<li><p>recreate <em>possible_cars</em>, add an additional car with mass 30,000 kg, surface area 10m2</p></li>
+<li><p>create a random sample of 100 highways each with a different rolling coefficient; , sample the rolling coefficients from a uniform distribution with a minimum value of 0.01 and a maximum value of 0.03, sample 100 different highways</p></li>
+<li><p>use a <em>for</em> loop to compute the power for each of 100 different highways for each car in <em>possible_cars</em> - for all calculations consider only a single speed - 120 km/hr. We are assuming this is the average speed driven on all highways</p></li>
+<li><p>create a box plot of power consumed for each car type (where the boxes will show ranges across the different highways)</p></li>
+<li><p>use <em>pmap</em> to repeat your calculations and create a second boxplot</p></li>
+</ul>
+<p>Submit the github link as usual on Gauchospace</p>
+<h1 id="to-review-for-next-class">To Review for next class</h1>
+<p>This is a short one * looping2.Rmd * compute_NPV.R</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

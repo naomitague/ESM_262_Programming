@@ -13,25 +13,8 @@ navbar:
           href: lectures/Class1_intro.html
         - text: "Topic 2: Modularity"
           href: lectures/Class2_modularity.html
-        - text: "Topic 3: Add images"
-          href: topic_3.html
-        - text: "Topic 4: Change the theme"
-          href: topic_4.html
-        - text: "Topic 5: Basic formatting"
-          href: topic_5.html
-        - text: "Topic 6: Internal & external links"
-          href: topic_6.html
-        - text: "Topic 7: Remove tables of contents"
-          href: topic_7.html
-        - text: "Topic 8: Add a dropdown menu from navigation bar item"
-          href: topic_8.html
-        - text: "Topic 9: Change site fonts"
-          href: topic_9.html
-        - text: "Topic 10: Add a table"
-          href: topic_10.html
+
     - text: "Assignments"
-      href: assignments.html
-    - text: "Resources"
       menu:
         - text: "Topic 1: Programming Basics and Best Practices"
           href: topic_1_resource.html
