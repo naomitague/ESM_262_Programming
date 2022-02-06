@@ -1,0 +1,182 @@
+---
+title: 'Testing'
+author: "Naomi Tague"
+date: "January, 2020"
+output:
+  slidy_presentation:
+   highlight: pygments
+  html_document: default
+  pdf_document: default
+  ioslides_presentation:
+    highlight: pygments
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo =TRUE)
+knitr::opts_chunk$set(error=TRUE)
+#knitr::opts_knit$set(root.dir = '/Users/christina/Desktop/Courses.local/ESM262n/docs/packages')
+library(tidyverse)
+library(devtools)
+library(roxygen2)
+library(testthat)
+install.packages("~/Courses/rainbow_0.1.0.tar.gz", repos = NULL, type = "source")
+
+```
+
+
+
+# <span style="color:orange">Testing</span>
+
+Top 12 Reasons to Write Unit Tests - Burke and Coyner (Java programmers)
+
+
+
+* Tests reduce bugs in new features
+* Tests reduce bugs in existing features
+* Tests defend agains other programmers
+* Testing forces you to slow down and think
+* Testing makes development faster
+* Tests reduce fear
+
+Model developers now often use software to help them automate the testing process
+Re-uses tests - makes it efficient to repeat many tests as you develop and modify the code 
+
+Particularly helpful when you have multiple modules (as in our mangrove example)
+
+This type of software is available for R, Python, C etc.
+
+# <span style="color:orange">Testing in R</span>
+
+In R, *testthat* library 
+install and add this library
+
+If you are in the working directory where you’ve stored the files in a specific directory (e.g **R**) you can use *testthat* to automate testing of your functions
+
+* need devtools and “testthat” libraries
+* test_dir(“name”) :runs all tests in the “name” subdirectory  (all files beginning with the word “test”
+* test_file(“name”): runs all  the tests in a file called “name”
+
+Testing in R uses expectation
+
+# <span style="color:orange">Expectation</span>
+
+
+tests you can use to make sure your code is working the way you think it should be working
+
+* expect_true(condition)
+* expect_equal(value, value)
+* expect_match(string1, string2)
+* expect_null(value)
+* expect_length(object, n)
+
+
+
+```{r testingsimple, eval=TRUE, error=TRUE}
+
+
+# runs a test on a statement and checks to see if it is correct
+# this one should work
+expect_equal(2+2, 4)
+# this one should 'throw and error'
+expect_equal(2+5, 4)
+
+# we can also use expect_true
+# works with variables two
+a = 200
+expect_true(a > 2 )
+a = 0
+expect_true(a > 2 )
+
+# matches
+fish1 = "salmon"
+fish2 = "trout"
+expect_match(fish1, fish2)
+
+# length
+a = seq(from=1, to=10)
+expect_length(a, 10)
+expect_length(a, 11)
+
+```
+
+# The art of testing
+
+It is good practice to create tests for functions (especially
+useful if you are going to have multiple functions and/or multiple developers)
+
+It make sure that the function returns what you think
+
+Recall when we designed contracts at the beginning of class, testing is a way to make sure the program is honoring the contract
+
+You need to be creative here - test for things you know will work (quick way to find bugs)
+
+Usually we want to run multiple tests..
+
+# <span style="color:orange">Testing in R</span>
+
+
+A **test** runs an **expectation** function and returns a message
+
+Format
+
+test_that(description, series of expectations)
+```{r testing2, eval=FALSE}
+
+
+source("R/compute_NPV.R")
+# lets do a simple test if profit is 0 , NPV should be 0
+# if time is 0, NPV should be the original value
+test_that("compute_NPV_works", {
+
+expect_equal(compute_NPV(value=0,time=100,discount=0.1), 0)
+expect_equal(compute_NPV(value=100, time=0, discount=0.1), 100)
+})
+
+
+
+```
+# <span style="color:orange">Using tests in package development</span>
+
+What we really want is to have tests that we **always** run, everytime we change something
+
+
+Store multiple test in a *name.R* file  store these in these in the *tests/testthat* directory
+
+Two options
+
+To run all tests in a file, use *test_file*
+
+
+To run all tests in a directory,use *test_dir*  (you can also do this from Build menu)
+
+
+
+Goal: Make tests for each function in your package
+
+```{r testing, eval=FALSE}
+clim_data = as.data.frame(cbind(month=c(1:4), day=rep(1, times=4), year=c(2000,2000,2001,2001), 
+                                 precip=rep(0, times=4), tavg=c(2,2,2,4)))
+spring_summary(clim_data)
+spring_summary(clim_data, spring_months=c(1,4))
+
+#save this to a file called test_spring_summary
+test_that("spring_summary_works" ,
+{clim_data = as.data.frame(cbind(month=c(1:4), day=rep(1, times=4), year=c(2000,2000,2001,2001), 
+                                 precip=rep(0, times=4), tavg=c(2,2,2,4)))
+
+expect_equal(spring_summary(clim_data, spring_months=4)$Pavg_spring,0)
+expect_equal(spring_summary(clim_data, spring_months=4)$Tavg_spring, 4)
+expect_equal(spring_summary(clim_data, spring_months=2)$Tavg_spring, 2)
+expect_equal(spring_summary(clim_data, spring_months=c(1:4))$warmest_spring, 2001)
+
+})
+
+# see example with rainbow package
+# this part can only be done if we are in build model with the rainbow package
+# to run the tests
+#test_file("./Tests/testthat/test_spring_summary.R")
+
+# do all tests in a directory
+#test_dir("Tests/testthat", reporter="tap")
+
+# you can also run Test under build menu

@@ -25,13 +25,17 @@ With your group, think of an example program that you might want to design that 
 
 # Review for class
 
-Clone the following repository 
+Review **starting_functions.Rmd** 
+To access this file, go to the following github repo
 
 [Example/Review Repo](https://github.com/naomitague/ESM_262_Examples.git)
 
-  - make sure this is in a completely separate directory from your assignments directory (git doesn't like two different repos in the same place!)
-  - find and go through *Rmarkdown/starting_functions.Rmd* BEFORE next class - play with it; come ready to ask questions in class
+- find and go through *Rmarkdown/starting_functions.Rmd* BEFORE next class - play with it; come ready to ask questions in class
 
+  - you can either *clone* this repository or just download the file - it is in rhe **Rmarkdown** directory
+  - cloning will make it easier for you to get future files (by pulling) but...
+  - if you **clone** make sure this is in a completely separate directory from your assignments directory (git doesn't like two different repos in the same place!)
+  
 
-Next class we will go through how to make a function in R
+Next class we will use this to learn how to make a function in R
 

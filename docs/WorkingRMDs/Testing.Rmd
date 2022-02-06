@@ -1,0 +1,176 @@
+---
+title: 'Testing'
+author: "Naomi Tague"
+date: "January, 2020"
+output:
+  slidy_presentation:
+   highlight: pygments
+  html_document: default
+  pdf_document: default
+  ioslides_presentation:
+    highlight: pygments
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo =TRUE)
+knitr::opts_chunk$set(error=TRUE)
+#knitr::opts_knit$set(root.dir = '/Users/christina/Desktop/Courses.local/ESM262n/docs/packages')
+library(tidyverse)
+library(devtools)
+library(testthat)
+
+```
+
+
+
+# <span style="color:orange">Testing</span>
+
+Top 12 Reasons to Write Unit Tests - Burke and Coyner (Java programmers)
+
+
+
+* Tests reduce bugs in new features
+* Tests reduce bugs in existing features
+* Tests defend agains other programmers
+* Testing forces you to slow down and think
+* Testing makes development faster
+* Tests reduce fear
+
+Model developers now often use software to help them automate the testing process
+Re-uses tests - makes it efficient to repeat many tests as you develop and modify the code 
+
+Particularly helpful when you have multiple modules (as in our mangrove example)
+
+This type of software is available for R, Python, C etc.
+
+# <span style="color:orange">Testing in R</span>
+
+In R, *testthat* library 
+install and add this library
+
+If you are in the working directory where you’ve stored the files for your project you can use *testthat* to automate testing of your functions
+
+* need devtools and “testthat” libraries
+
+A few R commands that are useful
+
+* load_all() :brings everything in “R” subdirectory into your workspace)
+* document() :creates documentation
+* test_dir(“name”) :runs all tests in the “name” subdirectory  (all files beginning with the word “test”
+* test_file(“name”): runs all  the tests in a file called “name”
+
+Testing in R uses "expectation"
+
+# <span style="color:orange">Expectation</span>
+
+
+tests you can use to make sure your code is working the way you think it should be working
+
+* expect_true(condition)
+* expect_equal(value, value)
+* expect_match(string1, string2)
+* expect_null(value)
+* expect_length(object, n)
+
+
+
+```{r testingsimple, eval=TRUE, error=TRUE}
+
+
+# runs a test on a statement and checks to see if it is correct
+# this one should work
+expect_equal(2+2, 4)
+# this one should 'throw and error'
+expect_equal(2+5, 4)
+
+# we can also use expect_true
+# works with variables two
+a = 200
+expect_true(a > 2 )
+a = 0
+expect_true(a > 2 )
+
+# matches
+fish1 = "salmon"
+fish2 = "trout"
+expect_match(fish1, fish2)
+
+# length
+a = seq(from=1, to=10)
+expect_length(a, 10)
+expect_length(a, 11)
+
+# because we use expect_that with variables and functions we can uses dynamically 
+# and test just to make sure we are using reasonable inputs
+library(rainbow)
+futurevalue = 100
+expect_true(compute_NPV(value=futurevalue, time=10, discount=0.01) > 0)
+futurevalue = -100
+expect_true(compute_NPV(value=futurevalue, time=10, discount=0.01) > 0)
+
+# what if function returns a list
+library(rainbow)
+help(spring_summary)
+data(sbdata)
+
+# to see if its working correctly we can make sure that coldest spring is at least as cold as mean
+expect_true(spring_summary(sbdata)$Tavg_spring >= spring_summary(sbdata)$Tmin_spring)
+
+# check for reasonable values
+expect_true(spring_summary(sbdata)$Tavg_spring > -100)
+
+
+# generate dummy data for testing
+clim_fake = data.frame( year=c(2000,2000), month=c(4,4), day=c(1,2), tavg=c(0,0), precip=c(0,0))
+clim_fake
+expect_true(spring_summary(clim_fake)$Tmin_spring == 0 ) 
+
+# an example where it will fail
+clim_fake$tavg = 9999
+expect_true(spring_summary(clim_fake)$Tmin_spring < 100)
+
+
+```
+# <span style="color:orange">Testing in R</span>
+
+
+A **test** runs an **expectation** function and returns a message
+
+Format
+
+test_that(description, code)
+
+```{r testing2, eval=FALSE}
+
+
+# lets do a simple test if surge is 0 we don't expect any damage
+test_that("compute_NPV_works", {
+
+expect_equal(compute_NPV(value=0,time=100,discount=0.1), 0)
+expect_equal(compute_NPV(value=100, time=0, discount=0.1), 100)
+})
+
+
+# lets say I made an error in compute_NPV
+compute_NPV
+compute_NPV = function(value, time, discount) {
+ result=value/(1+discount)*time
+return(result) }
+
+test_that("compute_NPV_works", {
+
+expect_equal(compute_NPV(value=0,time=100,discount=0.1), 0)
+expect_equal(compute_NPV(value=100, time=0, discount=0.1), 100)
+})
+
+compute_NPV = function(value, time, discount) {
+ result=value/(1+discount)^time
+return(result) }
+
+test_that("compute_NPV_works", {
+
+expect_equal(compute_NPV(value=0,time=100,discount=0.1), 0)
+expect_equal(compute_NPV(value=100, time=0, discount=0.1), 100)
+})
+
+```
