@@ -28,7 +28,7 @@ If you run into roadblocks here - send Louis and Naomi an email and we will try 
 ## R Installation
 
 
-So that we all are working with the same code make sure you have the most recent version of
+So that we all are working with the same code make sure you have a recent version of
 
  * **R  (4.0.3 )**
 
@@ -37,6 +37,8 @@ So that we all are working with the same code make sure you have the most recent
  You will also need the following libraries to get started
 
     **tidyverse**
+    **devtools**
+    **purr**
 
 
 ## Git Help
@@ -47,7 +49,7 @@ So that we all are working with the same code make sure you have the most recent
 From ESM  206 you already have a GitHub account, but if not
     [request a GitHub account](https://github.com/join).
 
-Make sure you include this in the initial survey on Gauchospace
+
 
 - There is a lot of information on the web that you can use to refresh / learn to take advantage of **Git** . This one is pretty much all you need to know for this course
 
