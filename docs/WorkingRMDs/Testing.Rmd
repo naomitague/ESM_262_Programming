@@ -54,8 +54,6 @@ If you are in the working directory where you’ve stored the files for your pro
 
 A few R commands that are useful
 
-* load_all() :brings everything in “R” subdirectory into your workspace)
-* document() :creates documentation
 * test_dir(“name”) :runs all tests in the “name” subdirectory  (all files beginning with the word “test”
 * test_file(“name”): runs all  the tests in a file called “name”
 
@@ -100,77 +98,52 @@ a = seq(from=1, to=10)
 expect_length(a, 10)
 expect_length(a, 11)
 
-# because we use expect_that with variables and functions we can uses dynamically 
-# and test just to make sure we are using reasonable inputs
-library(rainbow)
+# We can use expectation with functions 
+# and test just to make sure they are working as expected
+source("R/compute_NPV.R")
 futurevalue = 100
 expect_true(compute_NPV(value=futurevalue, time=10, discount=0.01) > 0)
 futurevalue = -100
 expect_true(compute_NPV(value=futurevalue, time=10, discount=0.01) > 0)
 
-# what if function returns a list
-library(rainbow)
-help(spring_summary)
-data(sbdata)
+# what if function returns a list?
+# we can use the buit in summary function to see how this works
+testdata = rnorm(mean=25, sd=3, n=100)
+summary(testdata)
+# it is actually returning a list, but what are the names?
+names(summary(testdata))
+# now we can specify them
+summary(testdata)["Max."]
+# and use in a test to make sure this function works -...hmm
+# well the max should be greater than the min right?
 
-# to see if its working correctly we can make sure that coldest spring is at least as cold as mean
-expect_true(spring_summary(sbdata)$Tavg_spring >= spring_summary(sbdata)$Tmin_spring)
+expect_true((summary(testdata)["Max."]-summary(testdata)["Min."]) > 0)
 
-# check for reasonable values
-expect_true(spring_summary(sbdata)$Tavg_spring > -100)
+# lets create a function with an error 
+# imagine total recharge of water to soil after rain (in mm) is daily rainfall minus interception (in mm with default of 1mm) lost on any given day
+# lets define a function that returns total rainfall and total recharge given an input of
+# rainfall and then a value for interception
 
-
-# generate dummy data for testing
-clim_fake = data.frame( year=c(2000,2000), month=c(4,4), day=c(1,2), tavg=c(0,0), precip=c(0,0))
-clim_fake
-expect_true(spring_summary(clim_fake)$Tmin_spring == 0 ) 
-
-# an example where it will fail
-clim_fake$tavg = 9999
-expect_true(spring_summary(clim_fake)$Tmin_spring < 100)
-
-
-```
-# <span style="color:orange">Testing in R</span>
-
-
-A **test** runs an **expectation** function and returns a message
-
-Format
-
-test_that(description, code)
-
-```{r testing2, eval=FALSE}
+effective_rain=function(rain, interception_loss=1) {
+  
+  # easy part - get total rain
+  totalrain = sum(rain)
+  
+  # interception happens everyday so we need a new vector
+  recharge = rain-interception_loss
+  totalrecharge = sum(recharge)
+  
+  return(list(totalrain=totalrain, totalrecharge=totalrecharge))}
 
 
-# lets do a simple test if surge is 0 we don't expect any damage
-test_that("compute_NPV_works", {
+# lets do some simple test
+# if it never rains for 730 days then both should be zero
+raindata = rep(0, times=730)
+expect_that(effective_rain(raindata)$totalrain, equals(0))
+# so far so good, now for recharge
 
-expect_equal(compute_NPV(value=0,time=100,discount=0.1), 0)
-expect_equal(compute_NPV(value=100, time=0, discount=0.1), 100)
-})
+raindata = rep(0, times=730)
+expect_that(effective_rain(raindata)$totalrecharge, equals(0))
 
-
-# lets say I made an error in compute_NPV
-compute_NPV
-compute_NPV = function(value, time, discount) {
- result=value/(1+discount)*time
-return(result) }
-
-test_that("compute_NPV_works", {
-
-expect_equal(compute_NPV(value=0,time=100,discount=0.1), 0)
-expect_equal(compute_NPV(value=100, time=0, discount=0.1), 100)
-})
-
-compute_NPV = function(value, time, discount) {
- result=value/(1+discount)^time
-return(result) }
-
-test_that("compute_NPV_works", {
-
-expect_equal(compute_NPV(value=0,time=100,discount=0.1), 0)
-expect_equal(compute_NPV(value=100, time=0, discount=0.1), 100)
-})
-
+# what went wrong???
 ```

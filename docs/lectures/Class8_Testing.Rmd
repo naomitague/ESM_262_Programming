@@ -97,6 +97,70 @@ a = seq(from=1, to=10)
 expect_length(a, 10)
 expect_length(a, 11)
 
+
+# We can use expectation with functions 
+# and test just to make sure they are working as expected
+source("R/compute_NPV.R")
+futurevalue = 100
+expect_true(compute_NPV(value=futurevalue, time=10, discount=0.01) > 0)
+futurevalue = -100
+expect_true(compute_NPV(value=futurevalue, time=10, discount=0.01) > 0)
+
+# what if function returns a list?
+# we can use the buit in summary function to see how this works
+testdata = rnorm(mean=25, sd=3, n=100)
+summary(testdata)
+# it is actually returning a list, but what are the names?
+names(summary(testdata))
+# now we can specify them
+summary(testdata)["Max."]
+# and use in a test to make sure this function works -...hmm
+# well the max should be greater than the min right?
+
+expect_true((summary(testdata)["Max."]-summary(testdata)["Min."]) > 0)
+
+# lets create a function with an error 
+# imagine total recharge of water to soil after rain (in mm) is daily rainfall minus interception (in mm with default of 1mm) lost on any given day
+# lets define a function that returns total rainfall and total recharge given an input of
+# rainfall and then a value for interception
+
+effective_rain=function(rain, interception_loss=1) {
+  
+  # easy part - get total rain
+  totalrain = sum(rain)
+  
+  # interception happens everyday so we need a new vector
+  recharge = rain-interception_loss
+  totalrecharge = sum(recharge)
+  
+  return(list(totalrain=totalrain, totalrecharge=totalrecharge))}
+
+
+# lets do some simple test
+# if it never rains for 730 days then both should be zero
+raindata = rep(0, times=730)
+expect_that(effective_rain(raindata)$totalrain, equals(0))
+# so far so good, now for recharge
+
+raindata = rep(0, times=730)
+expect_that(effective_rain(raindata)$totalrecharge, equals(0))
+
+# what went wrong???
+
+effective_rain=function(rain, interception_loss=1) {
+  
+  # easy part - get total rain
+  totalrain = sum(rain)
+  
+  # interception happens everyday so we need a new vector
+  recharge = rain-interception_loss
+  recharge = pmax(recharge,0)
+  totalrecharge = sum(recharge)
+  
+  return(list(totalrain=totalrain, totalrecharge=totalrecharge))}
+raindata = rep(0, times=730)
+expect_that(effective_rain(raindata)$totalrecharge, equals(0))
+
 ```
 
 # The art of testing
@@ -150,10 +214,19 @@ To run all tests in a file, use *test_file*
 To run all tests in a directory,use *test_dir*  (you can also do this from Build menu)
 
 
-
 Goal: Make tests for each function in your package
 
 ```{r testing, eval=FALSE}
+
+# put your test in a file
+test_file("tests/test_compute_NPV.R")
+
+# look at two new files
+source("R/spring_summary.R")
+spring_summary
+
+# now run a test
+
 clim_data = as.data.frame(cbind(month=c(1:4), day=rep(1, times=4), year=c(2000,2000,2001,2001), 
                                  precip=rep(0, times=4), tavg=c(2,2,2,4)))
 spring_summary(clim_data)
@@ -171,12 +244,13 @@ expect_equal(spring_summary(clim_data, spring_months=c(1:4))$warmest_spring, 200
 
 })
 
-# see example with rainbow package
-# this part can only be done if we are in build model with the rainbow package
-# to run the tests
-#test_file("./Tests/testthat/test_spring_summary.R")
+# see run a bunch of tests at once
+test_file("tests/test_spring_summary.R")
 
-# do all tests in a directory
-#test_dir("Tests/testthat", reporter="tap")
+# run all tests
+test_dir("tests")
+```
 
-# you can also run Test under build menu
+A good source for more expectation code and ways to do testing
+
+[testing](https://testthat.r-lib.org/reference/index.html)
