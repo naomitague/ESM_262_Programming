@@ -1,0 +1,458 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\title{Starting Functions: Class 3}
+\author{}
+\date{\vspace{-2.5em}}
+
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Starting Functions: Class 3},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Some conventions (helpful later in the course)}
+\protect\hypertarget{some-conventions-helpful-later-in-the-course}{}
+\begin{itemize}
+\item
+  Always write your function in a text editor and then copy into R
+\item
+  By convention we name files with functions in them by the name of the
+  function.R I called my function power\_gen\_orig so I'll save it to
+\end{itemize}
+
+e.g.~\textbf{power\_gen\_orig.R}
+
+\begin{itemize}
+\item
+  you can have R read a text file by source(``power\_gen\_orig.R'') -
+  make sure you are in the right working directory
+\item
+  keep organized by keeping all functions in a subdirectory called
+  \emph{R}
+\item
+  Eventually we will want our function to be part of a package (a
+  library of many functions) - to create a package you must use this
+  convention (name.R) place all function in a directory called ``R''
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Function Example}
+\protect\hypertarget{function-example}{}
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# first set your working directory to just above the R directory}
+\FunctionTok{source}\NormalTok{(}\StringTok{"../R/power\_gen\_orig.R"}\NormalTok{)}
+
+\CommentTok{\# to see the code}
+\NormalTok{power\_gen\_orig}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## function (height, flow, rho = 1000, g = 9.8, Keff = 0.8) 
+## {
+##     result = rho * height * flow * g * Keff
+##     return(result)
+## }
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Some insights into inputs}
+\protect\hypertarget{some-insights-into-inputs}{}
+A cool thing is that you can use multiple values as inputs to your R
+function Lets explore what it can do
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# note that this works (calculates power for each height)}
+\FunctionTok{power\_gen\_orig}\NormalTok{(}\AttributeTok{height=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{), }\AttributeTok{flow=}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 15680 62720 78400
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# and this works (calculates power for each flow rate)}
+\FunctionTok{power\_gen\_orig}\NormalTok{(}\AttributeTok{height=}\DecValTok{4}\NormalTok{, }\AttributeTok{flow=}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  62720 125440 156800
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# and this calculates power for each combination of flow and height}
+\FunctionTok{power\_gen\_orig}\NormalTok{(}\AttributeTok{height=}\FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{), }\AttributeTok{flow=}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{6}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  62720 156800 282240
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# but this doesn\textquotesingle{}t work {-} why?}
+\FunctionTok{power\_gen\_orig}\NormalTok{(}\AttributeTok{height=}\FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{20}\NormalTok{), }\AttributeTok{flow=}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{6}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in rho * height * flow: longer object length is not a multiple of
+## shorter object length
+\end{verbatim}
+
+\begin{verbatim}
+## [1]  62720 156800 282240 125440 627200
+\end{verbatim}
+\end{frame}
+
+\begin{frame}{}
+\protect\hypertarget{section}{}
+Note that by \emph{sourcing} a function - it will essentially overwrite
+anything else in your workspace with the same name
+
+\emph{Warning} - if you name your function, the same as an internal R
+function, your new function will take precidence, and \textbf{hide} the
+internal R function
+
+Ideally choose function names that are likely to be unique
+
+If you overwrite a \emph{base} package R function - good to delete it
+(see below)
+
+You can also use \emph{package\_name}:: to get to a function that is
+hidden in the current workspace
+\end{frame}
+
+\begin{frame}[fragile]{}
+\protect\hypertarget{section-1}{}
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# hiding the sort function}
+
+\CommentTok{\# normal use}
+\NormalTok{mydata }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{22}\NormalTok{,}\DecValTok{2}\NormalTok{)}
+\FunctionTok{sort}\NormalTok{(mydata)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  1  2  5  8 22
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# define a new function that adds two numbers {-} silly {-} but lets call it sort}
+\NormalTok{sort }\OtherTok{=} \ControlFlowTok{function}\NormalTok{(a,b) \{}
+\NormalTok{  add }\OtherTok{=}\NormalTok{ a}\SpecialCharTok{+}\NormalTok{b}
+  \FunctionTok{return}\NormalTok{(add)}
+\NormalTok{\}}
+
+\CommentTok{\# now run}
+\FunctionTok{sort}\NormalTok{(mydata)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Error in sort(mydata): argument "b" is missing, with no default
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# how do we get the base package sort back}
+\NormalTok{base}\SpecialCharTok{::}\FunctionTok{sort}\NormalTok{(mydata)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  1  2  5  8 22
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# or get rid of our silly function in the workspace}
+\FunctionTok{rm}\NormalTok{(sort)}
+\FunctionTok{sort}\NormalTok{(mydata)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  1  2  5  8 22
+\end{verbatim}
+\end{frame}
+
+\begin{frame}{Documentation Best Practices}
+\protect\hypertarget{documentation-best-practices}{}
+In additon to \emph{in-line} documents - at the top of the * *.R * where
+you define you function, include information about the functions
+contract
+
+\begin{itemize}
+\tightlist
+\item
+  descriptions
+\item
+  inputs and parameters
+\item
+  outputs
+\end{itemize}
+
+With units and default values included
+
+See example \emph{R/power\_gen\_orig.R}
+\end{frame}
+
+\begin{frame}{{Documentation}}
+\protect\hypertarget{documentation}{}
+\begin{itemize}
+\item
+  There is a standard format for documentation that can be read by
+  automatic programs (roxygen2) - an R package that generate
+  ``standard'' R documentation - manual or help pages
+\item
+  These automated approaches for building documentation (like roxygen2)
+  and meta data (descriptions of data sets) are increasingly common - so
+  you should get into the practice of being structured in your approach
+  to documentation
+\item
+  We will use the conventions that work with roxygen2 - and then use
+  this program to generate formal R documentation. Roxygen is similar to
+  Doxygen which is used for C code\ldots so its a widely used format
+\end{itemize}
+
+Documentation is placed at the top of the \emph{something.R} file all
+lines start with \emph{\#'}
+\end{frame}
+
+\begin{frame}{{Documentation Components}}
+\protect\hypertarget{documentation-components}{}
+Later in the course we will make our own package and create help pages,
+you can use the documentation at the top of your function definitions
+for this - so lets get into the \emph{habit} now
+
+Two parts
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Description} - summary of what your model/function does
+\item
+  \textbf{Tagged (using special ``key'' words)}
+\end{itemize}
+
+Here are some examples there are many others
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{@param} inputs/parameter description
+\item
+  \emph{@return} what your function returns (outputs)
+\item
+  \emph{@example} how to use it
+\item
+  \emph{@references} citations or urls
+\item
+  \emph{@author} YOU
+\end{itemize}
+
+(you don't need all of these and there are more tags, but start with at
+least param and return, example is a good idea
+
+See example
+\end{frame}
+
+\begin{frame}{{ Lets practice:: Automobile Power Generation }}
+\protect\hypertarget{lets-practice-automobile-power-generation}{}
+Some background
+
+One of the equations used to compute automobile fuel efficiency is as
+follows this is the power required to keep a car moving at a given speed
+is as follows:
+
+\(Pb = crolling * m *g *V + \frac{1}{2} * A*p_{air}*c_{drag}*V^3\)
+
+where crolling and cdrag are rolling and aerodynamic resistive
+coefficients, typical values are 0.015 and 0.3, respectively.
+
+\begin{itemize}
+\item
+  V: is vehicle speed (assuming no headwind) in m/s (or mps) m: is
+  vehicle mass in kg
+\item
+  A is surface area of car \((m^2)\)
+\item
+  \emph{g}: is acceleration due to gravity \((9.8 m/s^2 )\)
+\item
+  p\_air = density of air \((1.2kg/m^3 )\)
+\item
+  Pb is power in Watts
+\end{itemize}
+
+What would be the function's contract - input/parameters? what will it
+do?
+
+Write a function to compute power, given a truck of m=31752 kg
+(parameters for a heavy truck) for a range of different highway speeds
+(30 m/s, 80 km/hr, 120 km/hr, 40 km/hr, 5km/hr ) The surface area is 16
+\(m^2\)
+
+Plot power as a function of speed Add a second line for lighter vehicle
+Remember to keep the function in its own file, store it in a
+subdirectory called \emph{R} and then create a Rmarkdown to use the
+function and store the Rmarkdown in a different directory
+
+\textbf{Good Programming Practices}
+
+Name variables so its easy to understand
+
+Describe the contract at the top of the function (following the format
+for the \emph{power\_gen\_orig.R} example
+
+Also include the comments in the Rmarkdown that you are using to run the
+function
+\end{frame}
+
+\begin{frame}{{ PART 2 - Review Two Rmarkdowns }}
+\protect\hypertarget{part-2---review-two-rmarkdowns}{}
+\begin{itemize}
+\item
+  Sampling\_example.Rmd
+\item ~
+  \hypertarget{error_checking.rmd}{%
+  \subsection{Error\_checking.Rmd}\label{error_checking.rmd}}
+\end{itemize}
+\end{frame}
+
+\end{document}

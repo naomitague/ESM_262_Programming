@@ -96,10 +96,55 @@ rm(sort)
 sort(mydata)
 ```
 
+# Documentation Best Practices
 
-# Lets practice:: Automobile Power Generation
+In additon to *in-line* documents - at the top of the * \*.R * where you define
+you function, include information about the functions contract
 
+* descriptions
+* inputs and parameters
+* outputs
 
+With units and default values included
+
+See example *R/power_gen_orig.R*
+
+# <span style="color:orange">Documentation</span>
+
+ 
+* There is a standard format for documentation that can be read by automatic programs (roxygen2) - an R package that generate “standard” R documentation - manual or help pages
+
+* These automated approaches for building documentation (like roxygen2) and meta data (descriptions of data sets) are increasingly common - so you should get into the practice of being structured in your approach to documentation
+
+* We will use the conventions that work with roxygen2 - and then use this program to generate formal R documentation. Roxygen is similar to Doxygen which is used for C code…so its a widely used format
+
+Documentation is placed at the top of the *something.R* file
+all lines start with *\#\'*
+
+# <span style="color:orange">Documentation Components</span>
+
+Later in the course we will make our own package and create help pages, you
+can use the documentation at the top of your function definitions for this - so lets 
+get into the *habit* now
+
+Two parts
+
+* **Description** - summary of what your model/function does
+* **Tagged (using special “key” words)**
+
+Here are some examples there are many others
+
+* *\@param*  inputs/parameter description
+* *\@return* what your function returns (outputs)
+* *\@example*  how to use it
+* *\@references*  citations or urls
+* *\@author* YOU
+
+(you don’t need all of these and there are more tags, but start with at least param and return, example is a good idea
+
+See example
+
+# <span style="color:orange"> Lets practice:: Automobile Power Generation </span>
 
 Some background
 
@@ -123,19 +168,23 @@ where crolling and cdrag are rolling and aerodynamic resistive coefficients, typ
 
 What would be the function's contract - input/parameters? what will it do?
 
-Write a function to compute power, given a truck of m=31752 kg (parameters for a heavy truck) for a range of different highway speeds (30 m/s, 80 km/hr, 120 km/hr, 40 km/hr )
+Write a function to compute power, given a truck of m=31752 kg (parameters for a heavy truck) for a range of different highway speeds (30 m/s, 80 km/hr, 120 km/hr, 40 km/hr, 5km/hr )
+The surface area is 16 $m^2$
+
 Plot power as a function of speed
 Add a second line for lighter vehicle
 Remember to keep the function in its own file, store it in a subdirectory called *R* and then create a Rmarkdown to use the function and store the Rmarkdown in a different directory
 
-Good Programming Practices:
+**Good Programming Practices**
 
 Name variables so its easy to understand
-Include comments in the function and at the top to make it easy to understand
+
+Describe the contract at the top of the function (following the format for the *power_gen_orig.R* example
+
 Also include the comments in the Rmarkdown that you are using to run the function
 
-PART 2 - Review 
+# <span style="color:orange"> PART 2: Review Two Rmarkdowns </span>
 
-Sampling_example.Rmd (no need to turn in anything but just try the example with your function)
-Error_checking.Rmd
+- Sampling_example.Rmd 
+- Error_checking.Rmd
 ---

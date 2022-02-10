@@ -144,9 +144,7 @@ Here are some examples there are many others
 
 See example
 
-# Lets practice:: Automobile Power Generation
-
-
+# <span style="color:orange"> Lets practice:: Automobile Power Generation </span>
 
 Some background
 
@@ -177,7 +175,7 @@ Plot power as a function of speed
 Add a second line for lighter vehicle
 Remember to keep the function in its own file, store it in a subdirectory called *R* and then create a Rmarkdown to use the function and store the Rmarkdown in a different directory
 
-Good Programming Practices:
+**Good Programming Practices**
 
 Name variables so its easy to understand
 
@@ -185,8 +183,8 @@ Describe the contract at the top of the function (following the format for the *
 
 Also include the comments in the Rmarkdown that you are using to run the function
 
-PART 2 - Review Two Rmarkdowns
+# <span style="color:orange"> PART 2: Review Two Rmarkdowns </span>
 
-Sampling_example.Rmd 
-Error_checking.Rmd
+- Sampling_example.Rmd 
+- Error_checking.Rmd
 ---
