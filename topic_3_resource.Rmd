@@ -1,9 +1,9 @@
 ---
-title: "Assignment 3"
+title: "Prepare for Lecture 4"
 
 ---
 
-# To turn n
+#  Finish writing a function and Review
 
 One of the equations used to compute automobile fuel efficiency is as follows this is the power required to keep a car moving at a given speed is as follows:
 
@@ -26,6 +26,8 @@ where crolling and cdrag are rolling and aerodynamic resistive coefficients, typ
 What would be the function's contract - input/parameters? what will it do?
 
 Write a function to compute power, given a truck of m=31752 kg (parameters for a heavy truck) for a range of different highway speeds (30 m/s, 80 km/hr, 120 km/hr, 40 km/hr )
+The surface area is 6 $m^2$
+
 Plot power as a function of speed
 Add a second line for lighter vehicle
 Remember to keep the function in its own file, store it in a subdirectory called *R* and then create a Rmarkdown to use the function and store the Rmarkdown in a different directory
@@ -33,9 +35,12 @@ Remember to keep the function in its own file, store it in a subdirectory called
 Good Programming Practices:
 
 Name variables so its easy to understand
-Include comments in the function and at the top to make it easy to understand
+
+Describe the contract at the top of the function (following the format for the *power_gen_orig.R* example
+
 Also include the comments in the Rmarkdown that you are using to run the function
 
-# PART 2 - Review for class
+PART 2 - Review Two Rmarkdowns
 
-Sampling_example.Rmd (no need to turn in anything but just try the example with your function)
+Sampling_example.Rmd 
+Error_checking.Rmd
