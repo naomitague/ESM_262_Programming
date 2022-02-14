@@ -25,8 +25,8 @@ where crolling and cdrag are rolling and aerodynamic resistive coefficients, typ
 
 What would be the function's contract - input/parameters? what will it do?
 
-Write a function to compute power, given a truck of m=31752 kg (parameters for a heavy truck) for a range of different highway speeds (30 m/s, 80 km/hr, 120 km/hr, 40 km/hr )
-The surface area is 6 $m^2$
+Write a function to compute power, given a truck of m=31752 kg (parameters for a heavy truck) for a range of different highway speeds (30 m/s, 80 km/hr, 120 km/hr, 40 km/hr, 5km/hr )
+The surface area is 16 $m^2$
 
 Plot power as a function of speed
 Add a second line for lighter vehicle
