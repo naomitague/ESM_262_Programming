@@ -165,7 +165,7 @@ for (n in 1:10) {
 head(account)
 ```
 
-# why loop
+# Why loop
 
 what if we wanted to combine different rows and different columns?
 
@@ -217,7 +217,7 @@ with mean of *5* and standard deviation of *0.5*
 Lets imagine that annual yield of a crop can be estimated follows:
 
 
-$ yield =  1.8*fertilizer^2 - 0.5*fertilizer  + 0.3*TP$
+$$ yield =  1.8*fertilizer^2 - 0.5*fertilizer  + 0.1*TP $$
 
 
 and TP is mean precipitation in cm
@@ -237,6 +237,52 @@ Now modify your function so that it returns total yield if the user inputs a vec
 Check that function returns the same result as your original *for* loop
 Add some error checking and test
 
+# Do on your own first before you check with this
+
+```{r}
+
+fert = rnorm(n=10, mean=5, sd=0.5)
+TP = 20
+crop = data.frame(fert=fert)
+crop$yield = NA
+for (yr in 1:10) {
+  crop$yield[yr] = 1.8*fert[yr]^2 - 0.5*fert[yr]  + 0.1*TP
+}
+
+sum(crop$yield)
+ggplot(crop, aes(fert, yield))+geom_point()+labs(y="yield", x="fertilizer")
+
+# as a function
+
+compute_yield = function(fert, TP) {
+  yield = 1.8*fert^2-0.5* fert + 0.1*TP
+  return(yield)
+}
+
+# apply function
+compute_yield(fert, TP)
+sum(compute_yield(fert, TP))
+
+# a different function that includes annual sum
+compute_total_yield = function(fert, TP) {
+  yield = 1.8*fert^2-0.5* fert + 0.1*TP
+  ty = sum(yield)
+  return(ty)
+}
+
+compute_total_yield(fert, TP)
+
+# useful error checking
+compute_total_yield = function(fert, TP) {
+  
+  fert = ifelse(fert < 0, return("fertilizer cannot be negative"), fert)
+   
+  
+  yield = 1.8*fert^2-0.5* fert + 0.1*TP
+  ty = sum(yield)
+  return(ty)
+}
+```
 
 
 # Assignment
