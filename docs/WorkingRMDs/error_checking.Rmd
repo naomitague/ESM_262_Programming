@@ -41,7 +41,7 @@ e.g. **power_gen_orig.R**
 
 ```{r}
 
-source("R/power_gen_orig.R")
+source("../R/power_gen_orig.R")
 ```
 
 

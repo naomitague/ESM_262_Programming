@@ -1,27 +1,15 @@
 ---
-title: "Assignment 4 _Topic 5"
-
+title: "Assignment 3 (Topic 4)"
 ---
-
-Try this - make a random sample of fertilizer application, 10 values
-with mean of *5* and standard deviation of *0.5*
-
-(user *rnorm* function in R to do this)
-
-
-Create a random sample of mean annual growth of a crop due to climate variation, 10 values with mean  of *20*, standard deviation of *2*,
-
-Imagine that growth due to combined effects of climate and fertilize effects can be estimates as:
-
-$ 1.8*fertilizer^2-0.5*fertilizer + mean annual growth $
-
-Use a *for* loop to estimate combined growth for each of 10 samples
-
-(you can assume that samples are matched - so you will have 10 growth estimates - using your 10 fertilizer applications and 10 estimates of mean annual growth)
-
-Can you put together in a data structure that lets you plot growth against fertilizer?
-
-*No need to hand in*
 
 # Review for next class
 looping.Rmd
+
+# Assignment
+
+* recreate *possible_cars*, add an additional super light car with mass 5,000 kg, surface area 10m2
+
+* provide 3 new estimates of power required that includes this super light car in the mix
+(one for each approach to repeating calculations)
+
+* turn these 3 estimates in as assignment 3; You should also try to recreate the graphs with a 4th car, you don't need to turn in the graphs; we will go over in class
