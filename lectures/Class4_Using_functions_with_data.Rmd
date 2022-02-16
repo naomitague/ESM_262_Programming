@@ -175,7 +175,7 @@ so carry forward net income is current years net income plus last years net
 
 ```{r loop2 }
 
-View(account)
+#View(account)
 
 # note: we treat first year differently because we don't have carry forward
 # initialize our column to zero, start counter (n) at 2 instead of 1
@@ -225,7 +225,7 @@ and TP is mean precipitation in cm
 
 Use a *for* loop to compute the total yield after 10 years
 
-  * fertilizer is normally distributed with mean of 10 and standard deviation of 0.5
+  * fertilizer is normally distributed with mean of 5 and standard deviation of 0.5
   * TP is 20cm
   
   
