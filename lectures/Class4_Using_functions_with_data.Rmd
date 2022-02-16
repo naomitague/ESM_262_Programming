@@ -225,7 +225,7 @@ and TP is mean precipitation in cm
 
 Use a *for* loop to compute the total yield after 10 years
 
-  * fertilizer is normally distributed with mean of 20 and standard deviation of 2
+  * fertilizer is normally distributed with mean of 10 and standard deviation of 0.5
   * TP is 20cm
   
   
