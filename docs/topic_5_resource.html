@@ -2486,6 +2486,7 @@ Topics
 <a href="lectures/Class2_modularity.html">Topic 2: Modularity</a>
 <a href="lectures/Class3_starting_functions.html">Topic 3: Creating Functions</a>
 <a href="lectures/Class4_Using_functions_with_data.html">Topic 4: Using Functions with Data</a>
+<a href="lectures/Class5_Looping.html">Topic 5: Looping</a>
 </div>
 </div>
 <div class="nav-dropdown">
@@ -2499,6 +2500,7 @@ Assignments
 <a href="topic_2_resource.html">Topic 2: Modularity</a>
 <a href="topic_3_resource.html">Topic 3: Functions</a>
 <a href="topic_4_resource.html">Topic 4: Looping</a>
+<a href="topic_5_resource.html">Topic 5: Looping2</a>
 </div>
 </div>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
@@ -2528,19 +2530,18 @@ Assignments
 </nav>
 </div>
 <h1 id="assignment-4">Assignment 4</h1>
-<p>Working in the groups that you used to build your existing autopower function;</p>
+<p>For this assignment work in pairs - and submit as a group</p>
 <ul>
-<li><p>add some error checking to your function; save in its own file as usual</p></li>
-<li><p>In an Rmarkdown document, using the cars that I generated in class (see Class4_Using_functions_with_data.Rmd on Gauchospace),</p></li>
-<li><p>recreate <em>possible_cars</em>, add an additional car with mass 30,000 kg, surface area 10m2</p></li>
-<li><p>create a random sample of 100 highways each with a different rolling coefficient; , sample the rolling coefficients from a uniform distribution with a minimum value of 0.01 and a maximum value of 0.03, sample 100 different highways</p></li>
-<li><p>use a <em>for</em> loop to compute the power for each of 100 different highways for each car in <em>possible_cars</em> - for all calculations consider only a single speed - 120 km/hr. We are assuming this is the average speed driven on all highways</p></li>
-<li><p>create a box plot of power consumed for each car type (where the boxes will show ranges across the different highways)</p></li>
-<li><p>use <em>pmap</em> to repeat your calculations and create a second boxplot</p></li>
+<li><p>Design a function - you can pick anything - and you can essentially make up the equations as long as they conceptually make sense Make sure it has at least 2 inputs and 1 parameter (ideally more)</p></li>
+<li><p>Code your function in R, save as a R file in subdirectory called R Make sure you include documentation (both at the top as we’ve shown in past examples, and inline) Include some error checking</p></li>
+<li><p>In an Rmarkdown file, generate some data for 2 of the function inputs, use a for loop to run the function for the data repeat the “looping” using something from the “purrr” package</p></li>
+<li><p>Graph the result (you can decide what the most interesting way to graph is)</p></li>
+<li><p>Include your function.R file, and the Rmarkdown in your git repo and submit the link on Gauchospace Submit as a group with your partner, you will have to fill out the group select on Gauchspace first before you submit</p></li>
 </ul>
-<p>Submit the github link as usual on Gauchospace</p>
 <h1 id="to-review-for-next-class">To Review for next class</h1>
-<p>This is a short one * looping2.Rmd * compute_NPV.R</p>
+<ul>
+<li>DataTypes.Rmd</li>
+</ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

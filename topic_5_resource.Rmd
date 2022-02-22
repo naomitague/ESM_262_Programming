@@ -1,29 +1,27 @@
 ---
 title: "Assignment 4"
-
 ---
 
 # Assignment 4
 
-Working in the groups that you used to build your existing autopower function; 
+For this assignment work in pairs - and submit as a group
 
-* add some error checking to your function; save in its own file as usual
-* In an Rmarkdown document, using the cars that I generated in class (see Class4_Using_functions_with_data.Rmd on Gauchospace), 
+* Design a function - you can pick anything - and you can essentially make up the equations as long as they conceptually make sense
+Make sure it has at least 2 inputs and 1 parameter (ideally more)
 
-* recreate *possible_cars*, add an additional car with mass 30,000 kg, surface area 10m2
+* Code your function in R, save as a R file in subdirectory called R
+Make sure you include documentation (both at the top as we've shown in past examples, and inline)
+Include some error checking
 
-* create a random sample of 100 highways each with a different rolling coefficient; , sample the rolling coefficients from a uniform distribution with a minimum value of 0.01 and a maximum value of 0.03, sample 100 different highways
+* In an Rmarkdown file, generate some data for 2 of the function inputs, 
+use a for  loop to run the function for the data 
+repeat the "looping" using something from the "purrr" package 
 
-* use a *for* loop to compute the power for each of 100 different highways for each car in *possible_cars* -  for all calculations consider only a single speed -  120 km/hr. We are assuming this is the average speed driven on all highways
+* Graph the result (you can decide what the most interesting way to graph is)
 
-* create a box plot of power consumed for each car type (where the boxes will show ranges across the different highways)
-
-* use *pmap* to repeat your calculations and create a second boxplot
-
-Submit the github link as usual on Gauchospace
+* Include your function.R file, and the Rmarkdown in your git repo and submit the link on Gauchospace
+Submit as a group with your partner, you will have to fill out the group select on Gauchspace first before you submit
 
 # To Review for next class
 
-This is  a short one
-* looping2.Rmd
-* compute_NPV.R
+* DataTypes.Rmd

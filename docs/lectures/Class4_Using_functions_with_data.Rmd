@@ -175,7 +175,7 @@ so carry forward net income is current years net income plus last years net
 
 ```{r loop2 }
 
-View(account)
+#View(account)
 
 # note: we treat first year differently because we don't have carry forward
 # initialize our column to zero, start counter (n) at 2 instead of 1
@@ -223,16 +223,16 @@ $$ yield =  1.8*fertilizer^2 - 0.5*fertilizer  + 0.1*TP $$
 and TP is mean precipitation in cm
 
 
-Use a *for* loop to compute the total yield after 10 years
+Task 1: Use a *for* loop to compute the total yield after 10 years
 
-  * fertilizer is normally distributed with mean of 20 and standard deviation of 2
+  * fertilizer is normally distributed with mean of 5 and standard deviation of 0.5
   * TP is 20cm
   
   
-Now create a function to that takes as input a single value for annual fertilizer and annual total precipitation and returns yield
+Task 2: create a function to that takes as input a single value for annual fertilizer and annual total precipitation and returns yield
 
 
-Now modify your function so that it returns total yield if the user inputs a vector of fertilizer and a vector of precipitation
+Task 3: modify your function so that it returns total yield if the user inputs a vector of fertilizer and a vector of precipitation
 
 Check that function returns the same result as your original *for* loop
 Add some error checking and test
