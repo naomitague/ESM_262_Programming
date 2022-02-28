@@ -1,6 +1,5 @@
 ---
 title: "Assignment 7"
-
 ---
 
 # Assignment -on your own
@@ -22,10 +21,10 @@ Turn in on Gauchospace what your function returns when you run with fish.txt!
 Challenge: What if we had multiple catches - how would you run your summary function for all of those catches - see below for an example to generate multiple catches
 You don't have to run this one in but we will go over in class
 
-```{r  challenge}
+```{r  challenge,}
 # generate some data if we had 10 different fishing days
 # some examples of using the purr family of functions
-
+library(tidyverse)
 possible.fish = c("salmon","steelhead","shark","tuna","cod")
 
 # lets generate random sample of the number of fish caught on each day

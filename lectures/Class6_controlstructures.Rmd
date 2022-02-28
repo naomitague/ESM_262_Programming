@@ -1,13 +1,15 @@
 ---
-title: 'Control Structures'
+title: "Control Structures"
 author: "Naomi Tague"
-date: "January, 2021"
+date: "January, 2022"
 output:
   slidy_presentation:
-   highlight: pygments
+    highlight: pygments
   html_document: default
   pdf_document: default
   ioslides_presentation:
+    highlight: pygments
+  beamer_presentation:
     highlight: pygments
 ---
 

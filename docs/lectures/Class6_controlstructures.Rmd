@@ -1,23 +1,51 @@
 ---
-title: 'Control Structures'
+title: "Control Structures"
 author: "Naomi Tague"
-date: "January, 2021"
+date: "January, 2022"
 output:
   slidy_presentation:
-   highlight: pygments
+    highlight: pygments
   html_document: default
   pdf_document: default
   ioslides_presentation:
+    highlight: pygments
+  beamer_presentation:
     highlight: pygments
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo =TRUE)
 knitr::opts_chunk$set(error=TRUE)
-#knitr::opts_knit$set(root.dir = '/Users/naomitague/CoursesLocal/ESM262n/docs/dataf2')
+
 library(tidyverse)
 library(purrr)
 ```
+
+# Exchange functions
+
+# Review DataTypes.Rmd
+
+How do you figure out the rarest fish in our simulated ocean
+
+Two key "take homes"
+
+* working with *factors*
+* how to return multiple items from a function using *list*
+
+# Answer
+```{r answer}
+
+possible.fish = c("salmon","steelhead","shark","tuna","cod")
+catch1 = base::sample(possible.fish, size=20, replace=T)
+rarestfish = names(which.min(summary(as.factor(catch1))))
+rarestfish
+
+plottitle = sprintf("The rarest fist is %s", rarestfish)
+ggplot(data.frame(catch1=catch1), aes(catch1, fill=catch1))+geom_histogram(stat="count")+labs(title=plottitle)
+
+```
+
+
 
 # Flow Control (think of steering your program)
 
@@ -31,26 +59,103 @@ IF then ELSE
 If you have multiple conditions we can use case_when
 Here's a silly simple example of how it works
 
+# Simple example of flow control with if
 ```{r}
 
-# if x is 1, return A, if x is 2, return, B, if x is 3, return, C
+mycortest  = function(x,y, thresh=0.8) {
+  # compute correlation
+  res = cor(x,y)
+  classification = ifelse(res > thresh, "GOOD", "NotGood")
+  return(classification)
+}
 
-x=1
-case_when(x ==1 ~ "A", x==2 ~ "B", x >= 3 ~ "C")
+a = runif(min=1, max=100, n=100)
+b = runif(min=1, max=100, n=100)
 
-x = c(1,2,1,3)
-case_when(x ==1 ~ "A", x==2 ~ "B", x==3 ~ "C")
+mycortest(a,b)
+mycortest(a,a)
+# this doesn't work - why?
+mycortest(a, 1)
+
+# useful to add error checking
+mycortest  = function(x,y, thresh=0.8) {
+  # compute correlation
+  if(length(x) != length(y)) {return("unequal lengths for x and y")}
+  res = cor(x,y)
+  classification = ifelse(res > thresh, "GOOD", "NotGood")
+  return(classification)
+}
+mycortest(a, 1)
+
+```
+
+# Flow control with a simple if
+```{r fc}
+
+# Simple "IF*
+# imagine we are trying to get a tuna  - lets "fish" by sampling
+possible.fish = c("salmon","steelhead","shark","tuna","cod")
+catch1 = base::sample(possible.fish, size=1, replace=T)
+catch1
+ifelse(catch1 == "tuna", "success", "tryagain")
+
+catch1 = "tuna"
+ifelse(catch1 == "tuna", "success", "tryagain")
+```
+
+# multiple alternatives 
+
+ what if we have more than one category of fish - grade A, B, C
+steelhead are A, tuna are B and everything else is C
+
+R and other languages have ways to do this multiple alternatives flow control
+in R an example is
+
+*case_when*
+
+case_when(
+
+condition ~ response,
+
+condition ~ response
+...
+)
+
+```{r was}
+
+fish = "steelhead"
+
+case_when((fish =="steelhead")  ~ "A", (fish =="tuna") ~ "B", !(fish == "tuna") & !(fish=="steelhead") ~ "C")
+
+# apply to all of our ocean
+# start by making a function
+classify_fish = function(fish) {
+ class=  case_when((fish =="steelhead")  ~ "A", (fish =="tuna") ~ "B", !(fish == "tuna") & !(fish=="steelhead") ~ "C")
+ return(class) }
+
+classify_fish("steelhead")
+classify_fish("cod")
+
+# apply to our ocean
+possible.fish = c("salmon","steelhead","shark","tuna","cod")
+catch2 = base::sample(possible.fish, size=20, replace=T)
+catch2
+
+classify_fish(catch2)
+
 ```
 
 # A more interesting example
 
-Lets imagine that we are monitoring pollution in a lake, and we want to write a function that will let us know (flag) a nutrient pollution as high, medium or low
+Lets imagine that we are monitoring pollution in a lake, and we want to write a function that will let us know (flag) if risk associated with nutrient pollution are high, medium or low
 
+From ecological studies, we know that
 Risk is high if water temperature is greater than a threshold for more than 5 days, 
 and mean nutrient concentration is greater than a high threshold
 
-Risk is medium if water temperature is greater than a threshold for more than 5 days
+Risk is medium if water temperature is greater than a  threshold for more than 5 days
 and mean nutrient concentration is greater than a medium threshold
+
 
 
 Inputs:   
@@ -59,6 +164,8 @@ temperature for at least 5 days
 thresholds for temperature and nutrient (with default values)
 
 Output:
+
+Mean Nutrient Concentration
 Pollution Risk as "low", "med" or "high"
 
 Take a look at classify_lake 
@@ -67,7 +174,7 @@ Take a look at classify_lake
 
 ```{r}
 
-source("R/classify_lake.R")
+source("../R/classify_lake.R")
 
 # generate some data to try the function
 temperature = runif(min=4, max=35, n=30)
@@ -94,66 +201,48 @@ classify_lake(temperature=temperature, nutrient=nutrient)
 * how to write a function (and add error checking)
 * how to generate data
 * how to repeat in code  (different types of looping)
-* how to "nest" functions
 * how to make choices (flow control)
 
-# Repeating 
-
-in most  R functions, if all variables have one or the *same* number of values, iteration happens automatically BUT this always depends on how you define your function
 
 
-For example:
+# Assignment -on your own
 
-# Generating Data for your function
-```{r}
+Write a function that takes a vector of fish names and always returns three items
 
-mycortest  = function(x,y, thresh=0.8) {
-  # compute correlation
-  res = cor(x,y)
-  classification = ifelse(res > thresh, "GOOD", "NotGood")
-  return(classification)
-}
+* the most common fish, 
+* the rarest fish
+* the total number of fish
 
-a = runif(min=1, max=100, n=100)
-b = runif(min=1, max=100, n=100)
+Create an Rmarkdown to demonstrate the use of your function with fish.txt - which
+is under Data on ESM_262_Examples
 
-mycortest(a,b)
-mycortest(a,a)
-# this doesn't work
-mycortest(a, 1)
+[Data on ESM_262_Examples]{https://github.com/naomitague/ESM_262_Examples/blob/main/Data/fish.txt}
 
-# useful to add error checking
-mycortest  = function(x,y, thresh=0.8) {
-  # compute correlation
-  if(length(x) != length(y)) {return("unequal lengths for x and y")}
-  res = cor(x,y)
-  classification = ifelse(res > thresh, "GOOD", "NotGood")
-  return(classification)
-}
-mycortest(a, 1)
+
+Turn in on Gauchospace what your function returns when you run with fish.txt!
+
+Challenge: What if we had multiple catches - how would you run your summary function for all of those catches - see below for an example to generate multiple catches
+You don't have to run this one in but we will go over in class
+
+```{r  challenge}
+# generate some data if we had 10 different fishing days
+# some examples of using the purr family of functions
+
+possible.fish = c("salmon","steelhead","shark","tuna","cod")
+
+# lets generate random sample of the number of fish caught on each day
+ndays=10
+catches = round(runif(min=3, max=400, n=ndays))
+
+# now for each fishing day (and its number of fish caught) - use sample to genreate the fish
+catches_res = list(catches) %>% pmap(sample, x=possible.fish, replace=TRUE)
+# look at the sample catches
+catches_res[[1]]
+catches_res[[10]]
+
+# ok so how do we get the summary (rarest fish, number of fish for all catches in catch_res)?
 
 ```
 
-# Assignment for today
 
-Make up a function that includes flow control (if statement) and has inputs and parameters (more than two ) that you can vary
-Here we want to practice designing functions, using flow control, ways of generating data and running functions across ranges of different inputs - and of course visualizing results 
-
-
-Write that function, save it in a .R file
-
-In an Rmarkdown document, generate some data to experiment with your function, create scenario where you repeat the function for each row in a data set (you can use this for inputs and/or parameters) - Similar to what we did for the autopower function when we ran it for multiple speeds (but you could do something over time, multiple climate inputs, multiple ages...depending on your function of course)
-
-Then generate a scenario where you repeat what you just did (for all rows) where you vary another a parameter using pmap (or a loop) - Similar to what we did when we  ran our autopower function for different cars and speeds - and then repeated the cars/speed scenarios for different drag coefficients
-
-Make sure you use good programming practices
-* provide details on the function contract at the top of the function - what are inputs/output their units format etc
-* understandable variables names
-* commenting through out so its easy to understand what you are doing
-* add error checking
-
-# Review for next class
-
-* DataTypes.Rmd
-* compute_simpson_index.R
-* computediversity.R
+Also review the classify_lake.R function from today's lecture to make sure you understand
