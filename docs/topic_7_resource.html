@@ -2486,6 +2486,7 @@ Topics
 <a href="lectures/Class3_starting_functions.html">Topic 3: Creating Functions</a>
 <a href="lectures/Class4_Using_functions_with_data.html">Topic 4: Using Functions with Data</a>
 <a href="lectures/Class5_Looping.html">Topic 5: Looping</a>
+<a href="lectures/Class6_controlstructures.html">Topic 6: Control Structure</a>
 </div>
 </div>
 <div class="nav-dropdown">
@@ -2500,6 +2501,8 @@ Assignments
 <a href="topic_3_resource.html">Topic 3: Functions</a>
 <a href="topic_4_resource.html">Topic 4: Looping</a>
 <a href="topic_5_resource.html">Topic 5: Looping2</a>
+<a href="topic_6_resource.html">Topic 6: Functions with data</a>
+<a href="topic_7_resource.html">Topic 7: Flow control</a>
 </div>
 </div>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
@@ -2555,24 +2558,74 @@ Assignments
 <span class='va'>catches_res</span><span class='op'>[[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span>
 </code></pre>
 </div>
-<pre><code> [1] &quot;steelhead&quot; &quot;steelhead&quot; &quot;cod&quot;       &quot;steelhead&quot; &quot;tuna&quot;     
- [6] &quot;salmon&quot;    &quot;shark&quot;     &quot;cod&quot;       &quot;tuna&quot;      &quot;steelhead&quot;
-[11] &quot;salmon&quot;    &quot;shark&quot;     &quot;shark&quot;     &quot;steelhead&quot; &quot;salmon&quot;   
-[16] &quot;salmon&quot;    &quot;cod&quot;      </code></pre>
+<pre><code>  [1] &quot;steelhead&quot; &quot;cod&quot;       &quot;salmon&quot;    &quot;salmon&quot;    &quot;tuna&quot;     
+  [6] &quot;shark&quot;     &quot;shark&quot;     &quot;salmon&quot;    &quot;salmon&quot;    &quot;salmon&quot;   
+ [11] &quot;tuna&quot;      &quot;cod&quot;       &quot;tuna&quot;      &quot;salmon&quot;    &quot;steelhead&quot;
+ [16] &quot;salmon&quot;    &quot;cod&quot;       &quot;shark&quot;     &quot;cod&quot;       &quot;salmon&quot;   
+ [21] &quot;shark&quot;     &quot;shark&quot;     &quot;tuna&quot;      &quot;tuna&quot;      &quot;cod&quot;      
+ [26] &quot;salmon&quot;    &quot;cod&quot;       &quot;salmon&quot;    &quot;cod&quot;       &quot;salmon&quot;   
+ [31] &quot;shark&quot;     &quot;tuna&quot;      &quot;salmon&quot;    &quot;cod&quot;       &quot;steelhead&quot;
+ [36] &quot;cod&quot;       &quot;salmon&quot;    &quot;steelhead&quot; &quot;salmon&quot;    &quot;tuna&quot;     
+ [41] &quot;tuna&quot;      &quot;salmon&quot;    &quot;tuna&quot;      &quot;salmon&quot;    &quot;salmon&quot;   
+ [46] &quot;salmon&quot;    &quot;salmon&quot;    &quot;shark&quot;     &quot;shark&quot;     &quot;shark&quot;    
+ [51] &quot;tuna&quot;      &quot;salmon&quot;    &quot;tuna&quot;      &quot;cod&quot;       &quot;steelhead&quot;
+ [56] &quot;steelhead&quot; &quot;steelhead&quot; &quot;tuna&quot;      &quot;steelhead&quot; &quot;shark&quot;    
+ [61] &quot;shark&quot;     &quot;steelhead&quot; &quot;salmon&quot;    &quot;salmon&quot;    &quot;cod&quot;      
+ [66] &quot;cod&quot;       &quot;cod&quot;       &quot;salmon&quot;    &quot;shark&quot;     &quot;shark&quot;    
+ [71] &quot;tuna&quot;      &quot;tuna&quot;      &quot;shark&quot;     &quot;cod&quot;       &quot;salmon&quot;   
+ [76] &quot;cod&quot;       &quot;steelhead&quot; &quot;shark&quot;     &quot;shark&quot;     &quot;tuna&quot;     
+ [81] &quot;cod&quot;       &quot;salmon&quot;    &quot;shark&quot;     &quot;salmon&quot;    &quot;salmon&quot;   
+ [86] &quot;cod&quot;       &quot;cod&quot;       &quot;tuna&quot;      &quot;tuna&quot;      &quot;tuna&quot;     
+ [91] &quot;shark&quot;     &quot;salmon&quot;    &quot;shark&quot;     &quot;shark&quot;     &quot;tuna&quot;     
+ [96] &quot;steelhead&quot; &quot;steelhead&quot; &quot;salmon&quot;    &quot;salmon&quot;    &quot;steelhead&quot;
+[101] &quot;shark&quot;     &quot;tuna&quot;      &quot;tuna&quot;      &quot;cod&quot;       &quot;cod&quot;      
+[106] &quot;cod&quot;       &quot;cod&quot;       &quot;salmon&quot;    &quot;salmon&quot;    &quot;salmon&quot;   
+[111] &quot;cod&quot;       &quot;salmon&quot;    &quot;cod&quot;       &quot;steelhead&quot; &quot;shark&quot;    
+[116] &quot;shark&quot;     &quot;cod&quot;       &quot;tuna&quot;      &quot;tuna&quot;      &quot;tuna&quot;     
+[121] &quot;shark&quot;     &quot;tuna&quot;      &quot;tuna&quot;      &quot;cod&quot;       &quot;cod&quot;      
+[126] &quot;shark&quot;     &quot;tuna&quot;      &quot;tuna&quot;      &quot;salmon&quot;    &quot;salmon&quot;   
+[131] &quot;tuna&quot;      &quot;shark&quot;     &quot;steelhead&quot; &quot;cod&quot;       &quot;steelhead&quot;
+[136] &quot;salmon&quot;    &quot;cod&quot;       &quot;steelhead&quot; &quot;cod&quot;       &quot;tuna&quot;     
+[141] &quot;steelhead&quot; &quot;salmon&quot;    &quot;salmon&quot;    &quot;cod&quot;       &quot;steelhead&quot;
+[146] &quot;steelhead&quot; &quot;cod&quot;       &quot;shark&quot;     &quot;salmon&quot;    &quot;steelhead&quot;
+[151] &quot;shark&quot;     &quot;shark&quot;     &quot;salmon&quot;    &quot;steelhead&quot; &quot;tuna&quot;     
+[156] &quot;salmon&quot;    &quot;steelhead&quot; &quot;tuna&quot;      &quot;salmon&quot;    &quot;cod&quot;      
+[161] &quot;cod&quot;       &quot;salmon&quot;    &quot;cod&quot;       &quot;salmon&quot;    &quot;cod&quot;      
+[166] &quot;shark&quot;     &quot;cod&quot;       &quot;steelhead&quot; &quot;cod&quot;       &quot;salmon&quot;   
+[171] &quot;tuna&quot;      &quot;shark&quot;     &quot;tuna&quot;      &quot;tuna&quot;      &quot;shark&quot;    
+[176] &quot;shark&quot;     &quot;steelhead&quot; &quot;salmon&quot;    &quot;tuna&quot;      &quot;shark&quot;    
+[181] &quot;steelhead&quot; &quot;shark&quot;     &quot;shark&quot;     &quot;cod&quot;       &quot;tuna&quot;     
+[186] &quot;shark&quot;     &quot;steelhead&quot; &quot;steelhead&quot; &quot;cod&quot;       &quot;shark&quot;    
+[191] &quot;steelhead&quot; &quot;shark&quot;     &quot;salmon&quot;    &quot;steelhead&quot; &quot;salmon&quot;   
+[196] &quot;shark&quot;     &quot;salmon&quot;    &quot;steelhead&quot; &quot;tuna&quot;      &quot;steelhead&quot;
+[201] &quot;salmon&quot;    &quot;tuna&quot;      &quot;shark&quot;     &quot;cod&quot;       &quot;cod&quot;      
+[206] &quot;cod&quot;       &quot;tuna&quot;      &quot;steelhead&quot; &quot;cod&quot;       &quot;shark&quot;    
+[211] &quot;tuna&quot;      &quot;steelhead&quot; &quot;salmon&quot;    &quot;shark&quot;     &quot;steelhead&quot;
+[216] &quot;cod&quot;       &quot;cod&quot;       &quot;cod&quot;       &quot;salmon&quot;    &quot;cod&quot;      
+[221] &quot;tuna&quot;      &quot;tuna&quot;      &quot;shark&quot;     &quot;tuna&quot;      &quot;cod&quot;      
+[226] &quot;steelhead&quot; &quot;salmon&quot;    &quot;steelhead&quot; &quot;steelhead&quot; &quot;steelhead&quot;
+[231] &quot;tuna&quot;      &quot;cod&quot;       &quot;salmon&quot;    &quot;cod&quot;       &quot;shark&quot;    
+[236] &quot;salmon&quot;    &quot;tuna&quot;      &quot;tuna&quot;      &quot;steelhead&quot; &quot;steelhead&quot;
+[241] &quot;steelhead&quot; &quot;steelhead&quot; &quot;tuna&quot;      &quot;steelhead&quot; &quot;steelhead&quot;
+[246] &quot;steelhead&quot; &quot;steelhead&quot; &quot;salmon&quot;    &quot;salmon&quot;    &quot;cod&quot;      
+[251] &quot;shark&quot;     &quot;tuna&quot;      &quot;cod&quot;       &quot;steelhead&quot; &quot;shark&quot;    
+[256] &quot;tuna&quot;      &quot;steelhead&quot; &quot;steelhead&quot; &quot;cod&quot;       &quot;tuna&quot;     
+[261] &quot;shark&quot;     &quot;cod&quot;       &quot;steelhead&quot; &quot;steelhead&quot; &quot;shark&quot;    
+[266] &quot;shark&quot;     &quot;salmon&quot;    &quot;salmon&quot;    &quot;cod&quot;       &quot;cod&quot;      
+[271] &quot;salmon&quot;    &quot;tuna&quot;      &quot;salmon&quot;    &quot;shark&quot;     &quot;steelhead&quot;
+[276] &quot;salmon&quot;    &quot;steelhead&quot; &quot;shark&quot;     &quot;steelhead&quot; &quot;tuna&quot;     
+[281] &quot;tuna&quot;      &quot;shark&quot;     &quot;cod&quot;       &quot;salmon&quot;    &quot;tuna&quot;     
+[286] &quot;steelhead&quot; &quot;cod&quot;       &quot;shark&quot;     &quot;steelhead&quot; &quot;shark&quot;    
+[291] &quot;salmon&quot;    &quot;salmon&quot;    &quot;shark&quot;     &quot;shark&quot;     &quot;tuna&quot;     
+[296] &quot;shark&quot;     &quot;cod&quot;       &quot;steelhead&quot; &quot;tuna&quot;      &quot;cod&quot;      
+[301] &quot;cod&quot;       &quot;cod&quot;       &quot;steelhead&quot; &quot;tuna&quot;      &quot;cod&quot;      
+[306] &quot;shark&quot;     &quot;tuna&quot;      &quot;tuna&quot;      &quot;cod&quot;       &quot;shark&quot;    
+[311] &quot;tuna&quot;      &quot;tuna&quot;      &quot;cod&quot;       &quot;steelhead&quot; &quot;cod&quot;      </code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>catches_res</span><span class='op'>[[</span><span class='fl'>10</span><span class='op'>]</span><span class='op'>]</span>
 </code></pre>
 </div>
-<pre><code> [1] &quot;salmon&quot;    &quot;shark&quot;     &quot;cod&quot;       &quot;salmon&quot;    &quot;steelhead&quot;
- [6] &quot;steelhead&quot; &quot;steelhead&quot; &quot;cod&quot;       &quot;steelhead&quot; &quot;steelhead&quot;
-[11] &quot;steelhead&quot; &quot;shark&quot;     &quot;shark&quot;     &quot;shark&quot;     &quot;shark&quot;    
-[16] &quot;steelhead&quot; &quot;shark&quot;     &quot;salmon&quot;    &quot;cod&quot;       &quot;salmon&quot;   
-[21] &quot;tuna&quot;      &quot;shark&quot;     &quot;cod&quot;       &quot;shark&quot;     &quot;shark&quot;    
-[26] &quot;shark&quot;     &quot;salmon&quot;    &quot;steelhead&quot; &quot;cod&quot;       &quot;steelhead&quot;
-[31] &quot;shark&quot;     &quot;tuna&quot;      &quot;steelhead&quot; &quot;cod&quot;       &quot;steelhead&quot;
-[36] &quot;shark&quot;     &quot;cod&quot;       &quot;cod&quot;       &quot;shark&quot;     &quot;salmon&quot;   
-[41] &quot;shark&quot;     &quot;shark&quot;     &quot;salmon&quot;    &quot;cod&quot;       &quot;tuna&quot;     
-[46] &quot;tuna&quot;      &quot;cod&quot;       &quot;cod&quot;       &quot;shark&quot;     &quot;shark&quot;    </code></pre>
+<pre><code>[1] &quot;salmon&quot;    &quot;steelhead&quot; &quot;cod&quot;       &quot;steelhead&quot;</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># ok so how do we get the summary (rarest fish, number of fish for all catches in catch_res)?</span>
 </code></pre>
