@@ -27,6 +27,7 @@ You don't have to run this one in but we will go over in class
 library(tidyverse)
 possible.fish = c("salmon","steelhead","shark","tuna","cod")
 
+source("R/fish_summary.R")
 # lets generate random sample of the number of fish caught on each day
 ndays=10
 catches = round(runif(min=3, max=400, n=ndays))
