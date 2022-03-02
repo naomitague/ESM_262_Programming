@@ -100,7 +100,7 @@ expect_length(a, 11)
 
 # We can use expectation with functions 
 # and test just to make sure they are working as expected
-source("R/compute_NPV.R")
+source("../R/compute_NPV.R")
 futurevalue = 100
 expect_true(compute_NPV(value=futurevalue, time=10, discount=0.01) > 0)
 futurevalue = -100
@@ -187,14 +187,9 @@ test_that(description, series of expectations)
 ```{r testing2, eval=FALSE}
 
 
-source("R/compute_NPV.R")
+source("../R/compute_NPV.R")
 # lets do a simple test if profit is 0 , NPV should be 0
 # if time is 0, NPV should be the original value
-test_that("compute_NPV_works", {
-
-expect_equal(compute_NPV(value=0,time=100,discount=0.1), 0)
-expect_equal(compute_NPV(value=100, time=0, discount=0.1), 100)
-})
 
 
 

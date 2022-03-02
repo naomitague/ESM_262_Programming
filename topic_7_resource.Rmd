@@ -38,6 +38,12 @@ catches_res[[1]]
 catches_res[[10]]
 
 # ok so how do we get the summary (rarest fish, number of fish for all catches in catch_res)?
+fish_summary(catches_res[[1]])
+
+res = catches_res %>% map_df(fish_summary)
+res
+
+
 
 ```
 
