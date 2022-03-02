@@ -125,7 +125,8 @@ plottitle=sprintf("We mostly caught %s \n max catch(%d)", names(which.max(summar
 ggplot(data.frame(catch1=catch1), aes(catch1, fill=catch1))+geom_histogram(stat="count")+labs(title=plottitle)
 
 #How do you figure out the rarest fish in our simulated ocean
-
+#to get just the name 
+names(which.min(summary(catch1)))
 
 ```
 

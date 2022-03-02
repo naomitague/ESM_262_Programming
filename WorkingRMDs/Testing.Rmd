@@ -23,26 +23,6 @@ library(testthat)
 
 
 
-# <span style="color:orange">Testing</span>
-
-Top 12 Reasons to Write Unit Tests - Burke and Coyner (Java programmers)
-
-
-
-* Tests reduce bugs in new features
-* Tests reduce bugs in existing features
-* Tests defend agains other programmers
-* Testing forces you to slow down and think
-* Testing makes development faster
-* Tests reduce fear
-
-Model developers now often use software to help them automate the testing process
-Re-uses tests - makes it efficient to repeat many tests as you develop and modify the code 
-
-Particularly helpful when you have multiple modules (as in our mangrove example)
-
-This type of software is available for R, Python, C etc.
-
 # <span style="color:orange">Testing in R</span>
 
 In R, *testthat* library 

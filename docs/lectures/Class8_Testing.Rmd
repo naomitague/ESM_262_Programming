@@ -1,7 +1,7 @@
 ---
 title: 'Testing'
 author: "Naomi Tague"
-date: "January, 2020"
+date: "January, 2022"
 output:
   slidy_presentation:
    highlight: pygments
@@ -19,7 +19,7 @@ library(tidyverse)
 library(devtools)
 library(roxygen2)
 library(testthat)
-install.packages("~/Courses/rainbow_0.1.0.tar.gz", repos = NULL, type = "source")
+
 
 ```
 
@@ -199,7 +199,7 @@ expect_equal(compute_NPV(value=100, time=0, discount=0.1), 100)
 
 
 ```
-# <span style="color:orange">Using tests in package development</span>
+# <span style="color:orange">Using tests </span>
 
 What we really want is to have tests that we **always** run, everytime we change something
 
@@ -214,38 +214,14 @@ To run all tests in a file, use *test_file*
 To run all tests in a directory,use *test_dir*  (you can also do this from Build menu)
 
 
-Goal: Make tests for each function in your package
+Goal: Make tests for each function in your package 
+We will talk more about making packages next week
 
 ```{r testing, eval=FALSE}
 
 # put your test in a file
 test_file("tests/test_compute_NPV.R")
 
-# look at two new files
-source("R/spring_summary.R")
-spring_summary
-
-# now run a test
-
-clim_data = as.data.frame(cbind(month=c(1:4), day=rep(1, times=4), year=c(2000,2000,2001,2001), 
-                                 precip=rep(0, times=4), tavg=c(2,2,2,4)))
-spring_summary(clim_data)
-spring_summary(clim_data, spring_months=c(1,4))
-
-#save this to a file called test_spring_summary
-test_that("spring_summary_works" ,
-{clim_data = as.data.frame(cbind(month=c(1:4), day=rep(1, times=4), year=c(2000,2000,2001,2001), 
-                                 precip=rep(0, times=4), tavg=c(2,2,2,4)))
-
-expect_equal(spring_summary(clim_data, spring_months=4)$Pavg_spring,0)
-expect_equal(spring_summary(clim_data, spring_months=4)$Tavg_spring, 4)
-expect_equal(spring_summary(clim_data, spring_months=2)$Tavg_spring, 2)
-expect_equal(spring_summary(clim_data, spring_months=c(1:4))$warmest_spring, 2001)
-
-})
-
-# see run a bunch of tests at once
-test_file("tests/test_spring_summary.R")
 
 # run all tests
 test_dir("tests")

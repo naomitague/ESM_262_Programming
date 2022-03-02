@@ -21,6 +21,8 @@ navbar:
           href: lectures/Class5_Looping.html
         - text: "Topic 6: Control Structure"
           href: lectures/Class6_controlstructures.html
+        - text: "Topic 7: Testing"
+          href: lectures/Class8_Testing.html
 
     - text: "Assignments"
       menu:
@@ -38,6 +40,8 @@ navbar:
           href: topic_6_resource.html
         - text: "Topic 7: Flow control"
           href: topic_7_resource.html
+        - text: "Topic 8: A Bit more on functions"
+          href: topic_8_resource.html
 
 output:
   distill::distill_article:

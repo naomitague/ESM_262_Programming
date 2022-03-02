@@ -174,14 +174,14 @@ Take a look at classify_lake
 
 ```{r}
 
-source("../R/classify_lake.R")
+source("R/classify_lake.R")
 
 # generate some data to try the function
 temperature = runif(min=4, max=35, n=30)
 nutrient = runif(min=5, max=40, n=30)
 
 # try it
-classify_lake(temperature=temperature, nutrient=nutrient)
+res=classify_lake(temperature=temperature, nutrient=nutrient)
 
 # lets pick some numbers we know should give us a low value
 nutrient = runif(min=0, max=5, n=30)

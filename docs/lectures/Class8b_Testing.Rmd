@@ -222,6 +222,33 @@ We will talk more about making packages next week
 # put your test in a file
 test_file("tests/test_compute_NPV.R")
 
+# consider another function
+source("R/spring_summary.R")
+spring_summary
+
+# to test this function we need to create some data
+
+
+clim_data = as.data.frame(cbind(month=c(1:4), day=rep(1, times=4), year=c(2000,2000,2001,2001), 
+                                 precip=rep(0, times=4), tavg=c(2,2,2,4)))
+spring_summary(clim_data)
+spring_summary(clim_data, spring_months=c(1,4))
+
+# we can add data to a test
+#save this to a file called test_spring_summary
+test_that("spring_summary_works" ,
+{clim_data = as.data.frame(cbind(month=c(1:4), day=rep(1, times=4), year=c(2000,2000,2001,2001), 
+                                 precip=rep(0, times=4), tavg=c(2,2,2,4)))
+
+expect_equal(spring_summary(clim_data, spring_months=4)$Pavg_spring,0)
+expect_equal(spring_summary(clim_data, spring_months=4)$Tavg_spring, 4)
+expect_equal(spring_summary(clim_data, spring_months=2)$Tavg_spring, 2)
+expect_equal(spring_summary(clim_data, spring_months=c(1:4))$warmest_spring, 2001)
+
+})
+
+# see run a bunch of tests at once
+test_file("tests/test_spring_summary.R")
 
 # run all tests
 test_dir("tests")

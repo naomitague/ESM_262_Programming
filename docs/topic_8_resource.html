@@ -87,26 +87,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>ESM 232: Topic 3: Adding images</title>
+  <title>ESM 232: Assignment </title>
   
   
   
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="ESM 232: Topic 3: Adding images"/>
+  <meta property="og:title" content="ESM 232: Assignment "/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="ESM 232"/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="ESM 232: Topic 3: Adding images"/>
+  <meta property="twitter:title" content="ESM 232: Assignment "/>
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Topic 3: Adding images"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Assignment "]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2462,7 +2462,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Topic 3: Adding images","authors":[]}
+{"title":"Assignment ","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2516,7 +2516,7 @@ Assignments
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Topic 3: Adding images</h1>
+<h1>Assignment</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2528,44 +2528,25 @@ Assignments
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#where-should-i-save-my-images">Where should I save my images?</a></li>
-<li><a href="#how-do-i-make-images-show-up-on-my-site">How do I make images show up on my site?</a></li>
+<li><a href="#assignment">Assignment</a></li>
+<li><a href="#review-testing.rmd">Review Testing.Rmd</a></li>
 </ul>
 </nav>
 </div>
-<p style="color: #ba5e00">
-<b>TO UPDATE THIS PAGE:</b> Open and edit the <b>topic_3.Rmd</b> file, in the project root, to delete this placeholder text and customize with your own!
-</p>
-<h2 id="where-should-i-save-my-images">Where should I save my images?</h2>
-<p>Drop images you want to include on your site into the existing <code>img</code> folder within your R Project (or make your own folder for images, set up a subfolder structure, etc.) - as long as you can easily point to them within your project.</p>
-<h2 id="how-do-i-make-images-show-up-on-my-site">How do I make images show up on my site?</h2>
-<p>There are a bunch of ways to add images in an R Markdown document (see more examples from the R Markdown Cookbook <a href="https://bookdown.org/yihui/rmarkdown-cookbook/figure-size.html">here</a>).</p>
-<p>I recommend using <code>knitr::include_graphics("path_to_image")</code>.</p>
-<p>For example, if there is an image saved as <code>cool_dogs.jpg</code> in the <code>img</code> folder, then you can add this to your R Markdown document by adding (within a code chunk):</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="bn">```{r, echo = FALSE}</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="bn">  knitr::include_graphics(&quot;img/cool_dogs.jpg&quot;)</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="bn">```</span></span></code></pre></div>
-<p>You can also update the size of the image, add a caption, etc. by updating the code chunk header, e.g.:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="bn">```{r, echo = FALSE, out.width = &quot;50%&quot;, fig.cap = &quot;Some cool dogs!&quot;}</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="bn">  knitr::include_graphics(&quot;img/cool_dogs.jpg&quot;)</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="bn">```</span></span></code></pre></div>
-<p>For example, the image <code>usgs_sat.jpeg</code> is in the <code>img</code> folder of this template. I can have it show up here by include a code chunk that looks like this:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1"></a></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="bn">```{r, echo = FALSE, out.width = &quot;80%&quot;, fig.cap = &quot;USGS image of Mississippi River.&quot;}</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="bn">  knitr::include_graphics(&quot;img/usgs_sat.jpeg&quot;)</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="bn">```</span></span></code></pre></div>
-<p>Which creates:</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
-<img src="img/usgs_sat.jpeg" alt="USGS image of Mississippi River." width="80%" />
-<p class="caption">
-Figure 1: USGS image of Mississippi River.
-</p>
-</div>
-</div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h1 id="assignment">Assignment</h1>
+<p>You can complete this assignment on your own OR in pairs!</p>
+<p>Create a function that computes a level of risk associated with a extreme temperature events.</p>
+<p>You can decide who/what the risk is to - for example risk of heat related illness for urban dwellers, or risk of heat related mortality for a particular type of tree</p>
+<p>You function should take as input daily temperature data - from this data you should estimate how often extremes occur -</p>
+<p>What is an extreme temperature? you should include a threshold to define extremes as one of the input parameters. You can be flexible here - if you want you can think of extremes as only occurring when you have temperature above a threshold for a sequence several days (and the number of days would be another parameter) or something simpler - just any temperature above a threshold; if you want you could have different thresholds to define different “severity” of extremes.</p>
+<p>What is risk? You will develop the equation for risk on your own! Be creative here - what might make sense? how might temperature extremes translate into risk; would it be a linear equation- something else? What might be some of the parameters that influence risk (incomes, tree species, age? (include at least two parameters) How many categories of risk will you have</p>
+<p>Have your function return both the risk associated with the input temperature sequence AND then number of extremes</p>
+<p>Code your function in R Make sure you document well</p>
+<p>Create an Rmarkdown to demonstrate the use of your function with clim.txt - which is under Data on ESM_262_Examples</p>
+<p>[Data on ESM_262_Examples]{<a href="https://github.com/naomitague/ESM_262_Examples/blob/main/Data/clim.txt" class="uri">https://github.com/naomitague/ESM_262_Examples/blob/main/Data/clim.txt</a>}</p>
+<p>Submit the link to the R function code and your Rmarkdown on Gauchospace</p>
+<h1 id="review-testing.rmd">Review Testing.Rmd</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

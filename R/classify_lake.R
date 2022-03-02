@@ -6,7 +6,7 @@
 #' @param nutrient_threshold_med (mg/L) (default 5)
 #' @param nutrient_threshold_high (mg/L) (default 8)
 #' @param temperature_threshold (mg/L) (default 10)
-#' @return high=2, medium=1, low=0
+#' @return risk (high,med, low), mean nutrient concentration (mg/L)
 
 
 classify_lake = function(nutrient, temperature, nutrient_threshold_med=5,
