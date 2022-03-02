@@ -25,7 +25,7 @@ Code your function in R
 Make sure you document well
 
 
-Create an Rmarkdown to demonstrate the use of your function with clim.txt - which
+Create an Rmarkdown to demonstrate the use of your function with tmax.txt - which
 is under Data on ESM_262_Examples
 
 [Data on ESM_262_Examples]{https://github.com/naomitague/ESM_262_Examples/blob/main/Data/clim.txt}
