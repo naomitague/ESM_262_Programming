@@ -43,14 +43,14 @@ You can then refer to that dataset as an object in your workspace
 
 * save the data to the data subdirectory of your package using:
   * use_data(name, pkg="packagename")
-  * eg. *use_data(clim, pkg=esm237examplesS18)*
+  * eg. *use_data(clim, pkg=ESM262Examples)*
 
 * dataset will be stored as data/name.rda in your package
 
 ```{r storing data, echo=FALSE, eval=FALSE}
 
 clim=read.table("clim.txt", header=T)
-use_data(clim, pkg="../esm237examplesS18", overwrite=TRUE)
+use_data(clim, pkg="../ESM262Examples", overwrite=TRUE)
 data(clim)
 ```
 # <span style="color:orange">Adding Data to your package</span>
