@@ -60,7 +60,7 @@ You can load my package *ESM262Examples* by
   
   
   * *devtools::install_github("naomitague/ESM_262_Examples")*
-  * *library(esm237examples)*
+  * *library(ESM262Examples)*
   
   * to make sure it works,try the following
   
@@ -102,17 +102,36 @@ First lets review the format for writing functions
 
 * Back in Rstudio, start a new project, using the same name for the project as your package name
     * choose the option in package creation to **create a package**
-   
-    * make sure that the *path* to this directory is not in the course directory, or other directory that is already under version control (git)
-   
-    * link to your **Github** repository
     
-* If you already have an R function (you do!) you can add it here
+    * make sure you click the box that also creates a local *git* respository
+    
+    * If you already have an R function (you do!) you can add it here
+      * make sure your function is named *something.R* and follows the format for functions that we have been using 
+  
+      * try adding one of the functions that you created
+  
+    * make sure that the *path* to the directory you create is not in the course directory, or other directory that is already under version control (git)
+    
+    * first thing to do once you've created the package
+    
+    * before you commit - link to your **Github** repository
+   
+        * make sure you are in the project directory 
+        
+        * in your project, in a *terminal* window execute the following commands
+        
+            * *git remote add origin 'http link from git' * 
+        
+            * *git pull origin main*
+            
+        * now in Rstudio, checkout a new branch called *main*, it will ask you if you want to checkout existing branch - say yes
+        
+          * commit the package files you have so far
+          
+          * push to **github** as usual
 
-  * make sure your function is named *something.R* and follows the format for functions that we have been using 
-  
-  * try adding one of the functions that you created
-  
+    
+
 * Install libraries **devtools** and **roxygen2** from CRAN
 
 # Initial Package Structure
