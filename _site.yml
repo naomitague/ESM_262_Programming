@@ -25,6 +25,10 @@ navbar:
           href: lectures/Class8_Testing.html
         - text: "Topic 8: Packages"
           href: lectures/Class9_packages_intro.html
+        - text: "Topic 9: More on Packages"
+          href: lectures/Class10_packages2.html
+        - text: "Wrap-Up"
+          href: lectures/Wrap_Up.html
 
     - text: "Assignments"
       menu:

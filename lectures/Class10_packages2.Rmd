@@ -18,55 +18,74 @@ library(tidyverse)
 library(devtools)
 library(roxygen2)
 ```
-``
-## Accessing existing data stored with packages
 
+# <span style="color:orange">Creating Packages</span>
+
+* creating and link with github
+
+* edit your DESCRIPTION file to add title, descripition of your package
+
+* populate with R functions
+
+* run *document()* to create help files
+
+* repeat as needed adding functions as you go *build* and *load* as you go
+
+* add package dependencies with * **usethis::use_package("name")** * which updates your DESCRIPITION file
+
+## Next
+
+* add data
+
+* add testing
+
+* share your package
+
+# <span style="color:orange"> Data stored with packages</span>
+
+Reminder:
 To access a dataset that has been stored with a package
 
 **data(name)**
 
 There are numerous data sets stored with the base R package
 try 
+
 `data(CO2)'
+
 `help(CO2)'
 
 This is a data set on carbon dioxide uptake in plants - note that it always has help documentation that is similar to functions
 
-
 You can then refer to that dataset as an object in your workspace
 
-## Storing your own data
+# Storing your own data
 
-*have the dataset (e.g clim) in your workspace
-
-* set working directory to one level above your package directory
+* have the dataset (e.g *fish*) in your workspace (e.g you've already read it in)
+   
 
 * save the data to the data subdirectory of your package using:
   * use_data(name, pkg="packagename")
-  * eg. *use_data(clim, pkg=ESM262Examples)*
+  * eg. *use_data(fish, pkg=ESM262Examples)*
 
-* dataset will be stored as data/name.rda in your package
+* dataset will be stored as *data/name.rda* in your package
 
-```{r storing data, echo=FALSE, eval=FALSE}
-
-clim=read.table("clim.txt", header=T)
-use_data(clim, pkg="../ESM262Examples", overwrite=TRUE)
-data(clim)
-```
-# <span style="color:orange">Adding Data to your package</span>
+Try this
 
 
-## Documenting Data Sets for Packages
+# Documenting Data Sets for Packages
+
+You can also create help pages for your dataset, the format is similar to what you use to document functions, what differs is where you put the documentation code
 
 Here's an example 
 
 Data Documentation example ![](../img/datadoc.jpeg)
 
-### Steps for documenting data sets
+# Steps for documenting data sets
 
 * store documentation as a file (dataname.R) 
  (e.g **R/clim.R**)
-save that file in the R subdirectory of your package
+save that file in the *R* subdirectory of your package
 
 * this file will contain ONLY the documentation for the data set
 
@@ -98,6 +117,34 @@ help(clim)
 spring_summary(clim)
 
 ```
+# <span style="color:orange">Testing</span>
+
+For all of your functions; you should write at least one test
+
+Put that test into the *tests* directory
+    *test_functionname.R*
+    
+Run tests_dir() frequently
+
+
+# <span style="color:orange">Giving the package to others</span>
+
+
+To give the package to others - (who will simply be using it)
+
+* build a source package (see build directory)
+
+* this will create an *.gz file that you can distribute
+
+* the user will then **install** this package (see installation menu, go to install from *.gz files) in order to have access to functions and data in your package
+
+
+Alternatively if your users are used to *github* you can use 
+
+*devtools::install_github("yourname/packagename")*
+
+This can be a good way to share the package with yourself :)
+
 
 # <span style="color:orange">Vignettes</span>
 
@@ -160,16 +207,5 @@ See **esm237examplesS18/vignettes/using_climate_summaries.Rmd**
 
 
 Try to make a vignette for your function
-
-# <span style="color:orange">Giving the package to others</span>
-
-When you work on the defining the package you use the project of the same name
-To give the package to others - (who will simply be using it)
-
-* build a source package (see build directory)
-
-* this will create an *.gz file that you can distribute
-
-* the user will then **install** this package in order to have access to functions and data in your package
 
 

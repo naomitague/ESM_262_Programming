@@ -90,21 +90,28 @@ Naomi Tague
 <li><p>Back in Rstudio, start a new project, using the same name for the project as your package name</p>
 <ul>
 <li><p>choose the option in package creation to <strong>create a package</strong></p></li>
-<li><p>make sure that the <em>path</em> to this directory is not in the course directory, or other directory that is already under version control (git)</p></li>
-<li><p>link to your <strong>Github</strong> repository</p>
-<ul>
-<li><p>make sure you are in the project directory</p></li>
-<li><p>in your project, in a <em>shell</em> window execute the following commands</p>
-<ul>
-<li><em>git remote add origin ‘http link from git’ </em></li>
-<li><em>git push -u origin master</em></li>
-</ul></li>
-</ul></li>
-</ul></li>
+<li><p>make sure you click the box that also creates a local <em>git</em> respository</p></li>
 <li><p>If you already have an R function (you do!) you can add it here</p>
 <ul>
 <li><p>make sure your function is named <em>something.R</em> and follows the format for functions that we have been using</p></li>
 <li><p>try adding one of the functions that you created</p></li>
+</ul></li>
+<li><p>make sure that the <em>path</em> to the directory you create is not in the course directory, or other directory that is already under version control (git)</p></li>
+<li><p>first thing to do once you’ve created the package</p></li>
+<li><p>before you commit - link to your <strong>Github</strong> repository</p>
+<ul>
+<li><p>make sure you are in the project directory</p></li>
+<li><p>in your project, in a <em>terminal</em> window execute the following commands</p>
+<ul>
+<li><p><em>git remote add origin ‘http link from git’ </em></p></li>
+<li><p><em>git pull origin main</em></p></li>
+</ul></li>
+<li><p>now in Rstudio, checkout a new branch called <em>main</em>, it will ask you if you want to checkout existing branch - say yes</p>
+<ul>
+<li><p>commit the package files you have so far</p></li>
+<li><p>push to <strong>github</strong> as usual</p></li>
+</ul></li>
+</ul></li>
 </ul></li>
 <li><p>Install libraries <strong>devtools</strong> and <strong>roxygen2</strong> from CRAN</p></li>
 </ul>
