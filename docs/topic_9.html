@@ -2443,7 +2443,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2532,16 +2532,22 @@ Assignments
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#fonts-are-imported-and-specified-in-theme.css">Fonts are imported and specified in theme.css</a></li>
+<li><a href="#fonts-are-imported-and-specified-in-theme.css">Fonts are
+imported and specified in theme.css</a></li>
 <li><a href="#use-different-fonts">Use different fonts</a></li>
 </ul>
 </nav>
 </div>
 <p style="color: #ba5e00">
-<b>TO UPDATE THIS PAGE:</b> Open and edit the <b>topic_9.Rmd</b> file, in the project root, to delete this placeholder text and customize with your own!
+<b>TO UPDATE THIS PAGE:</b> Open and edit the <b>topic_9.Rmd</b> file,
+in the project root, to delete this placeholder text and customize with
+your own!
 </p>
-<p>You are welcome to use any fonts you want on your website. Here, only using Google fonts is described (there are other methods for downloading fonts and adding, not included here).</p>
-<h2 id="fonts-are-imported-and-specified-in-theme.css">Fonts are imported and specified in theme.css</h2>
+<p>You are welcome to use any fonts you want on your website. Here, only
+using Google fonts is described (there are other methods for downloading
+fonts and adding, not included here).</p>
+<h2 id="fonts-are-imported-and-specified-in-theme.css">Fonts are
+imported and specified in theme.css</h2>
 <p>In your Project in RStudio, open the <code>theme.css</code> file.</p>
 <p>Near the top, you’ll see some lines that look like this:</p>
 <pre><code>/* Header font */
@@ -2552,23 +2558,43 @@ Assignments
 
 /* Code font (Roboto Mono) */
 @import url(&#39;https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&amp;display=swap&#39;);</code></pre>
-<p>Those are the import command to get 3 different Google fonts (Sanchez, Nunito Sans, and Roboto Mono). You can explore many different Google fonts <a href="https://fonts.google.com/">here</a>.</p>
+<p>Those are the import command to get 3 different Google fonts
+(Sanchez, Nunito Sans, and Roboto Mono). You can explore many different
+Google fonts <a href="https://fonts.google.com/">here</a>.</p>
 <h2 id="use-different-fonts">Use different fonts</h2>
 <ol type="1">
-<li><p>Find a <a href="https://fonts.google.com/">Google Font</a> you like.</p></li>
-<li><p>Click on the font. To the right of the font example text, you should see an option to ‘+ Select this style’. Click the one(s) you want to select.</p></li>
-<li><p>That will probably bring up a side menu. If you <em>don’t</em> see that side menu, you can see your selected styles at any time by clicking on the top-right menu icon that is a grid with 3 squares and a plus sign - hovering reveals this is to ‘View your selected families’. In the <em>Use on the web</em> section of the side menu that appears, <strong>select the radio button for <span class="citation" data-cites="import">@import</span></strong>. It’ll look weird like this (for the Zen Dots Google Font):</p></li>
+<li><p>Find a <a href="https://fonts.google.com/">Google Font</a> you
+like.</p></li>
+<li><p>Click on the font. To the right of the font example text, you
+should see an option to ‘+ Select this style’. Click the one(s) you want
+to select.</p></li>
+<li><p>That will probably bring up a side menu. If you <em>don’t</em>
+see that side menu, you can see your selected styles at any time by
+clicking on the top-right menu icon that is a grid with 3 squares and a
+plus sign - hovering reveals this is to ‘View your selected families’.
+In the <em>Use on the web</em> section of the side menu that appears,
+<strong>select the radio button for <span class="citation"
+data-cites="import">@import</span></strong>. It’ll look weird like this
+(for the Zen Dots Google Font):</p></li>
 </ol>
 <pre><code>    &lt;style&gt;
     @import url(&#39;https://fonts.googleapis.com/css2?family=Zen+Dots&amp;display=swap&#39;);
     &lt;/style&gt; </code></pre>
 <ol start="4" type="1">
-<li><p>Copy everything BETWEEN (but excluding) the ending <code>&lt;style&gt;</code> and <code>&lt;/style&gt;</code>tags</p></li>
-<li><p>Paste the <code>@import</code> line you’ve copied into the top section of <code>theme.css</code> near the other fonts imported there. It is now available for use in your theme.</p></li>
-<li><p>Update the css with your new fonts, replacing the existing font names with the name you’ve imported. You might want to use a Find &amp; Replace All if you want to make sure you’re updating a font everywhere it appears in the current theme.</p></li>
-<li><p>Repeat for as many different fonts as you want to update in your theme.</p></li>
+<li><p>Copy everything BETWEEN (but excluding) the ending
+<code>&lt;style&gt;</code> and <code>&lt;/style&gt;</code>tags</p></li>
+<li><p>Paste the <code>@import</code> line you’ve copied into the top
+section of <code>theme.css</code> near the other fonts imported there.
+It is now available for use in your theme.</p></li>
+<li><p>Update the css with your new fonts, replacing the existing font
+names with the name you’ve imported. You might want to use a Find &amp;
+Replace All if you want to make sure you’re updating a font everywhere
+it appears in the current theme.</p></li>
+<li><p>Repeat for as many different fonts as you want to update in your
+theme.</p></li>
 </ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
