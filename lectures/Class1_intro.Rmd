@@ -26,7 +26,7 @@ knitr::opts_chunk$set(echo = FALSE)
   * when working in groups, pay attention to your partner, if they are not at your skill level, help them learn - recognize that we all have different backgrounds
   
 
-* If you are really struggling, reach out to Louis or myself, we can help
+* If you are really struggling, reach out to Rachel or myself, we can help
 (or if you just want to chat about something ) 
 
 
