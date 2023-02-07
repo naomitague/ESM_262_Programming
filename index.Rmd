@@ -40,22 +40,22 @@ Class will include a mix of lectures and hands-on examples, using students' own 
 
 **Instructor:** Naomi Tague (www.tagueteamlab.org)
 
--   **Office hours:** Friday 9pm - 11pm
+-   **Office hours:** email me
 -   **email**  (tague@ucsb.edu)
 -   **git user id** naomitague
 
-**Teaching assistant:** Louis Graup
+**Teaching assistant:** Ojas S
 
 
--   **Office hours:** Saturday 7am - 8am
--   **email** (lgraup@bren.ucsb.edu)
--   **git user id** LouisGraup
+-   **Office hours:** TBA
+-   **email** (ojassarup@ucsb.edu )
+-   **git user id** GET THIS
 
 
 
 ## Learning objectives
 
-- 3 *BIG* concepts in programming are *modulariy*, *data structure*, *looping* - we will learns skills related to all three of these
+- 3 *BIG* concepts in programming are *modularity*, *data structure*, *looping* - we will learns skills related to all three of these
 
 - learn and practice some coding/programming best practices (that will make your data science life easier - whatever you do!)
   - documentation

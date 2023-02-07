@@ -30,9 +30,9 @@ If you run into roadblocks here - send Louis and Naomi an email and we will try 
 
 So that we all are working with the same code make sure you have a recent version of
 
- * **R  (4.0.3 )**
+ * **R**
 
- * **RStudio (1.3.1093)** installed,
+ * **RStudio** installed,
 
  You will also need the following libraries to get started
 

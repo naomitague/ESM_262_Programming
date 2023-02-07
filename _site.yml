@@ -11,43 +11,43 @@ navbar:
       menu:
         - text: "Topic 1: Programming Basics and Best Practices"
           href: lectures/Class1_intro.html
-        - text: "Topic 2: Modularity"
-          href: lectures/Class2_modularity.html
-        - text: "Topic 3: Creating Functions"
-          href: lectures/Class3_starting_functions.html
-        - text: "Topic 4: Using Functions with Data"
-          href: lectures/Class4_Using_functions_with_data.html
-        - text: "Topic 5: Looping"
-          href: lectures/Class5_Looping.html
-        - text: "Topic 6: Control Structure"
-          href: lectures/Class6_controlstructures.html
-        - text: "Topic 7: Testing"
-          href: lectures/Class8_Testing.html
-        - text: "Topic 8: Packages"
-          href: lectures/Class9_packages_intro.html
-        - text: "Topic 9: More on Packages"
-          href: lectures/Class10_packages2.html
-        - text: "Wrap-Up"
-          href: lectures/Wrap_Up.html
+ #       - text: "Topic 2: Modularity"
+#          href: lectures/Class2_modularity.html
+#        - text: "Topic 3: Creating Functions"
+#          href: lectures/Class3_starting_functions.html
+#        - text: "Topic 4: Using Functions with Data"
+#          href: lectures/Class4_Using_functions_with_data.html
+#        - text: "Topic 5: Looping"
+#          href: lectures/Class5_Looping.html
+#        - text: "Topic 6: Control Structure"
+#          href: lectures/Class6_controlstructures.html
+#        - text: "Topic 7: Testing"
+#          href: lectures/Class8_Testing.html
+#        - text: "Topic 8: Packages"
+#          href: lectures/Class9_packages_intro.html
+#        - text: "Topic 9: More on Packages"
+#          href: lectures/Class10_packages2.html
+#        - text: "Wrap-Up"
+#          href: lectures/Wrap_Up.html
 
     - text: "Assignments"
       menu:
         - text: "Topic 1: Programming Basics and Best Practices"
           href: topic_1_resource.html
-        - text: "Topic 2: Modularity"
-          href: topic_2_resource.html
-        - text: "Topic 3: Functions"
-          href: topic_3_resource.html
-        - text: "Topic 4: Looping"
-          href: topic_4_resource.html
-        - text: "Topic 5: Looping2"
-          href: topic_5_resource.html
-        - text: "Topic 6: Functions with data"
-          href: topic_6_resource.html
-        - text: "Topic 7: Flow control"
-          href: topic_7_resource.html
-        - text: "Topic 8: A Bit more on functions"
-          href: topic_8_resource.html
+#        - text: "Topic 2: Modularity"
+#          href: topic_2_resource.html
+#        - text: "Topic 3: Functions"
+#          href: topic_3_resource.html
+#        - text: "Topic 4: Looping"
+#          href: topic_4_resource.html
+#        - text: "Topic 5: Looping2"
+#          href: topic_5_resource.html
+#        - text: "Topic 6: Functions with data"
+#          href: topic_6_resource.html
+#        - text: "Topic 7: Flow control"
+#          href: topic_7_resource.html
+#        - text: "Topic 8: A Bit more on functions"
+#          href: topic_8_resource.html
 
 output:
   distill::distill_article:
