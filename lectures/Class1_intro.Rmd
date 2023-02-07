@@ -1,6 +1,6 @@
 
 ---
-title: 'Programming Basics and Best Practices: Class 31'
+title: 'Programming Basics and Best Practices'
 output:
   slidy_presentation: default
   ioslides_presentation: default
