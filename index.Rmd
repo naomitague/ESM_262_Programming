@@ -47,9 +47,9 @@ Class will include a mix of lectures and hands-on examples, using students' own 
 **Teaching assistant:** Ojas S
 
 
--   **Office hours:** TBA
+-   **Office hours:**  Tuesday / Thursday 3pm-4pm
 -   **email** (ojassarup@ucsb.edu )
--   **git user id** GET THIS
+-   **git user id** osarup
 
 
 
@@ -103,17 +103,3 @@ Then, for each assignment:
 2. Submit the URL of the folder on Gauchospace
 
 
-## Weekly Schedule
-
-| Class | Lecture topics | Lab topics |
-|------|----------------|------------|
-| 1    | Topics         | Topics     |
-| 2    | Topics         | Topics     |
-| 3    | Topics         | Topics     |
-| 4    | Topics         | Topics     |
-| 5    | Topics         | Topics     |
-| 6    | Topics         | Topics     |
-| 7    | Topics         | Topics     |
-| 8    | Topics         | Topics     |
-| 9    | Topics         | Topics     |
-| 10   | Topics         | Topics     |
