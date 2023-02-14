@@ -5,15 +5,28 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <title>Programming Basics and Best Practices: Class 31</title>
+  <title>Programming Basics and Best Practices</title>
   <style type="text/css">
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-              </style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+  <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
   <style type="text/css">
 body
 {
@@ -379,7 +392,7 @@ list-style-type: none;
 </head>
 <body>
 <div class="slide titlepage">
-  <h1 class="title">Programming Basics and Best Practices: Class 31</h1>
+  <h1 class="title">Programming Basics and Best Practices</h1>
   <p class="author">
 
   </p>
@@ -387,39 +400,60 @@ list-style-type: none;
 <div id="protocols-and-guidance-on-how-to-best-use-this-class" class="slide section level1">
 <h1>Protocols and Guidance on how to best use this class</h1>
 <ul>
-<li><p>Learning to program is hard and I may not always explain in a way that is accessible to you - So if you don’t understand something <em>ASK</em> , you will help me to learn how to explain (or find an answer if I don’t know it) and you will help others</p></li>
-<li><p>Programming gets better with practice and play - Don’t just read the Rmarkdown - try the code, try variations on the ideas presented, make up stuff to try, get your feet wet</p></li>
-<li><p>Programming means making mistakes, expect it, stay calm and try again - if you get frustrated step away and come back; be creative</p></li>
+<li><p>Learning to program is hard and I may not always explain in a way
+that is accessible to you - So if you don’t understand something
+<em>ASK</em> , you will help me to learn how to explain (or find an
+answer if I don’t know it) and you will help others</p></li>
+<li><p>Programming gets better with practice and play - Don’t just read
+the Rmarkdown - try the code, try variations on the ideas presented,
+make up stuff to try, get your feet wet</p></li>
+<li><p>Programming means making mistakes, expect it, stay calm and try
+again - if you get frustrated step away and come back; be
+creative</p></li>
 <li><p>Support each other</p>
 <ul>
-<li>when working in groups, pay attention to your partner, if they are not at your skill level, help them learn - recognize that we all have different backgrounds</li>
+<li>when working in groups, pay attention to your partner, if they are
+not at your skill level, help them learn - recognize that we all have
+different backgrounds</li>
 </ul></li>
-<li><p>If you are really struggling, reach out to Louis or myself, we can help (or if you just want to chat about something )</p></li>
+<li><p>If you are really struggling, reach out to Ojas or myself, we can
+help (or if you just want to chat about something )</p></li>
 </ul>
 </div>
 <div id="what-we-will-learn---some-more-details" class="slide section level1">
 <h1>What we will learn - some more details</h1>
 <ul>
-<li><p>Modular programming: Designing building blocks or functions</p></li>
-<li><p>Data structures, operations and flow control (general programmings skills we use for manipulating data inside each block)</p></li>
-<li><p>Automated (or semi-automated) Tools for good programming practice</p>
+<li><p>Modular programming: Designing building blocks or
+functions</p></li>
+<li><p>Data structures, operations and flow control (general
+programmings skills we use for manipulating data inside each
+block)</p></li>
+<li><p>Automated (or semi-automated) Tools for good programming
+practice</p>
 <ul>
 <li>testing</li>
 <li>documentation</li>
 <li>workflow for sharing programs/packages with others</li>
 </ul></li>
 </ul>
-<p>The course features <strong>R</strong> for programming, <strong>Git</strong> for version control, <strong>Markdown</strong> for workflow, and <strong>GitHub</strong> for collaboration and publishing, but many concepts would be applicable in other software design tools.</p>
+<p>The course features <strong>R</strong> for programming,
+<strong>Git</strong> for version control, <strong>Markdown</strong> for
+workflow, and <strong>GitHub</strong> for collaboration and publishing,
+but many concepts would be applicable in other software design
+tools.</p>
 </div>
 <div id="what-is-a-program" class="slide section level1">
 <h1>What is a program</h1>
 <ul>
-<li><p>A program is a set of instructions for a computer to follow</p></li>
-<li><p>Programs are often used to manipulate data (in all type and formats you discussed last week)</p></li>
+<li><p>A program is a set of instructions for a computer to
+follow</p></li>
+<li><p>Programs are often used to manipulate data (in all type and
+formats you discussed last week)</p></li>
 <li><p>Simple to complex</p>
 <ul>
 <li>scripts that you save in R-Markdown</li>
-<li>instructions to analyze relationships in census data and visualize them</li>
+<li>instructions to analyze relationships in census data and visualize
+them</li>
 <li>a model of global climate</li>
 </ul></li>
 </ul>
@@ -427,46 +461,67 @@ list-style-type: none;
 <div id="programming-languages" class="slide section level1">
 <h1>Programming Languages</h1>
 <ul>
-<li>Programs can be written in many different languages (all have their strengths and weakness)</li>
-<li>Languages expect instructions in a particular form (syntax) and then translate them to be readable by the computer</li>
-<li>Languages have evolved to make it help users write programs that are easy to understand, re-use, extend, test, run quickly, use lots of data…</li>
+<li>Programs can be written in many different languages (all have their
+strengths and weakness)</li>
+<li>Languages expect instructions in a particular form (syntax) and then
+translate them to be readable by the computer</li>
+<li>Languages have evolved to make it help users write programs that are
+easy to understand, re-use, extend, test, run quickly, use lots of
+data…</li>
 </ul>
-<h2 id="programming-fundamentals---big-ideas">Programming Fundamentals - “Big Ideas”</h2>
+<h2 id="programming-fundamentals---big-ideas">Programming Fundamentals -
+“Big Ideas”</h2>
 <ul>
-<li>Data structures (simple variables, arrays, lists…) - how do we organize data</li>
-<li>Basic Operations (=,+,-,…concatenate, copy) to Control structures (if then, loops) - how do we manipulate data</li>
-<li>Modules…Functions - how do we make all this efficient - especially when we want to similar types of things over an over</li>
+<li>Data structures (simple variables, arrays, lists…) - how do we
+organize data</li>
+<li>Basic Operations (=,+,-,…concatenate, copy) to Control structures
+(if then, loops) - how do we manipulate data</li>
+<li>Modules…Functions - how do we make all this efficient - especially
+when we want to similar types of things over an over</li>
 </ul>
-<p>These concepts common to all languages through the syntax may be different</p>
+<p>These concepts common to all languages through the syntax may be
+different</p>
 </div>
 <div id="breakout-group-task" class="slide section level1">
 <h1>BREAKOUT GROUP TASK:</h1>
-<p>Based on whatever programming/coding experience you have had - come up with what you think are 4 best practices Write them into an Rmarkdown document</p>
+<p>Based on whatever programming/coding experience you have had - come
+up with what you think are 4 best practices Write them into an Rmarkdown
+document</p>
 </div>
 <div id="best-practices-for-software-development" class="slide section level1">
 <h1>Best Practices for Software Development</h1>
 <ul>
-<li><p>Wilson G, Aruliah DA, Brown CT, Chue Hong NP, Davis M, et al. (2014) Best Practices for Scientific Computing. PLoS Biol 12(1): e1001745. <a href="doi:10.1371/journal.pbio.1001745" class="uri">doi:10.1371/journal.pbio.1001745</a></p></li>
-<li><p>Blanton, B and Lenhardt, C 2014. A Scientist’s Perspective on Sustainable Scientific Software. Journal of Open Research Software 2(1):e17, DOI: <a href="http://dx.doi.org/10.5334/jors.ba" class="uri">http://dx.doi.org/10.5334/jors.ba</a></p></li>
+<li><p>Wilson G, Aruliah DA, Brown CT, Chue Hong NP, Davis M, et
+al. (2014) Best Practices for Scientific Computing. PLoS Biol 12(1):
+e1001745. <a href="doi:10.1371/journal.pbio.1001745" class="uri">doi:10.1371/journal.pbio.1001745</a></p></li>
+<li><p>Blanton, B and Lenhardt, C 2014. A Scientist’s Perspective on
+Sustainable Scientific Software. Journal of Open Research Software
+2(1):e17, DOI: <a href="http://dx.doi.org/10.5334/jors.ba" class="uri">http://dx.doi.org/10.5334/jors.ba</a></p></li>
 </ul>
-<p><a href="http://simpleprogrammer.com/2013/02/17/principles-are-timeless-best-practices-are-fads/">Alternative View</a></p>
+<p><a href="http://simpleprogrammer.com/2013/02/17/principles-are-timeless-best-practices-are-fads/">Alternative
+View</a></p>
 </div>
 <div id="summary-of-best-practices" class="slide section level1">
 <h1>Summary of Best Practices</h1>
-<p><a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745#pbio-1001745-box001">Wilson et al, Summary Box</a></p>
+<p><a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745#pbio-1001745-box001">Wilson
+et al, Summary Box</a></p>
 </div>
 <div id="common-codingsoftware-engineering-issues" class="slide section level1">
 <h1>Common Coding/Software Engineering Issues</h1>
 <ul>
-<li>Unreadable code (hard to understand, easy to forget how it works, hard to find errors, hard to expand)</li>
-<li>Overly complex, disorganized code (hard to find errors; hard to modify-expand)</li>
+<li>Unreadable code (hard to understand, easy to forget how it works,
+hard to find errors, hard to expand)</li>
+<li>Overly complex, disorganized code (hard to find errors; hard to
+modify-expand)</li>
 <li>Insufficient testing (both during development and after)</li>
-<li>Not tracking code changes (multiple versions, which is correct?)</li>
+<li>Not tracking code changes (multiple versions, which is
+correct?)</li>
 </ul>
 </div>
 <div id="automated-tools-for-best-practices-in-software-engineering" class="slide section level1">
 <h1>Automated Tools for Best Practices in Software Engineering</h1>
-<p>Automated tools (really useful for more complex code development ( note that GP’s often create programs &gt; 100 lines of code)</p>
+<p>Automated tools (really useful for more complex code development (
+note that GP’s often create programs &gt; 100 lines of code)</p>
 <p>Automated documentation</p>
 <p><a href="http://www.stack.nl/~dimitri/doxygen/" class="uri">http://www.stack.nl/~dimitri/doxygen/</a></p>
 <p><a href="http://roxygen.org/roxygen2-manual.pdf" class="uri">http://roxygen.org/roxygen2-manual.pdf</a></p>
