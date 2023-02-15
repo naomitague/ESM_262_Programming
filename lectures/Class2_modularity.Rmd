@@ -240,7 +240,7 @@ Two ways to get the Rmarkdown File
 
 You can either clone the following repository or just go to the repo on github and download the file
 
-[Example/Review Repo](https://github.com/naomitague/ESM_262_Examples.git)
+[Example/Review Repo](https://github.com/naomitague/ESM_262_Examples.git")
 
 
 **IF Your are Cloning**
@@ -252,7 +252,7 @@ You can either clone the following repository or just go to the repo on github a
 If you are cloning in a **new project** - you can use
 ```{r}
 library(devtools)
- install_github("naomitague/ESM_262_Examples.git")
+ install_github("naomitague/ESM_262_Examples")
 ```
 
 Next class we will go through how to make a function in R
