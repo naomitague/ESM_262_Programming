@@ -249,7 +249,7 @@ You can either clone the following repository or just go to the repo on github a
  
  - find and review *Rmarkdown/starting_functions.Rmd* BEFORE next class - play with it; come ready to ask questions in class
 
-If you are cloning in a new project - you can use
+If you are cloning in a **new project** - you can use
 ```{r}
 library(devtools)
  install_github("naomitague/ESM_262_Examples.git")
