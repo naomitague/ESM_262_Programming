@@ -13,8 +13,8 @@ navbar:
           href: lectures/Class1_intro.html
         - text: "Topic 2: Modularity"
           href: lectures/Class2_modularity.html
-#        - text: "Topic 3: Creating Functions"
-#          href: lectures/Class3_starting_functions.html
+        - text: "Topic 3: Creating Functions"
+          href: lectures/Class3_starting_functions.html
 #        - text: "Topic 4: Using Functions with Data"
 #          href: lectures/Class4_Using_functions_with_data.html
 #        - text: "Topic 5: Looping"
@@ -36,8 +36,8 @@ navbar:
           href: topic_1_resource.html
         - text: "Topic 2: Modularity"
           href: topic_2_resource.html
-#        - text: "Topic 3: Functions"
-#          href: topic_3_resource.html
+        - text: "Topic 3: Functions"
+          href: topic_3_resource.html
 #        - text: "Topic 4: Looping"
 #          href: topic_4_resource.html
 #        - text: "Topic 5: Looping2"

@@ -1,9 +1,10 @@
 ---
-title: "Prepare for Lecture 4"
+title: "Before next class"
 
 ---
 
-#  Finish writing a function and Review
+# <span style="color:orange"> PART 1: Finish writing a function from class </span>
+
 
 One of the equations used to compute automobile fuel efficiency is as follows this is the power required to keep a car moving at a given speed is as follows:
 
@@ -23,24 +24,32 @@ where crolling and cdrag are rolling and aerodynamic resistive coefficients, typ
 
 - Pb is power in Watts
 
-What would be the function's contract - input/parameters? what will it do?
+1. Write a function to compute power, given a truck of m=31752 kg (parameters for a heavy truck) for a range of different highway speeds, The surface area of this truck  is 16 $m^2$
 
-Write a function to compute power, given a truck of m=31752 kg (parameters for a heavy truck) for a range of different highway speeds (30 m/s, 80 km/hr, 120 km/hr, 40 km/hr, 5km/hr )
-The surface area is 16 $m^2$
+* 30 m/s
+* 80 km/hr
+* 120 km/hr
+* 40 km/hr
+* 5 km/hr
 
-Plot power as a function of speed
-Add a second line for lighter vehicle
-Remember to keep the function in its own file, store it in a subdirectory called *R* and then create a Rmarkdown to use the function and store the Rmarkdown in a different directory
 
-**Good Programming Practices**
+2. Plot power as a function of speed
 
-Name variables so its easy to understand
+3. Recompute for a lighter vehicle (15,000 kg) 
+Add a second line to your graph for lighter vehicle
 
-Describe the contract at the top of the function (following the format for the *power_gen_orig.R* example
+* Keep your function in its own file, store it in a subdirectory called *R* and then create a **separate** Rmarkdown document to use the function and store the Rmarkdown in a different directory
 
-Also include the comments in the Rmarkdown that you are using to run the function
+You don't need to hand in anything - but you need to complete this exercise before next class because
+we will build on these skills
 
-#  PART 2: Review Two Rmarkdowns 
+# <span style="color:orange"> PART 2: Review Two Rmarkdowns </span>
 
--  Sampling_example.Rmd 
--  Error_checking.Rmd
+Before next class, review these two Rmarkdowns in 
+https://github.com/naomitague/ESM_262_Examples
+
+If you've already cloned this, you will find them in the Rmarkdown subdirectory
+
+* Sampling_example.Rmd
+* Error_checking.Rmd
+

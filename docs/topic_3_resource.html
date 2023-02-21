@@ -88,26 +88,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>ESM 232: Prepare for Lecture 4</title>
+  <title>ESM 232: Before next class</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="ESM 232: Prepare for Lecture 4"/>
+  <meta property="og:title" content="ESM 232: Before next class"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="ESM 232"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="ESM 232: Prepare for Lecture 4"/>
+  <meta property="twitter:title" content="ESM 232: Before next class"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Prepare for Lecture 4"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Before next class"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2480,7 +2480,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.19/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2500,7 +2500,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Prepare for Lecture 4","authors":[]}
+{"title":"Before next class","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2520,6 +2520,8 @@ Topics
 </button>
 <div class="nav-dropdown-content">
 <a href="lectures/Class1_intro.html">Topic 1: Programming Basics and Best Practices</a>
+<a href="lectures/Class2_modularity.html">Topic 2: Modularity</a>
+<a href="lectures/Class3_starting_functions.html">Topic 3: Creating Functions</a>
 </div>
 </div>
 <div class="nav-dropdown">
@@ -2530,6 +2532,8 @@ Assignments
 </button>
 <div class="nav-dropdown-content">
 <a href="topic_1_resource.html">Topic 1: Programming Basics and Best Practices</a>
+<a href="topic_2_resource.html">Topic 2: Modularity</a>
+<a href="topic_3_resource.html">Topic 3: Functions</a>
 </div>
 </div>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
@@ -2541,7 +2545,7 @@ Assignments
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Prepare for Lecture 4</h1>
+<h1>Before next class</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2553,12 +2557,12 @@ Assignments
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#finish-writing-a-function-and-review" id="toc-finish-writing-a-function-and-review">Finish writing a function and Review</a></li>
-<li><a href="#part-2-review-two-rmarkdowns" id="toc-part-2-review-two-rmarkdowns">PART 2: Review Two Rmarkdowns</a></li>
+<li><a href="#part-1-finish-writing-a-function-from-class" id="toc-part-1-finish-writing-a-function-from-class"><span style="color:orange"> PART 1: Finish writing a function from class </span></a></li>
+<li><a href="#part-2-review-two-rmarkdowns" id="toc-part-2-review-two-rmarkdowns"><span style="color:orange"> PART 2: Review Two Rmarkdowns </span></a></li>
 </ul>
 </nav>
 </div>
-<h1 id="finish-writing-a-function-and-review">Finish writing a function and Review</h1>
+<h1 id="part-1-finish-writing-a-function-from-class"><span style="color:orange"> PART 1: Finish writing a function from class </span></h1>
 <p>One of the equations used to compute automobile fuel efficiency is as follows this is the power required to keep a car moving at a given speed is as follows:</p>
 <p><span class="math inline">\(Pb = crolling * m *g *V + \frac{1}{2} * A*p_{air}*c_{drag}*V^3\)</span></p>
 <p>where crolling and cdrag are rolling and aerodynamic resistive coefficients, typical values are 0.015 and 0.3, respectively.</p>
@@ -2569,17 +2573,30 @@ Assignments
 <li><p>p_air = density of air <span class="math inline">\((1.2kg/m^3 )\)</span></p></li>
 <li><p>Pb is power in Watts</p></li>
 </ul>
-<p>What would be the function’s contract - input/parameters? what will it do?</p>
-<p>Write a function to compute power, given a truck of m=31752 kg (parameters for a heavy truck) for a range of different highway speeds (30 m/s, 80 km/hr, 120 km/hr, 40 km/hr, 5km/hr )
-The surface area is 16 <span class="math inline">\(m^2\)</span></p>
-<p>Plot power as a function of speed
-Add a second line for lighter vehicle
-Remember to keep the function in its own file, store it in a subdirectory called <em>R</em> and then create a Rmarkdown to use the function and store the Rmarkdown in a different directory</p>
-<p><strong>Good Programming Practices</strong></p>
-<p>Name variables so its easy to understand</p>
-<p>Describe the contract at the top of the function (following the format for the <em>power_gen_orig.R</em> example</p>
-<p>Also include the comments in the Rmarkdown that you are using to run the function</p>
-<h1 id="part-2-review-two-rmarkdowns">PART 2: Review Two Rmarkdowns</h1>
+<ol type="1">
+<li>Write a function to compute power, given a truck of m=31752 kg (parameters for a heavy truck) for a range of different highway speeds, The surface area of this truck is 16 <span class="math inline">\(m^2\)</span></li>
+</ol>
+<ul>
+<li>30 m/s</li>
+<li>80 km/hr</li>
+<li>120 km/hr</li>
+<li>40 km/hr</li>
+<li>5 km/hr</li>
+</ul>
+<ol start="2" type="1">
+<li><p>Plot power as a function of speed</p></li>
+<li><p>Recompute for a lighter vehicle (15,000 kg)
+Add a second line to your graph for lighter vehicle</p></li>
+</ol>
+<ul>
+<li>Keep your function in its own file, store it in a subdirectory called <em>R</em> and then create a <strong>separate</strong> Rmarkdown document to use the function and store the Rmarkdown in a different directory</li>
+</ul>
+<p>You don’t need to hand in anything - but you need to complete this exercise before next class because
+we will build on these skills</p>
+<h1 id="part-2-review-two-rmarkdowns"><span style="color:orange"> PART 2: Review Two Rmarkdowns </span></h1>
+<p>Before next class, review these two Rmarkdowns in
+<a href="https://github.com/naomitague/ESM_262_Examples" class="uri">https://github.com/naomitague/ESM_262_Examples</a></p>
+<p>If you’ve already cloned this, you will find them in the Rmarkdown subdirectory</p>
 <ul>
 <li>Sampling_example.Rmd</li>
 <li>Error_checking.Rmd</li>
