@@ -56,6 +56,22 @@ power_gen_orig(height=c(4,5,6), flow=c(2,4,6))
 # but this doesn't work - why?
 power_gen_orig(height=c(4,5,6, 8, 20), flow=c(2,4,6))
 
+# and of course you can always change default parameters
+h = c(4,5,6)
+f = c(1,1,1)
+# note I can specify inputs in different ways
+p1=power_gen_orig(height=h, flow=f,  Keff=0.6)
+p2=power_gen_orig(h,f, Keff=0.9)
+
+
+#organize data for plotting
+plant_energy = data.frame(cbind(height=h, flow=f, v1=v1, v2=v2))
+plant_energy
+
+ggplot(plant_energy, aes(height, v1))+geom_line()+
+  geom_line(aes(height, v2), col="blue")+labs(x="Water height (m)", y="Power Generated kW")
+
+
 ```
 
 #
@@ -168,14 +184,25 @@ where crolling and cdrag are rolling and aerodynamic resistive coefficients, typ
 
 What would be the function's contract - input/parameters? what will it do?
 
-Write a function to compute power, given a truck of m=31752 kg (parameters for a heavy truck) for a range of different highway speeds (30 m/s, 80 km/hr, 120 km/hr, 40 km/hr, 5km/hr )
-The surface area is 16 $m^2$
+# <span style="color:orange"> Lets practice:: Automobile Power Generation </span>
 
-Plot power as a function of speed
-Add a second line for lighter vehicle
-Remember to keep the function in its own file, store it in a subdirectory called *R* and then create a Rmarkdown to use the function and store the Rmarkdown in a different directory
+1. Write a function to compute power, given a truck of m=31752 kg (parameters for a heavy truck) for a range of different highway speeds, The surface area of this truck  is 16 $m^2$
 
-**Good Programming Practices**
+* 30 m/s
+* 80 km/hr
+* 120 km/hr
+* 40 km/hr
+* 5 km/hr
+
+
+2. Plot power as a function of speed
+
+3. Recompute for a lighter vehicle (15,000 kg) 
+Add a second line to your graph for lighter vehicle
+
+* Keep your function in its own file, store it in a subdirectory called *R* and then create a **separate** Rmarkdown document to use the function and store the Rmarkdown in a different directory
+
+# **Good Programming Practices**
 
 Name variables so its easy to understand
 
@@ -183,8 +210,16 @@ Describe the contract at the top of the function (following the format for the *
 
 Also include the comments in the Rmarkdown that you are using to run the function
 
+I'm not going to grade this - but everyone should do it and we will go over at the beginning of next class
+Remember you learn by doing. AND
+
 # <span style="color:orange"> PART 2: Review Two Rmarkdowns </span>
 
-- Sampling_example.Rmd 
-- Error_checking.Rmd
----
+Before next class, review these two Rmarkdowns in 
+https://github.com/naomitague/ESM_262_Examples
+
+If you've already cloned this, you will find them in the Rmarkdown subdirectory
+
+* Sampling_example.Rmd
+* Error_checking.Rmd
+

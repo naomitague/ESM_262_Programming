@@ -525,15 +525,19 @@ list-style-type: none;
   <p class="author">
 Naomi Tague
   </p>
-  <p class="date">January, 2021</p>
+  <p class="date">January, 2022</p>
 </div>
 <div id="programming-always-starts-with" class="slide section level1">
 <h1>Programming Always Starts with</h1>
 <p><span style="color: cyan;"> Conceptual Design </span></p>
 <ul>
 <li>What is the goal</li>
+<li>How can you break this goal into sub-task</li>
+<li>For the overall project and each sub-task
+<ul>
 <li>What are the inputs</li>
 <li>What are the outputs</li>
+</ul></li>
 </ul>
 </div>
 <div id="modularity" class="slide section level1">
@@ -543,7 +547,8 @@ Naomi Tague
 <li>A <strong>main program</strong> that controls the flow and
 <strong>calls</strong> functions/modules/building blocks</li>
 </ul>
-<p>[Modular Housing] (<a href="https://images.app.goo.gl/moGdSXVHWiRvHm3X8/" class="uri">https://images.app.goo.gl/moGdSXVHWiRvHm3X8/</a>)</p>
+<p><a href="https://images.app.goo.gl/moGdSXVHWiRvHm3X8/">Modular
+Housing</a></p>
 </div>
 <div id="modules-take-you-from-inputs-to-outputs-in-pieces" class="slide section level1">
 <h1>Modules take you from inputs to outputs in pieces</h1>
@@ -552,24 +557,25 @@ Naomi Tague
 <strong>diagramming</strong> or <strong>flow charting </strong> your
 program</p></li>
 <li><p>what is the goal</p></li>
-<li><p>inputs and output</p></li>
 <li><p>what are key building blocks - modules or functions</p></li>
+<li><p>inputs and output</p></li>
 <li><p>how do you put the blocks together to go from input to output -
 main program</p></li>
 </ul>
 </div>
 <div id="flow-chart-example" class="slide section level1">
 <h1>Flow Chart Example</h1>
-<p><a href="#flow-chart-example">Flow chart Example</a> (<a href="https://images.app.goo.gl/ktxjSGC2Dyi1WQFA6" class="uri">https://images.app.goo.gl/ktxjSGC2Dyi1WQFA6</a>)</p>
+<p><a href="https://images.app.goo.gl/ktxjSGC2Dyi1WQFA6">Flow chart
+Example</a></p>
 </div>
 <div id="designing-modularity" class="slide section level1">
 <h1>Designing Modularity</h1>
-<p>Breaking your instructions down into individual pieces identifying
-instructions that can be reused</p>
+<p>Breaking your instructions down into individual pieces</p>
+<p>identifying instructions that can be reused</p>
 <p>EXAMPLES</p>
 <ul>
 <li>an ecosystem model might re-use instructions for calculating how a
-species grows</li>
+living organism grows</li>
 <li>an accounting program might re-use instructions for computing net
 present value from interest rates</li>
 </ul>
@@ -585,19 +591,22 @@ allow you to write your own</p>
 <h1>STEPS IN Program Design for Each Module and Overal Program
 Design</h1>
 <ol style="list-style-type: decimal">
-<li>Clearly define your goal in words/figures as precisely as possible,
-what do you want your program to do
+<li><p>Clearly define your goal in words/figures as precisely as
+possible, what do you want your program to do</p>
+<ul>
+<li>input/output of the entire program</li>
+<li>modules
 <ul>
 <li>inputs/parameters</li>
 <li>outputs</li>
-<li>modulees</li>
+</ul></li>
 <li>flow between modules</li>
 </ul></li>
-<li>Implement AND document as you go</li>
-<li>Test</li>
-<li>Refine</li>
-<li>Test again</li>
-<li>Create User Documentation and Distribute</li>
+<li><p>Implement AND document as you go</p></li>
+<li><p>Test</p></li>
+<li><p>Refine</p></li>
+<li><p>Test again</p></li>
+<li><p>Create User Documentation and Distribute</p></li>
 </ol>
 </div>
 <div id="some-examples" class="slide section level1">
@@ -666,8 +675,8 @@ boxes)</em></p>
 instructions that can be reused</p>
 <p>basic modules are called <strong>functions</strong> in R</p>
 </div>
-<div id="learn-to-think-in-terms-of-function" class="slide section level1">
-<h1>Learn to think in terms of function</h1>
+<div id="learn-to-think-in-terms-of-functionsmodules" class="slide section level1">
+<h1>Learn to think in terms of functions/modules</h1>
 <ul>
 <li>break your tasks into boxes with inputs, parameters and output</li>
 <li><strong>WRITE DOWN</strong> the <em>contract</em> for each
@@ -682,6 +691,13 @@ parameters, options)</li>
 </div>
 <div id="a-simple-function-example---just-one-module" class="slide section level1">
 <h1>A simple function example - just one module</h1>
+<p>Lets say we want to develop a program that computes power generated
+from hydro-reservoir</p>
+<p>We know that power generation depends on water release rates and the
+potential energy (from the reservoir height)</p>
+</div>
+<div id="lets-break-it-down" class="slide section level1">
+<h1>Lets break it down</h1>
 <p>Contract</p>
 <p><em>Input</em>: Reservoir height (m) and flow rate (m3/sec) (as a
 single value in time or a time series)</p>
@@ -696,13 +712,15 @@ equation - <em>body</em> of the function</p>
 height in meters, r is flow rate in cubic meters per second, g is
 acceleration due to gravity of 9.8 m/s2, KEff is a coefficient of
 efficiency ranging from 0 to 1.</p>
+<h2 id="lets-think-about-a-more-complex-program">Lets think about a more
+complex program…</h2>
 </div>
 <div id="a-more-complex-one" class="slide section level1">
 <h1>A more complex one</h1>
 <ul>
-<li>Goal - Calculate profit from a reservoir feed by a stream gages, if
-a minumum reservoir volume must be maintained and otherwide reservoir is
-operated at a set flow rate, that is set by the user</li>
+<li>Goal - Calculate profit from a reservoir feed by river, if a minimum
+reservoir volume must be maintained and otherwise reservoir is operated
+at a flow rate, that is set by the user</li>
 </ul>
 <p><em>Input</em> Stream gage data (m3/sec)</p>
 <p><em>Parameters</em> Efficiency, ρ (density of water), g (acceleration
@@ -761,7 +779,8 @@ different repos in the same place!)</p></li>
 <li><p>find and review <em>Rmarkdown/starting_functions.Rmd</em> BEFORE
 next class - play with it; come ready to ask questions in class</p></li>
 </ul>
-<p>If you are cloning in a new project - you can use</p>
+<p>If you are cloning in a <strong>new project</strong> - you can
+use</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span></code></pre></div>
 <pre><code>## Loading required package: usethis</code></pre>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">install_github</span>(<span class="st">&quot;naomitague/ESM_262_Examples.git&quot;</span>)</span></code></pre></div>
