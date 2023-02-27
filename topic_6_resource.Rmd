@@ -3,6 +3,24 @@ title: "Assignment 5"
 
 ---
 
+# Assignment 4
+For this assignment work in pairs - and submit as a group
+
+* Design a function - you can pick anything - and you can essentially make up the equations as long as they conceptually make sense
+Make sure it has at least 2 inputs and 1 parameter (ideally more)
+
+* Code your function in R, save as a R file in subdirectory called R
+Make sure you include documentation (both at the top as we've shown in past examples, and inline)
+Include some error checking
+
+* In an Rmarkdown file, generate some data for 2 of the function inputs, 
+use a for  loop to run the function for the data 
+repeat the "looping" using something from the "purrr" package 
+
+* Graph the result (you can decide what the most interesting way to graph is)
+
+* Include your function.R file, and the Rmarkdown in your git repo and submit the link on Gauchospace
+Submit as a group with your partner, you will have to fill out the group select on Gauchspace first before you submit
 # Assignment 5
 
 Working in a new group

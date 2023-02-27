@@ -1,15 +1,7 @@
 ---
-title: "Assignment 3 (Topic 4)"
+title: "Nothing to turn in"
 ---
 
 # Review for next class
 looping.Rmd
 
-# Assignment
-
-* recreate *possible_cars*, add an additional super light car with mass 5,000 kg, surface area 10m2
-
-* provide 3 new estimates of power required that includes this super light car in the mix
-(one for each approach to repeating calculations)
-
-* turn these 3 estimates in as assignment 3; You should also try to recreate the graphs with a 4th car, you don't need to turn in the graphs; we will go over in class

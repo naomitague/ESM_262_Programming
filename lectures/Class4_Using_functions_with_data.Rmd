@@ -24,11 +24,11 @@ library(ggpubr)
 * sampling_example.Rmd
 * error_checking.Rmd
 
-# Steps for running your model over multiple inputs
+# Steps for running your function over multiple inputs
 
 1. design a data structure to store results: sometimes this is automatic but not always
 2. generate the input data
-3. apply to the model
+3. apply to the function
 
 
 
@@ -71,7 +71,7 @@ Two parts
 * Repeat application of your function over the data
 
 
-Example use: Imagine we want to see how much power is generated given scenario where we know the mean and standard deviation of vehicles speeds
+Example use: Imagine we want to see how much power is generated given a scenario where we know the mean and standard deviation of vehicle speeds
 
 
 ```{r sampling}
@@ -97,7 +97,7 @@ results$power = autopower(V=speeds, A=25, m=20000)
 
 # ALWAYS look at your results to make sure it make sense
 ggplot(results, aes(speed, power/1000))+geom_point()+labs(x="speed in m/s", y="power in kW")
-ggplot(results, aes(x="Across Speed",y=power/1000))+geom_boxplot()+labs(y="power in kW")
+ggplot(results, aes(x="POWER", y=power/1000))+geom_boxplot()+labs(y="power in kW", x="")
 
 ```
 
@@ -111,6 +111,19 @@ Looping - or repeating applying your function over multiple inputs is not always
   * other programming languages
 
 Lets start with the basics of how you do repetition in programming in general often called *looping*
+
+# For loops
+
+ **for** statement 
+  
+* defines a loop using a counter that is incremented each time you go through the loop
+  
+* the counter - could be any variable (we often use *i*) but you could
+  use what ever variable you want
+  
+* the loop is  the commands between the *{* and *}* after the *for* keyword
+  
+* these commands are repeated each time you go through the loop (following the definition)
 
 ```{r loop }
 
@@ -135,11 +148,15 @@ a
 # create some data for an example
 
 income = runif(min=1000, max=5000, n=10)
+income
 expenses = rnorm(mean=1500, sd=500, n=10)
+expenses
 # it is possible that this approach could generate negative expenses
 expenses = ifelse(expenses < 0, 0, expenses)
 # normally we can just do
 net = income-expenses
+net
+
 
 # lets make this a data frame for nice plotting
 account = data.frame(income=income, expenses=expenses, net = net)
@@ -213,6 +230,7 @@ with mean of *5* and standard deviation of *0.5*
 
 (user *rnorm* function in R to do this)
 
+<span style="color:orange">Function to computed crop yield</span>
 
 Lets imagine that annual yield of a crop can be estimated follows:
 
@@ -223,23 +241,24 @@ $$ yield =  1.8*fertilizer^2 - 0.5*fertilizer  + 0.1*TP $$
 and TP is mean precipitation in cm
 
 
-Task 1: Use a *for* loop to compute the total yield after 10 years
+<span style="color:gold">Task 1</span>: Use a *for* loop to compute the total yield after 10 years
 
   * fertilizer is normally distributed with mean of 5 and standard deviation of 0.5
   * TP is 20cm
   
   
-Task 2: create a function to that takes as input a single value for annual fertilizer and annual total precipitation and returns yield
+<span style="color:gold">Task 2</span>: create a function to that takes as input a single value for annual fertilizer and annual total precipitation and returns yield
 
 
-Task 3: modify your function so that it returns total yield if the user inputs a vector of fertilizer and a vector of precipitation
+<span style="color:gold">Task 3</span>: modify your function so that it returns total yield if the user inputs a vector of fertilizer and a vector of precipitation
 
 Check that function returns the same result as your original *for* loop
+
 Add some error checking and test
 
 # Do on your own first before you check with this
 
-```{r}
+```{r cropyield}
 
 fert = rnorm(n=10, mean=5, sd=0.5)
 TP = 20
@@ -284,14 +303,29 @@ compute_total_yield = function(fert, TP) {
 }
 ```
 
+# More formal error checking
 
-# Assignment
+R also has specified totols for returning error messages
+
+You can also use *stop()* or *warning()* inside your function to 
+alter the user
+
+*stop()* stops the remainder of the functions from executing
+*warning()* continues but lets the user know
+
+```{r, errorchecking, error=TRUE}
+
+source("../R/compute_total_yield.R")
+compute_total_yield
+
+compute_total_yield(fert, TP)
+
+compute_total_yield(fert=c(-2, 2,2), TP=3)
+compute_total_yield(fert=c(2,2,2), TP=0)
+```
+
+
+
 
 * Review looping.Rmd - its a long one
 
-* recreate *possible_cars*, add an additional super light car with mass 5,000 kg, surface area 10m2
-
-* provide 3 new estimates of power required that includes this super light car in the mix
-(one for each approach to repeating calculations)
-
-* turn these 3 estimates in as Assignment 3 on Gauchospace; You should also try to recreate the graphs with a 4th car, you don't need to turn in the graphs; we will go over in class

@@ -178,25 +178,14 @@ yr
 
 ```
 
-# Assignment 4
+# Assignment 3
+* recreate *possible_cars* from looping.RMD; add an additional super light car with mass 5,000 kg, surface area 10m2
 
-For this assignment work in pairs - and submit as a group
+* provide 3 new estimates of power required that includes this super light car in the mix
+(one for each approach to repeating calculations)
 
-* Design a function - you can pick anything - and you can essentially make up the equations as long as they conceptually make sense
-Make sure it has at least 2 inputs and 1 parameter (ideally more)
+* turn these 3 estimates in as Assignment 3 on Gauchospace; You should also try to recreate the graphs with a 4th car, you don't need to turn in the graphs; we will go over in class
 
-* Code your function in R, save as a R file in subdirectory called R
-Make sure you include documentation (both at the top as we've shown in past examples, and inline)
-Include some error checking
-
-* In an Rmarkdown file, generate some data for 2 of the function inputs, 
-use a for  loop to run the function for the data 
-repeat the "looping" using something from the "purrr" package 
-
-* Graph the result (you can decide what the most interesting way to graph is)
-
-* Include your function.R file, and the Rmarkdown in your git repo and submit the link on Gauchospace
-Submit as a group with your partner, you will have to fill out the group select on Gauchspace first before you submit
 
 # To Review for next class
 
