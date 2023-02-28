@@ -1,16 +1,31 @@
 ---
-title: "Assignment 4"
+title: "Assignment 3"
 ---
 
 
 # Assignment 3
 
-* recreate *possible_cars*, add an additional super light car with mass 5,000 kg, surface area 10m2
+For this assignment you will write a new Rmarkdown document based on the analysis of power required for different *possible_cars* from looping.RMD; You will
 
-* provide 3 new estimates of power required that includes this super light car in the mix
-(one for each approach to repeating calculations)
+* Add an additional super light car with mass 5,000 kg and a surface area 10m2
 
-* turn these 3 estimates in as assignment 3; You should also try to recreate the graphs with a 4th car, you don't need to turn in the graphs; we will go over in class
+* Compute the mean and maximum power for Cars A, B, C and for your new car, assuming that average highway speed is 80 km/hr with a standard deviation of 10km/hr;  Use 2 different methods to compute the mean and maximum power for each car type; a) **FOR** loop and b) the **pmap** function from **purr**
+
+* Create two boxplots (one for each method (**FOR** and **pmap**)) that show the range of power consumption (across sampled speeds) for each car type.
+
+Put the Rmarkdown in your assignment github and submit a link on Gauchospace for Assignment 3 when its ready to be graded
+
+**Grading Rubric**
+
+1. Correct R code for adding the super light car (5pts)
+2. Values for mean and maximum power for all 4 cars are in expected ranges (remember you are sampling so values will differ slightly) (5pts)
+3. Used both methods (**FOR** and **pmap**) correctly (4pts)
+4. Boxplots (6pts)
+  a) correctly show range of power consumption for each car type for the two methdos
+  b) good presentation (e.g axis labels, colors)
+5. Good coding practice (e.g Adequate documentation throughout) (5pts)
+
+Total out of 25pts
 
 
 

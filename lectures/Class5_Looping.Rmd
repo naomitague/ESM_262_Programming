@@ -1,7 +1,7 @@
 ---
 title: 'Looping'
 author: "Naomi Tague"
-date: "January, 2022"
+date: "January, 2023"
 output:
   slidy_presentation:
    highlight: pygments
@@ -37,17 +37,36 @@ looping.RMD
 
 #  <span style="color:blue"> A bit more on Looping 
 
+Loops can be "nested" with one loop inside the other
+
+"Nesting" means loops inside loops
+
+useful for "doing" something to each row and each column
 
 
-# Loops can be "nested" on loop inside the other
+**FOR** (i in 1:nrow) {
 
-Example: Calculate NPV for
+  **FOR** (j in 1: ncol)
+  
+  ...
+  
+}}
+
+
+In nested loops, the inner loop (last **FOR** in the sequences, gets done first)
+
+So the loop above will all columns for the first row and then go to the next row
+
+
+# Example
+
+Calculate NPV for
 
 * a range of different interest rates and 
 * a range of damages 
 * that may be incurred 10 years in the future
 
-Steps
+**Steps**
 
 * define inputs (interest rates, damages)
 * define output (NPV)
@@ -68,12 +87,14 @@ compute_NPV(20, discount=0.01, time=20)
 
 #generate some input
 damages = c(25,33,91,24)
+damages
 # sensitivity to discount rate
 discount_rates = seq(from=0.01, to=0.04, by=0.005)
+discount_rates
 yr=10
 
 # note that the "simple" application doesn't work - why?
-#compute_NPV(20, discount=discount_rates, value=damages)
+compute_NPV(20, discount=discount_rates, value=damages)
 
 # compute some npv's for different discount rates for each damage
 # first generate a dataframe to store results - we have both damages and discount rates that are changing - so we need rows and columns
@@ -97,8 +118,8 @@ colnames(npvs)=discount_rates
 rownames(npvs)=damages
  npvs
  
-# how do I plot this with ggplot - add a column for original value and then rearrage
- npvs$damage = rownames(npvs)
+# how do I plot this with ggplot - add a column for original value and then rearrange
+ npvs$damage = damages
  npvsg =npvs %>% pivot_longer(!damage,names_to="dis", values_to="npv")
  head(npvsg)
  ggplot(npvsg, aes(x=damage, y=npv, col=dis))+geom_point()+labs(col="Discount\nRate")
@@ -107,21 +128,30 @@ rownames(npvs)=damages
  npv.total =npvsg %>% group_by(dis) %>% summarize(t=sum(npv))
  ggplot(npv.total, aes(dis,t, fill=dis))+geom_col() + labs(x="Discount Rate", y="Total ($)")
 
- 
+  
+```
+
+# An alternative method
+
+An alternative (R specific) is to use functions from the **purr** package
+
+Specifically *pmap* - which applies a function over multiple inputs 
+
+```{r}
  # we could also do the repetition with map_dfc from the purr family of functions
- #generate some input
-damages = c(25,33,91,24)
-# sensitivity to discount rate
-discount_rates = seq(from=0.01, to=0.04, by=0.005)
-yr=10
 
-# with purr family, map_dfc runs the function for each value and returns as a data frame 
+# use damages and discount rates from above
 
-npvs = pmap(list(discount_rates), compute_NPV, time=10, value=damages)
+discount_rates
+damages
+
+# with purr family, pmap runs the function for each value and returns as a data frame 
+
+npvs = pmap(list(discount_rates),compute_NPV, time=10, value=damages)
 # turn into a data frame
 npvs = as.data.frame(npvs, col.names=discount_rates)
+colnames(npvs) = discount_rates
 npvs$damage = damages
-
 # clean up and plot
  npvsg =npvs %>% pivot_longer(!damage,names_to="dis", values_to="npv")
  head(npvsg)
@@ -135,7 +165,6 @@ npvs$damage = damages
  
  
 ```
-
 # Some other types of loops
 
 * while
@@ -178,13 +207,84 @@ yr
 
 ```
 
+# A bit more on nesting loops
+
+we could even have multiple nesting (think about doings something to a 3 dimensional matrix 
+time and space (x,y)
+
+useful for "doings" something to each row and each column
+
+    **FOR** (x in 1:nrow) {
+
+        **FOR** (y in 1: ncol)  
+  
+          **FOR**  (t in 1: ntime)
+ 
+ 
+                ...
+  
+        }
+      }
+    }
+
+
+
+To illustrate
+```{r}
+
+# lets ocean be a 3 dimensional array - space (x,y) and time
+# lets say is a 2 by 3 spatial maps (2 units across, 3 units down), and 2 time steps
+ocean = array(dim=c(2,3,2))
+
+ocean
+
+# lets make up data for our ocean
+
+ocean[1,1,1] = runif(n=1, min=0, max=1)
+
+# second time step
+ocean[1,1,2] = runif(n=1, min=0, max=1)
+
+# next column, first time step
+ocean[2,1,1] = runif(n=1, min=0, max=1)
+
+# for loops let us do this quickly
+for (x in 1:nrow(ocean)) {
+  for (y in 1:ncol(ocean)) {
+    for (t in 1:dim(ocean)[3]) {
+      ocean[x,y, t] = runif(n=1, min=0, max=1)
+    }}}
+
+
+```
+
+
 # Assignment 3
-* recreate *possible_cars* from looping.RMD; add an additional super light car with mass 5,000 kg, surface area 10m2
 
-* provide 3 new estimates of power required that includes this super light car in the mix
-(one for each approach to repeating calculations)
+For this assignment you will write a new Rmarkdown document based on the analysis of power required for different *possible_cars* from looping.RMD; You will
 
-* turn these 3 estimates in as Assignment 3 on Gauchospace; You should also try to recreate the graphs with a 4th car, you don't need to turn in the graphs; we will go over in class
+* Add an additional super light car with mass 5,000 kg and a surface area 10m2
+
+* Compute the mean and maximum power for Cars A, B, C and for your new car, assuming that average highway speed is 80 km/hr with a standard deviation of 10km/hr;  Use 2 different methods to compute the mean and maximum power for each car type; a) **FOR** loop and b) the **pmap** function from **purr**
+
+* Create two boxplots (one for each method (**FOR** and **pmap**)) that show the range of power consumption (across sampled speeds) for each car type.
+
+Put the Rmarkdown in your assignment github and submit a link on Gauchospace for Assignment 3 when its ready to be graded
+
+**Grading Rubric**
+
+1. Correct R code for adding the super light car (5pts)
+2. Values for mean and maximum power for all 4 cars are in expected ranges (remember you are sampling so values will differ slightly) (5pts)
+3. Used both methods (**FOR** and **pmap**) correctly (4pts)
+4. Boxplots (6pts)
+  a) correctly show range of power consumption for each car type for the two methdos
+  b) good presentation (e.g axis labels, colors)
+5. Good coding practice (e.g Adequate documentation throughout) (5pts)
+
+Total out of 25pts
+
+
+
 
 
 # To Review for next class
