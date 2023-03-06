@@ -17,10 +17,10 @@ navbar:
           href: lectures/Class3_starting_functions.html
         - text: "Topic 4: Using Functions with Data"
           href: lectures/Class4_Using_functions_with_data.html
-#        - text: "Topic 5: Looping"
-#          href: lectures/Class5_Looping.html
-#        - text: "Topic 6: Control Structure"
-#          href: lectures/Class6_controlstructures.html
+        - text: "Topic 5: Looping"
+          href: lectures/Class5_Looping.html
+        - text: "Topic 6: Control Structure"
+          href: lectures/Class6_controlstructures.html
 #        - text: "Topic 7: Testing"
 #          href: lectures/Class8_Testing.html
 #        - text: "Topic 8: Packages"
@@ -40,10 +40,10 @@ navbar:
           href: topic_3_resource.html
         - text: "Topic 4: Looping"
           href: topic_4_resource.html
-#        - text: "Topic 5: Looping2"
-#          href: topic_5_resource.html
-#        - text: "Topic 6: Functions with data"
-#          href: topic_6_resource.html
+        - text: "Topic 5: Looping2"
+          href: topic_5_resource.html
+        - text: "Topic 6: Flow Control"
+          href: topic_6_resource.html
 #        - text: "Topic 7: Flow control"
 #          href: topic_7_resource.html
 #        - text: "Topic 8: A Bit more on functions"

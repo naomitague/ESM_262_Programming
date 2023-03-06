@@ -1,7 +1,7 @@
 ---
 title: "Control Structures"
 author: "Naomi Tague"
-date: "January, 2022"
+date: "January, 2023"
 output:
   slidy_presentation:
     highlight: pygments
@@ -21,16 +21,18 @@ library(tidyverse)
 library(purrr)
 ```
 
-# Exchange functions
-
 # Review DataTypes.Rmd
 
-How do you figure out the rarest fish in our simulated ocean
 
 Two key "take homes"
 
 * working with *factors*
 * how to return multiple items from a function using *list*
+
+How do you figure out the rarest fish in our simulated ocean?
+
+Try it - generate a simulated ocean by sampling; and then uses summary to find the rarest fish
+
 
 # Answer
 ```{r answer}
@@ -50,13 +52,15 @@ ggplot(data.frame(catch1=catch1), aes(catch1, fill=catch1))+geom_histogram(stat=
 # Flow Control (think of steering your program)
 
 Another KEY concept is flow control
-In your function you do different things depending on a conditions
+
+Allowing your function to "do" different things depending on a conditions
 
 CLASSIC example is 
 
-IF then ELSE
+*IF* then *ELSE*
 
-If you have multiple conditions we can use case_when
+If you have multiple conditions we can use *case_when*
+
 Here's a silly simple example of how it works
 
 # Simple example of flow control with if
@@ -80,7 +84,7 @@ mycortest(a, 1)
 # useful to add error checking
 mycortest  = function(x,y, thresh=0.8) {
   # compute correlation
-  if(length(x) != length(y)) {return("unequal lengths for x and y")}
+  if(length(x) != length(y)) {stop("unequal lengths for x and y")}
   res = cor(x,y)
   classification = ifelse(res > thresh, "GOOD", "NotGood")
   return(classification)
@@ -103,10 +107,16 @@ catch1 = "tuna"
 ifelse(catch1 == "tuna", "success", "tryagain")
 ```
 
-# multiple alternatives 
+# Multiple Alternatives 
 
- what if we have more than one category of fish - grade A, B, C
-steelhead are A, tuna are B and everything else is C
+What if we have more than one category of fish 
+
+grade A, B, C
+
+* steelhead are A, 
+* tuna are B 
+* everything else is C
+
 
 R and other languages have ways to do this multiple alternatives flow control
 in R an example is
@@ -150,31 +160,43 @@ classify_fish(catch2)
 Lets imagine that we are monitoring pollution in a lake, and we want to write a function that will let us know (flag) if risk associated with nutrient pollution are high, medium or low
 
 From ecological studies, we know that
-Risk is high if water temperature is greater than a threshold for more than 5 days, 
-and mean nutrient concentration is greater than a high threshold
 
-Risk is medium if water temperature is greater than a  threshold for more than 5 days
-and mean nutrient concentration is greater than a medium threshold
+*High Risk Conditions*
 
+* risk is high if water temperature is greater than a threshold for more than 5 days, 
+and 
+* mean nutrient concentration is greater than a high threshold
 
+*Medium Risk Conditions*
 
-Inputs:   
-nutrient concentration for at least 5 days
-temperature for at least 5 days
-thresholds for temperature and nutrient (with default values)
+* Risk is medium if water temperature is greater than a  threshold for more than 5 days
+and
+* mean nutrient concentration is greater than a medium threshold
 
-Output:
+*Eveything else is low risk*
 
-Mean Nutrient Concentration
-Pollution Risk as "low", "med" or "high"
+# Design the function
+
+**Inputs**:   
+
+* nutrient concentration for at least 5 days
+* temperature for at least 5 days
+* thresholds for temperature and nutrient (with default values)
+
+**Output**:
+
+* Mean Nutrient Concentration
+* Pollution Risk as "low", "med" or "high"
+
 
 Take a look at classify_lake 
+
 * example of while
 * example of flow control with if..else   and case_when
 
 ```{r}
 
-source("R/classify_lake.R")
+source("../R/classify_lake.R")
 
 # generate some data to try the function
 temperature = runif(min=4, max=35, n=30)
@@ -205,7 +227,7 @@ classify_lake(temperature=temperature, nutrient=nutrient)
 
 
 
-# Assignment -on your own
+# Assignment 
 
 Write a function that takes a vector of fish names and always returns three items
 
@@ -218,10 +240,9 @@ is under Data on ESM_262_Examples
 
 [Data on ESM_262_Examples]{https://github.com/naomitague/ESM_262_Examples/blob/main/Data/fish.txt}
 
-
 Turn in on Gauchospace what your function returns when you run with fish.txt!
 
-Challenge: What if we had multiple catches - how would you run your summary function for all of those catches - see below for an example to generate multiple catches
+*Challenge*: What if we had multiple catches - how would you run your summary function for all of those catches - see below for an example to generate multiple catches
 You don't have to run this one in but we will go over in class
 
 ```{r  challenge}
@@ -244,24 +265,3 @@ catches_res[[10]]
 
 ```
 
-# Assignment 4
-
-For this assignment work in pairs - and submit as a group
-
-* Design a function - you can pick anything - and you can essentially make up the equations as long as they conceptually make sense
-Make sure it has at least 2 inputs and 1 parameter (ideally more)
-
-* Code your function in R, save as a R file in subdirectory called R
-Make sure you include documentation (both at the top as we've shown in past examples, and inline)
-Include some error checking
-
-* In an Rmarkdown file, generate some data for 2 of the function inputs, 
-use a for  loop to run the function for the data 
-repeat the "looping" using something from the "purrr" package 
-
-* Graph the result (you can decide what the most interesting way to graph is)
-
-* Include your function.R file, and the Rmarkdown in your git repo and submit the link on Gauchospace
-Submit as a group with your partner, you will have to fill out the group select on Gauchspace first before you submit
-
-Also review the classify_lake.R function from today's lecture to make sure you understand

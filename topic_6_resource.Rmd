@@ -1,47 +1,43 @@
 ---
 title: "Assignment 5"
-
 ---
+# Assignment 
 
-# Assignment 4
-For this assignment work in pairs - and submit as a group
+Write a function that takes a vector of fish names and always returns three items
 
-* Design a function - you can pick anything - and you can essentially make up the equations as long as they conceptually make sense
-Make sure it has at least 2 inputs and 1 parameter (ideally more)
+* the most common fish, 
+* the rarest fish
+* the total number of fish
 
-* Code your function in R, save as a R file in subdirectory called R
-Make sure you include documentation (both at the top as we've shown in past examples, and inline)
-Include some error checking
+Create an Rmarkdown to demonstrate the use of your function with fish.txt - which
+is under Data on ESM_262_Examples
 
-* In an Rmarkdown file, generate some data for 2 of the function inputs, 
-use a for  loop to run the function for the data 
-repeat the "looping" using something from the "purrr" package 
+[Data on ESM_262_Examples]{https://github.com/naomitague/ESM_262_Examples/blob/main/Data/fish.txt}
 
-* Graph the result (you can decide what the most interesting way to graph is)
+Turn in on Gauchospace what your function returns when you run with fish.txt!
 
-* Include your function.R file, and the Rmarkdown in your git repo and submit the link on Gauchospace
-Submit as a group with your partner, you will have to fill out the group select on Gauchspace first before you submit
-# Assignment 5
-
-Working in a new group
+*Challenge*: What if we had multiple catches - how would you run your summary function for all of those catches - see below for an example to generate multiple catches
+You don't have to run this one in but we will go over in class
 
 
+```{r  challenge}
 
-Write that function, save it in a .R file
+library(purrr)
+# generate some data if we had 10 different fishing days
+# some examples of using the purr family of functions
 
-In an Rmarkdown document, generate some data to experiment with your function, create scenario where you repeat the function for each row in a data set (you can use this for inputs and/or parameters) - Similar to what we did for the autopower function when we ran it for multiple speeds (but you could do something over time, multiple climate inputs, multiple ages...depending on your function of course)
+possible.fish = c("salmon","steelhead","shark","tuna","cod")
 
-Then generate a scenario where you repeat what you just did (for all rows) where you vary another a parameter using pmap (or a loop) - Similar to what we did when we  ran our autopower function for different cars and speeds - and then repeated the cars/speed scenarios for different drag coefficients
+# lets generate random sample of the number of fish caught on each day
+ndays=10
+catches = round(runif(min=3, max=400, n=ndays))
 
-Make sure you use good programming practices
-* provide details on the function contract at the top of the function - what are inputs/output their units format etc
-* understandable variables names
-* commenting through out so its easy to understand what you are doing
-* add error checking
+# now for each fishing day (and its number of fish caught) - use sample to genreate the fish
+catches_res = list(catches) %>% pmap(sample, x=possible.fish, replace=TRUE)
+# look at the sample catches
+catches_res[[1]]
+catches_res[[10]]
 
+# ok so how do we get the summary (rarest fish, number of fish for all catches in catch_res)?
 
-# Review for next class
-
-* DataTypes.Rmd
-* compute_simpson_index.R
-* computediversity.R
+```
