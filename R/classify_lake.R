@@ -1,6 +1,6 @@
 #' classify_lake
 #'
-#' compute net present value
+#' classify pollution risk for a lake
 #' @param nutrient concentraion (mg/L) (at least 5 days)
 #' @param temperature (C) (at least 5 days)
 #' @param nutrient_threshold_med (mg/L) (default 5)
@@ -21,18 +21,18 @@ classify_lake = function(nutrient, temperature, nutrient_threshold_med=5,
 
 
   # a while loop is useful here
-  numb10 = 0
+  numhotday = 0
   i=1
   # we use while here because we want to exit our loop any time we get more than 5 days with
   # air temperature greater than the threshold
 
-  while ( (numb10 < 5) && (i <= length(temperature))) {
+  while ( (numhotday < 5) && (i <= length(temperature))) {
       if (temperature[i] > temperature_threshold)
         # we have another day with greater than 10 so accumulate
-        numb10 = numb10+1
+        numhotday = numhotday+1
       else
         # we have to start over
-        numb10 = 0
+        numhotday = 0
       # remember with while loops we need to increment our counter
       i = i+1
 
@@ -42,7 +42,7 @@ classify_lake = function(nutrient, temperature, nutrient_threshold_med=5,
   mean_nutrient = mean(nutrient)
 
   # only high or med if temperature has been 10 degrees for more than 5 days
-  if (numb10 >= 5) {
+  if (numhotday >= 5) {
    risk= case_when ( mean_nutrient < nutrient_threshold_med ~ "low",
                      mean_nutrient >= nutrient_threshold_med &
                        mean_nutrient < nutrient_threshold_high ~ "med",
