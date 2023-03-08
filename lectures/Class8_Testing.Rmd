@@ -1,7 +1,7 @@
 ---
 title: 'Testing'
 author: "Naomi Tague"
-date: "January, 2022"
+date: "January, 2023"
 output:
   slidy_presentation:
    highlight: pygments
@@ -11,7 +11,7 @@ output:
     highlight: pygments
 ---
 
-```{r setup, include=FALSE}
+``` {r setup, include=FALSE}
 knitr::opts_chunk$set(echo =TRUE)
 knitr::opts_chunk$set(error=TRUE)
 #knitr::opts_knit$set(root.dir = '/Users/christina/Desktop/Courses.local/ESM262n/docs/packages')
@@ -48,20 +48,21 @@ This type of software is available for R, Python, C etc.
 # <span style="color:orange">Testing in R</span>
 
 In R, *testthat* library 
-install and add this library
 
-If you are in the working directory where you’ve stored the files in a specific directory (e.g **R**) you can use *testthat* to automate testing of your functions
+Install and add this library
+
 
 * need devtools and “testthat” libraries
 * test_dir(“name”) :runs all tests in the “name” subdirectory  (all files beginning with the word “test”
 * test_file(“name”): runs all  the tests in a file called “name”
 
+What is a test?
+
 Testing in R uses expectation
 
 # <span style="color:orange">Expectation</span>
 
-
-tests you can use to make sure your code is working the way you think it should be working
+functions that you can use to make sure your code is working the way you think it should be working
 
 * expect_true(condition)
 * expect_equal(value, value)
@@ -97,14 +98,25 @@ a = seq(from=1, to=10)
 expect_length(a, 10)
 expect_length(a, 11)
 
+```
 
-# We can use expectation with functions 
-# and test just to make sure they are working as expected
+# <span style="color:orange">Expectation</span>
+
+We can use expectation with functions 
+
+Quickly and repeatedly test that they are working as expected 
+as you develop code
+
+
+```{r testfunctions}
+
 source("../R/compute_NPV.R")
+
 futurevalue = 100
 expect_true(compute_NPV(value=futurevalue, time=10, discount=0.01) > 0)
 futurevalue = -100
 expect_true(compute_NPV(value=futurevalue, time=10, discount=0.01) > 0)
+
 
 # what if function returns a list?
 # we can use the buit in summary function to see how this works
@@ -118,26 +130,32 @@ summary(testdata)["Max."]
 # well the max should be greater than the min right?
 
 expect_true((summary(testdata)["Max."]-summary(testdata)["Min."]) > 0)
+```
 
-# lets create a function with an error 
-# imagine total recharge of water to soil after rain (in mm) is daily rainfall minus interception (in mm with default of 1mm) lost on any given day
-# lets define a function that returns total rainfall and total recharge given an input of
-# rainfall and then a value for interception
+# More on testing functions 
 
-effective_rain=function(rain, interception_loss=1) {
-  
-  # easy part - get total rain
-  totalrain = sum(rain)
-  
-  # interception happens everyday so we need a new vector
-  recharge = rain-interception_loss
-  totalrecharge = sum(recharge)
-  
-  return(list(totalrain=totalrain, totalrecharge=totalrecharge))}
+Lets create a function with an error 
+ 
+We want a function that computes total rainfall and total recharge from a daily time series of rainfall
+ 
+Daily recharge of water to soil after rain is:
+
+recharge = daily rainfall - interception 
+
+inputs: time series of daily  rainfall (mm), single value interception (default 1mm)
+
+outputs: totalrainfall (mm), totalrecharge (mm)
 
 
-# lets do some simple test
-# if it never rains for 730 days then both should be zero
+
+```{r testfunctions2}
+
+# Implement function
+source("../R/compute_recharge.R")
+
+# lets do some simple tests
+# if it never rains for 730 days then both total rainfall and recharage # should be zero
+
 raindata = rep(0, times=730)
 expect_that(effective_rain(raindata)$totalrain, equals(0))
 # so far so good, now for recharge
@@ -147,23 +165,13 @@ expect_that(effective_rain(raindata)$totalrecharge, equals(0))
 
 # what went wrong???
 
-effective_rain=function(rain, interception_loss=1) {
-  
-  # easy part - get total rain
-  totalrain = sum(rain)
-  
-  # interception happens everyday so we need a new vector
-  recharge = rain-interception_loss
-  recharge = pmax(recharge,0)
-  totalrecharge = sum(recharge)
-  
-  return(list(totalrain=totalrain, totalrecharge=totalrecharge))}
-raindata = rep(0, times=730)
-expect_that(effective_rain(raindata)$totalrecharge, equals(0))
 
 ```
 
-# The art of testing
+
+
+# <span style="color:orange">The art of testing</span>
+
 
 It is good practice to create tests for functions (especially
 useful if you are going to have multiple functions and/or multiple developers)
@@ -179,21 +187,18 @@ Usually we want to run multiple tests..
 # <span style="color:orange">Testing in R</span>
 
 
-A **test** runs an **expectation** function and returns a message
+A **test** runs a bunch of **expectation** functions and returns a message
 
 Format
 
 test_that(description, series of expectations)
-```{r testing2, eval=FALSE}
 
+We usually store these in a subdirectory called **tests**
 
-source("../R/compute_NPV.R")
-# lets do a simple test if profit is 0 , NPV should be 0
-# if time is 0, NPV should be the original value
+Example *test_compute_NPV.R*
 
 
 
-```
 # <span style="color:orange">Using tests </span>
 
 What we really want is to have tests that we **always** run, everytime we change something
@@ -214,13 +219,29 @@ We will talk more about making packages next week
 
 ```{r testing, eval=FALSE}
 
+source("../R/compute_NPV.R")
 # put your test in a file
-test_file("tests/test_compute_NPV.R")
+test_file("../tests/test_compute_NPV.R")
 
 
 # run all tests
-test_dir("tests")
+test_dir("../tests")
 ```
+
+# Spring Summary Function
+
+A more complex function examples - a function that extracts information
+about spring temperature  from a long time series of daily
+climate data
+
+Review the tests and *spring_summary* function for next class
+These are in 
+
+[ESM_262_Examples](https://github.com/naomitague/ESM_262_Examples)
+
+PLEASE pull most recent version - I had to make some changes to *spring_summary*
+
+# More on Testing
 
 A good source for more expectation code and ways to do testing
 
@@ -229,25 +250,45 @@ A good source for more expectation code and ways to do testing
 
 # Assignment 
 
-For this assignment work in pairs - and submit as a group
+For this assignment work in *pairs* - and submit as a group
 
-* Design a function - you can pick anything - and you can essentially make up the equations as long as they conceptually make sense
-Make sure it has at least 2 inputs and 1 parameter (ideally more)
+* Design a function - you can pick any subject and you can even make up the equations as long as they conceptually make sense
+  * Make sure it has at least 2 inputs and 1 parameter (ideally more) and at least 2 outputs
+  * Code your function in R, save as a R file in subdirectory called R
+  * Make sure you include documentation (both at the top as we've shown in past examples, and inline)
+  * Include some error checking
 
-* Code your function in R, save as a R file in subdirectory called R
-Make sure you include documentation (both at the top as we've shown in past examples, and inline)
-Include some error checking
+* In an Rmarkdown file, generate some data for 2 of the function inputs
+  * use a *for*  loop to run the function for the data
+  * repeat the "looping" using something from the "purrr" package 
+  * Graph results (you can decide what the most interesting way to graph - you just need to make one graph)
 
-* In an Rmarkdown file, generate some data for 2 of the function inputs, 
-use a for  loop to run the function for the data 
-repeat the "looping" using something from the "purrr" package 
+* Write at least 2 tests for your function; store in a separate test file
 
-* Graph the result (you can decide what the most interesting way to graph is)
+* Put this in a git repo that includes an R subdirectory a tests subsdirectory and an Rmarkdown file and submit the link on Gauchospace (or you can put all of this in a new git repo or a subdirectory of an existing git repo)
 
-* Write at least one test for your function; store in a separate test file
+Submit the link to repo (and name of subdirectory if part of a larger git project) as a group with your partner,
 
-* Include your function.R file, your file with a test and the Rmarkdown in your git repo and submit the link on Gauchospace
-Submit as a group with your partner, you will have to fill out the group select on Gauchspace first before you submit
+You will have to fill out the group select on Gauchospace first before you submit
 
-Also review the classify_lake.R function from today's lecture to make sure you understand
+*Grading Rubric*
 
+* Created a function 
+  * at least 2 inputs, 1 parameter and 2 outputs (it can have more) (5pts)
+  * includes error checking (5 pts)
+
+
+* Rmarkdown that generates test data and runs the function
+  * data generation ( 5pts)
+  * run function multiple times with a loop (5 pts)
+  * run function multiple times with something from *purr* (pmap) (5pts)
+  * Graphs results (5 pts)
+
+* Test file
+  * a file with two tests (10pts)
+
+Good programming practices (10 pts)
+Total 50pts
+
+Also review spring_summary.R and tests of that function from 
+[ESM_262_Examples](https://github.com/naomitague/ESM_262_Examples)

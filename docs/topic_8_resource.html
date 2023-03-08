@@ -2520,6 +2520,12 @@ Topics
 </button>
 <div class="nav-dropdown-content">
 <a href="lectures/Class1_intro.html">Topic 1: Programming Basics and Best Practices</a>
+<a href="lectures/Class2_modularity.html">Topic 2: Modularity</a>
+<a href="lectures/Class3_starting_functions.html">Topic 3: Creating Functions</a>
+<a href="lectures/Class4_Using_functions_with_data.html">Topic 4: Using Functions with Data</a>
+<a href="lectures/Class5_Looping.html">Topic 5: Looping</a>
+<a href="lectures/Class6_controlstructures.html">Topic 6: Control Structure</a>
+<a href="lectures/Class8_Testing.html">Topic 7: Testing</a>
 </div>
 </div>
 <div class="nav-dropdown">
@@ -2530,6 +2536,13 @@ Assignments
 </button>
 <div class="nav-dropdown-content">
 <a href="topic_1_resource.html">Topic 1: Programming Basics and Best Practices</a>
+<a href="topic_2_resource.html">Topic 2: Modularity</a>
+<a href="topic_3_resource.html">Topic 3: Functions</a>
+<a href="topic_4_resource.html">Topic 4: Looping</a>
+<a href="topic_5_resource.html">Topic 5: Looping2</a>
+<a href="topic_6_resource.html">Topic 6: Flow Control</a>
+<a href="topic_7_resource.html">Topic 7: Flow control</a>
+<a href="topic_8_resource.html">Topic 8: Testing</a>
 </div>
 </div>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
@@ -2554,27 +2567,53 @@ Assignments
 <h3>Contents</h3>
 <ul>
 <li><a href="#assignment" id="toc-assignment">Assignment</a></li>
-<li><a href="#review-testing.rmd" id="toc-review-testing.rmd">Review Testing.Rmd</a></li>
 </ul>
 </nav>
 </div>
 <h1 id="assignment">Assignment</h1>
-<p>You can complete this assignment on your own OR in pairs!</p>
-<p>Create a function that computes a level of risk associated with a extreme temperature events.</p>
-<p>You can decide who/what the risk is to - for example risk of heat related illness for urban dwellers, or risk of heat related mortality for a particular type of tree</p>
-<p>You function should take as input daily temperature data - from this data you should estimate how often extremes occur -</p>
-<p>What is an extreme temperature? you should include a threshold to define extremes as one of the input parameters. You can be flexible here - if you want you can think of extremes as only occurring when you have temperature above a threshold for a sequence several days (and the number of days would be another parameter) or something simpler - just any temperature above a threshold; if you want you could have different thresholds to define different “severity” of extremes.</p>
-<p>What is risk? You will develop the equation for risk on your own!
-Be creative here - what might make sense? how might temperature extremes translate into risk; would it be a linear equation- something else? What might be some of the parameters that influence risk (incomes, tree species, age? (include at least two parameters)
-How many categories of risk will you have</p>
-<p>Have your function return both the risk associated with the input temperature sequence AND then number of extremes</p>
-<p>Code your function in R
-Make sure you document well</p>
-<p>Create an Rmarkdown to demonstrate the use of your function with tmax.txt - which
-is under Data on ESM_262_Examples</p>
-<p>[Data on ESM_262_Examples]{<a href="https://github.com/naomitague/ESM_262_Examples/blob/main/Data/clim.txt" class="uri">https://github.com/naomitague/ESM_262_Examples/blob/main/Data/clim.txt</a>}</p>
-<p>Submit the link to the R function code and your Rmarkdown on Gauchospace</p>
-<h1 id="review-testing.rmd">Review Testing.Rmd</h1>
+<p>For this assignment work in <em>pairs</em> - and submit as a group</p>
+<ul>
+<li><p>Design a function - you can pick any subject and you can even make up the equations as long as they conceptually make sense</p>
+<ul>
+<li>Make sure it has at least 2 inputs and 1 parameter (ideally more) and at least 2 outputs</li>
+<li>Code your function in R, save as a R file in subdirectory called R</li>
+<li>Make sure you include documentation (both at the top as we’ve shown in past examples, and inline)</li>
+<li>Include some error checking</li>
+</ul></li>
+<li><p>In an Rmarkdown file, generate some data for 2 of the function inputs</p>
+<ul>
+<li>use a <em>for</em> loop to run the function for the data</li>
+<li>repeat the “looping” using something from the “purrr” package</li>
+<li>Graph results (you can decide what the most interesting way to graph - you just need to make one graph)</li>
+</ul></li>
+<li><p>Write at least 2 tests for your function; store in a separate test file</p></li>
+<li><p>Put this in a git repo that includes an R subdirectory a tests subsdirectory and an Rmarkdown file and submit the link on Gauchospace (or you can put all of this in a new git repo or a subdirectory of an existing git repo)</p></li>
+</ul>
+<p>Submit the link to repo (and name of subdirectory if part of a larger git project) as a group with your partner,</p>
+<p>You will have to fill out the group select on Gauchospace first before you submit</p>
+<p><em>Grading Rubric</em></p>
+<ul>
+<li>Created a function
+<ul>
+<li>at least 2 inputs, 1 parameter and 2 outputs (it can have more) (5pts)</li>
+<li>includes error checking (5 pts)</li>
+</ul></li>
+<li>Rmarkdown that generates test data and runs the function
+<ul>
+<li>data generation ( 5pts)</li>
+<li>run function multiple times with a loop (5 pts)</li>
+<li>run function multiple times with something from <em>purr</em> (pmap) (5pts)</li>
+<li>Graphs results (5 pts)</li>
+</ul></li>
+<li>Test file
+<ul>
+<li>a file with two tests (10pts)</li>
+</ul></li>
+</ul>
+<p>Good programming practices (10 pts)
+Total 50pts</p>
+<p>Also review spring_summary.R and tests of that function from
+<a href="https://github.com/naomitague/ESM_262_Examples">ESM_262_Examples</a></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

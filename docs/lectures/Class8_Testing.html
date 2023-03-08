@@ -8,141 +8,154 @@
   <meta name="author" content="Naomi Tague" />
   <title>Testing</title>
   <style type="text/css">
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-            code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode { white-space: pre; position: relative; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    code.sourceCode { white-space: pre-wrap; }
-    code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      {   }
-    @media screen {
-    code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-    code span.at { color: #7d9029; } /* Attribute */
-    code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #4070a0; } /* Char */
-    code span.cn { color: #880000; } /* Constant */
-    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-    code span.dt { color: #902000; } /* DataType */
-    code span.dv { color: #40a070; } /* DecVal */
-    code span.er { color: #ff0000; font-weight: bold; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #40a070; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-    code span.op { color: #666666; } /* Operator */
-    code span.ot { color: #007020; } /* Other */
-    code span.pp { color: #bc7a00; } /* Preprocessor */
-    code span.sc { color: #4070a0; } /* SpecialChar */
-    code span.ss { color: #bb6688; } /* SpecialString */
-    code span.st { color: #4070a0; } /* String */
-    code span.va { color: #19177c; } /* Variable */
-    code span.vs { color: #4070a0; } /* VerbatimString */
-    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-          </style>
-  <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
-  { counter-reset: source-line 0; }
+{ counter-reset: source-line 0; }
 pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
+{ position: relative; left: -4em; counter-increment: source-line; }
 pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
   <style type="text/css">
 body
 {
@@ -512,11 +525,12 @@ list-style-type: none;
   <p class="author">
 Naomi Tague
   </p>
-  <p class="date">January, 2022</p>
+  <p class="date">January, 2023</p>
 </div>
 <div id="testing" class="slide section level1">
 <h1><span style="color:orange">Testing</span></h1>
-<p>Top 12 Reasons to Write Unit Tests - Burke and Coyner (Java programmers)</p>
+<p>Top 12 Reasons to Write Unit Tests - Burke and Coyner (Java
+programmers)</p>
 <ul>
 <li>Tests reduce bugs in new features</li>
 <li>Tests reduce bugs in existing features</li>
@@ -525,24 +539,30 @@ Naomi Tague
 <li>Testing makes development faster</li>
 <li>Tests reduce fear</li>
 </ul>
-<p>Model developers now often use software to help them automate the testing process Re-uses tests - makes it efficient to repeat many tests as you develop and modify the code</p>
-<p>Particularly helpful when you have multiple modules (as in our mangrove example)</p>
+<p>Model developers now often use software to help them automate the
+testing process Re-uses tests - makes it efficient to repeat many tests
+as you develop and modify the code</p>
+<p>Particularly helpful when you have multiple modules (as in our
+mangrove example)</p>
 <p>This type of software is available for R, Python, C etc.</p>
 </div>
 <div id="testing-in-r" class="slide section level1">
 <h1><span style="color:orange">Testing in R</span></h1>
-<p>In R, <em>testthat</em> library install and add this library</p>
-<p>If you are in the working directory where you’ve stored the files in a specific directory (e.g <strong>R</strong>) you can use <em>testthat</em> to automate testing of your functions</p>
+<p>In R, <em>testthat</em> library</p>
+<p>Install and add this library</p>
 <ul>
 <li>need devtools and “testthat” libraries</li>
-<li>test_dir(“name”) :runs all tests in the “name” subdirectory (all files beginning with the word “test”</li>
+<li>test_dir(“name”) :runs all tests in the “name” subdirectory (all
+files beginning with the word “test”</li>
 <li>test_file(“name”): runs all the tests in a file called “name”</li>
 </ul>
+<p>What is a test?</p>
 <p>Testing in R uses expectation</p>
 </div>
 <div id="expectation" class="slide section level1">
 <h1><span style="color:orange">Expectation</span></h1>
-<p>tests you can use to make sure your code is working the way you think it should be working</p>
+<p>functions that you can use to make sure your code is working the way
+you think it should be working</p>
 <ul>
 <li>expect_true(condition)</li>
 <li>expect_equal(value, value)</li>
@@ -550,141 +570,212 @@ Naomi Tague
 <li>expect_null(value)</li>
 <li>expect_length(object, n)</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># runs a test on a statement and checks to see if it is correct</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="co"># this one should work</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">expect_equal</span>(<span class="dv">2</span><span class="op">+</span><span class="dv">2</span>, <span class="dv">4</span>)</span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># this one should &#39;throw and error&#39;</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="kw">expect_equal</span>(<span class="dv">2</span><span class="op">+</span><span class="dv">5</span>, <span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># runs a test on a statement and checks to see if it is correct</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># this one should work</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">expect_equal</span>(<span class="dv">2</span><span class="sc">+</span><span class="dv">2</span>, <span class="dv">4</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># this one should &#39;throw and error&#39;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">expect_equal</span>(<span class="dv">2</span><span class="sc">+</span><span class="dv">5</span>, <span class="dv">4</span>)</span></code></pre></div>
 <pre><code>## Error: 2 + 5 not equal to 4.
 ## 1/1 mismatches
 ## [1] 7 - 4 == 3</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># we can also use expect_true</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="co"># works with variables two</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a>a =<span class="st"> </span><span class="dv">200</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="kw">expect_true</span>(a <span class="op">&gt;</span><span class="st"> </span><span class="dv">2</span> )</span>
-<span id="cb3-5"><a href="#cb3-5"></a>a =<span class="st"> </span><span class="dv">0</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="kw">expect_true</span>(a <span class="op">&gt;</span><span class="st"> </span><span class="dv">2</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we can also use expect_true</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># works with variables two</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="dv">200</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">expect_true</span>(a <span class="sc">&gt;</span> <span class="dv">2</span> )</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">expect_true</span>(a <span class="sc">&gt;</span> <span class="dv">2</span> )</span></code></pre></div>
 <pre><code>## Error: a &gt; 2 is not TRUE
 ## 
 ## `actual`:   FALSE
 ## `expected`: TRUE</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># matches</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a>fish1 =<span class="st"> &quot;salmon&quot;</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a>fish2 =<span class="st"> &quot;trout&quot;</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="kw">expect_match</span>(fish1, fish2)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># matches</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>fish1 <span class="ot">=</span> <span class="st">&quot;salmon&quot;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>fish2 <span class="ot">=</span> <span class="st">&quot;trout&quot;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">expect_match</span>(fish1, fish2)</span></code></pre></div>
 <pre><code>## Error: `fish1` does not match &quot;trout&quot;.
 ## Actual value: &quot;salmon&quot;</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># length</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a>a =<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">1</span>, <span class="dt">to=</span><span class="dv">10</span>)</span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="kw">expect_length</span>(a, <span class="dv">10</span>)</span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="kw">expect_length</span>(a, <span class="dv">11</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># length</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="fu">seq</span>(<span class="at">from=</span><span class="dv">1</span>, <span class="at">to=</span><span class="dv">10</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">expect_length</span>(a, <span class="dv">10</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">expect_length</span>(a, <span class="dv">11</span>)</span></code></pre></div>
 <pre><code>## Error: `a` has length 10, not length 11.</code></pre>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># We can use expectation with functions </span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="co"># and test just to make sure they are working as expected</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="kw">source</span>(<span class="st">&quot;../R/compute_NPV.R&quot;</span>)</span>
-<span id="cb9-4"><a href="#cb9-4"></a>futurevalue =<span class="st"> </span><span class="dv">100</span></span>
-<span id="cb9-5"><a href="#cb9-5"></a><span class="kw">expect_true</span>(<span class="kw">compute_NPV</span>(<span class="dt">value=</span>futurevalue, <span class="dt">time=</span><span class="dv">10</span>, <span class="dt">discount=</span><span class="fl">0.01</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)</span>
-<span id="cb9-6"><a href="#cb9-6"></a>futurevalue =<span class="st"> </span><span class="dv">-100</span></span>
-<span id="cb9-7"><a href="#cb9-7"></a><span class="kw">expect_true</span>(<span class="kw">compute_NPV</span>(<span class="dt">value=</span>futurevalue, <span class="dt">time=</span><span class="dv">10</span>, <span class="dt">discount=</span><span class="fl">0.01</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)</span></code></pre></div>
-<pre><code>## Error: &gt;... is not TRUE
+</div>
+<div id="expectation-1" class="slide section level1">
+<h1><span style="color:orange">Expectation</span></h1>
+<p>We can use expectation with functions</p>
+<p>Quickly and repeatedly test that they are working as expected as you
+develop code</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;../R/compute_NPV.R&quot;</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>futurevalue <span class="ot">=</span> <span class="dv">100</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">expect_true</span>(<span class="fu">compute_NPV</span>(<span class="at">value=</span>futurevalue, <span class="at">time=</span><span class="dv">10</span>, <span class="at">discount=</span><span class="fl">0.01</span>) <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>futurevalue <span class="ot">=</span> <span class="sc">-</span><span class="dv">100</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">expect_true</span>(<span class="fu">compute_NPV</span>(<span class="at">value=</span>futurevalue, <span class="at">time=</span><span class="dv">10</span>, <span class="at">discount=</span><span class="fl">0.01</span>) <span class="sc">&gt;</span> <span class="dv">0</span>)</span></code></pre></div>
+<pre><code>## Error: ... &gt; 0 is not TRUE
 ## 
 ## `actual`:   FALSE
 ## `expected`: TRUE</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># what if function returns a list?</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="co"># we can use the buit in summary function to see how this works</span></span>
-<span id="cb11-3"><a href="#cb11-3"></a>testdata =<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">mean=</span><span class="dv">25</span>, <span class="dt">sd=</span><span class="dv">3</span>, <span class="dt">n=</span><span class="dv">100</span>)</span>
-<span id="cb11-4"><a href="#cb11-4"></a><span class="kw">summary</span>(testdata)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># what if function returns a list?</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># we can use the buit in summary function to see how this works</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>testdata <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="at">mean=</span><span class="dv">25</span>, <span class="at">sd=</span><span class="dv">3</span>, <span class="at">n=</span><span class="dv">100</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(testdata)</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   17.08   22.30   24.73   24.85   27.08   32.06</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># it is actually returning a list, but what are the names?</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="kw">names</span>(<span class="kw">summary</span>(testdata))</span></code></pre></div>
+##   17.61   23.01   24.73   24.94   26.82   33.32</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># it is actually returning a list, but what are the names?</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(<span class="fu">summary</span>(testdata))</span></code></pre></div>
 <pre><code>## [1] &quot;Min.&quot;    &quot;1st Qu.&quot; &quot;Median&quot;  &quot;Mean&quot;    &quot;3rd Qu.&quot; &quot;Max.&quot;</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># now we can specify them</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a><span class="kw">summary</span>(testdata)[<span class="st">&quot;Max.&quot;</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># now we can specify them</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(testdata)[<span class="st">&quot;Max.&quot;</span>]</span></code></pre></div>
 <pre><code>##     Max. 
-## 32.06373</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># and use in a test to make sure this function works -...hmm</span></span>
-<span id="cb17-2"><a href="#cb17-2"></a><span class="co"># well the max should be greater than the min right?</span></span>
-<span id="cb17-3"><a href="#cb17-3"></a></span>
-<span id="cb17-4"><a href="#cb17-4"></a><span class="kw">expect_true</span>((<span class="kw">summary</span>(testdata)[<span class="st">&quot;Max.&quot;</span>]<span class="op">-</span><span class="kw">summary</span>(testdata)[<span class="st">&quot;Min.&quot;</span>]) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)</span>
-<span id="cb17-5"><a href="#cb17-5"></a></span>
-<span id="cb17-6"><a href="#cb17-6"></a><span class="co"># lets create a function with an error </span></span>
-<span id="cb17-7"><a href="#cb17-7"></a><span class="co"># imagine total recharge of water to soil after rain (in mm) is daily rainfall minus interception (in mm with default of 1mm) lost on any given day</span></span>
-<span id="cb17-8"><a href="#cb17-8"></a><span class="co"># lets define a function that returns total rainfall and total recharge given an input of</span></span>
-<span id="cb17-9"><a href="#cb17-9"></a><span class="co"># rainfall and then a value for interception</span></span>
-<span id="cb17-10"><a href="#cb17-10"></a></span>
-<span id="cb17-11"><a href="#cb17-11"></a>effective_rain=<span class="cf">function</span>(rain, <span class="dt">interception_loss=</span><span class="dv">1</span>) {</span>
-<span id="cb17-12"><a href="#cb17-12"></a>  </span>
-<span id="cb17-13"><a href="#cb17-13"></a>  <span class="co"># easy part - get total rain</span></span>
-<span id="cb17-14"><a href="#cb17-14"></a>  totalrain =<span class="st"> </span><span class="kw">sum</span>(rain)</span>
-<span id="cb17-15"><a href="#cb17-15"></a>  </span>
-<span id="cb17-16"><a href="#cb17-16"></a>  <span class="co"># interception happens everyday so we need a new vector</span></span>
-<span id="cb17-17"><a href="#cb17-17"></a>  recharge =<span class="st"> </span>rain<span class="op">-</span>interception_loss</span>
-<span id="cb17-18"><a href="#cb17-18"></a>  totalrecharge =<span class="st"> </span><span class="kw">sum</span>(recharge)</span>
-<span id="cb17-19"><a href="#cb17-19"></a>  </span>
-<span id="cb17-20"><a href="#cb17-20"></a>  <span class="kw">return</span>(<span class="kw">list</span>(<span class="dt">totalrain=</span>totalrain, <span class="dt">totalrecharge=</span>totalrecharge))}</span>
-<span id="cb17-21"><a href="#cb17-21"></a></span>
-<span id="cb17-22"><a href="#cb17-22"></a></span>
-<span id="cb17-23"><a href="#cb17-23"></a><span class="co"># lets do some simple test</span></span>
-<span id="cb17-24"><a href="#cb17-24"></a><span class="co"># if it never rains for 730 days then both should be zero</span></span>
-<span id="cb17-25"><a href="#cb17-25"></a>raindata =<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>, <span class="dt">times=</span><span class="dv">730</span>)</span>
-<span id="cb17-26"><a href="#cb17-26"></a><span class="kw">expect_that</span>(<span class="kw">effective_rain</span>(raindata)<span class="op">$</span>totalrain, <span class="kw">equals</span>(<span class="dv">0</span>))</span>
-<span id="cb17-27"><a href="#cb17-27"></a><span class="co"># so far so good, now for recharge</span></span>
-<span id="cb17-28"><a href="#cb17-28"></a></span>
-<span id="cb17-29"><a href="#cb17-29"></a>raindata =<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>, <span class="dt">times=</span><span class="dv">730</span>)</span>
-<span id="cb17-30"><a href="#cb17-30"></a><span class="kw">expect_that</span>(<span class="kw">effective_rain</span>(raindata)<span class="op">$</span>totalrecharge, <span class="kw">equals</span>(<span class="dv">0</span>))</span></code></pre></div>
+## 33.32251</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># and use in a test to make sure this function works -...hmm</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># well the max should be greater than the min right?</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">expect_true</span>((<span class="fu">summary</span>(testdata)[<span class="st">&quot;Max.&quot;</span>]<span class="sc">-</span><span class="fu">summary</span>(testdata)[<span class="st">&quot;Min.&quot;</span>]) <span class="sc">&gt;</span> <span class="dv">0</span>)</span></code></pre></div>
+</div>
+<div id="more-on-testing-functions" class="slide section level1">
+<h1>More on testing functions</h1>
+<p>Lets create a function with an error</p>
+<p>We want a function that computes total rainfall and total recharge
+from a daily time series of rainfall</p>
+<p>Daily recharge of water to soil after rain is:</p>
+<p>recharge = daily rainfall - interception</p>
+<p>inputs: time series of daily rainfall (mm), single value interception
+(default 1mm)</p>
+<p>outputs: totalrainfall (mm), totalrecharge (mm)</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Implement function</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;../R/compute_recharge.R&quot;</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># lets do some simple tests</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># if it never rains for 730 days then both total rainfall and recharage # should be zero</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>raindata <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">730</span>)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="fu">expect_that</span>(<span class="fu">effective_rain</span>(raindata)<span class="sc">$</span>totalrain, <span class="fu">equals</span>(<span class="dv">0</span>))</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="co"># so far so good, now for recharge</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>raindata <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">730</span>)</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="fu">expect_that</span>(<span class="fu">effective_rain</span>(raindata)<span class="sc">$</span>totalrecharge, <span class="fu">equals</span>(<span class="dv">0</span>))</span></code></pre></div>
 <pre><code>## Error: `x` not equal to `expected`.
 ## 1/1 mismatches
 ## [1] -730 - 0 == -730</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># what went wrong???</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a></span>
-<span id="cb19-3"><a href="#cb19-3"></a>effective_rain=<span class="cf">function</span>(rain, <span class="dt">interception_loss=</span><span class="dv">1</span>) {</span>
-<span id="cb19-4"><a href="#cb19-4"></a>  </span>
-<span id="cb19-5"><a href="#cb19-5"></a>  <span class="co"># easy part - get total rain</span></span>
-<span id="cb19-6"><a href="#cb19-6"></a>  totalrain =<span class="st"> </span><span class="kw">sum</span>(rain)</span>
-<span id="cb19-7"><a href="#cb19-7"></a>  </span>
-<span id="cb19-8"><a href="#cb19-8"></a>  <span class="co"># interception happens everyday so we need a new vector</span></span>
-<span id="cb19-9"><a href="#cb19-9"></a>  recharge =<span class="st"> </span>rain<span class="op">-</span>interception_loss</span>
-<span id="cb19-10"><a href="#cb19-10"></a>  recharge =<span class="st"> </span><span class="kw">pmax</span>(recharge,<span class="dv">0</span>)</span>
-<span id="cb19-11"><a href="#cb19-11"></a>  totalrecharge =<span class="st"> </span><span class="kw">sum</span>(recharge)</span>
-<span id="cb19-12"><a href="#cb19-12"></a>  </span>
-<span id="cb19-13"><a href="#cb19-13"></a>  <span class="kw">return</span>(<span class="kw">list</span>(<span class="dt">totalrain=</span>totalrain, <span class="dt">totalrecharge=</span>totalrecharge))}</span>
-<span id="cb19-14"><a href="#cb19-14"></a>raindata =<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>, <span class="dt">times=</span><span class="dv">730</span>)</span>
-<span id="cb19-15"><a href="#cb19-15"></a><span class="kw">expect_that</span>(<span class="kw">effective_rain</span>(raindata)<span class="op">$</span>totalrecharge, <span class="kw">equals</span>(<span class="dv">0</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># what went wrong???</span></span></code></pre></div>
 </div>
 <div id="the-art-of-testing" class="slide section level1">
-<h1>The art of testing</h1>
-<p>It is good practice to create tests for functions (especially useful if you are going to have multiple functions and/or multiple developers)</p>
+<h1><span style="color:orange">The art of testing</span></h1>
+<p>It is good practice to create tests for functions (especially useful
+if you are going to have multiple functions and/or multiple
+developers)</p>
 <p>It make sure that the function returns what you think</p>
-<p>Recall when we designed contracts at the beginning of class, testing is a way to make sure the program is honoring the contract</p>
-<p>You need to be creative here - test for things you know will work (quick way to find bugs)</p>
+<p>Recall when we designed contracts at the beginning of class, testing
+is a way to make sure the program is honoring the contract</p>
+<p>You need to be creative here - test for things you know will work
+(quick way to find bugs)</p>
 <p>Usually we want to run multiple tests..</p>
 </div>
 <div id="testing-in-r-1" class="slide section level1">
 <h1><span style="color:orange">Testing in R</span></h1>
-<p>A <strong>test</strong> runs an <strong>expectation</strong> function and returns a message</p>
+<p>A <strong>test</strong> runs a bunch of <strong>expectation</strong>
+functions and returns a message</p>
 <p>Format</p>
 <p>test_that(description, series of expectations)</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">source</span>(<span class="st">&quot;../R/compute_NPV.R&quot;</span>)</span>
-<span id="cb20-2"><a href="#cb20-2"></a><span class="co"># lets do a simple test if profit is 0 , NPV should be 0</span></span>
-<span id="cb20-3"><a href="#cb20-3"></a><span class="co"># if time is 0, NPV should be the original value</span></span></code></pre></div>
+<p>We usually store these in a subdirectory called
+<strong>tests</strong></p>
+<p>Example <em>test_compute_NPV.R</em></p>
 </div>
 <div id="using-tests" class="slide section level1">
 <h1><span style="color:orange">Using tests </span></h1>
-<p>What we really want is to have tests that we <strong>always</strong> run, everytime we change something</p>
-<p>Store multiple test in a <em>name.R</em> file store these in these in the <em>tests/testthat</em> directory</p>
+<p>What we really want is to have tests that we <strong>always</strong>
+run, everytime we change something</p>
+<p>Store multiple test in a <em>name.R</em> file store these in these in
+the <em>tests/testthat</em> directory</p>
 <p>Two options</p>
 <p>To run all tests in a file, use <em>test_file</em></p>
-<p>To run all tests in a directory,use <em>test_dir</em> (you can also do this from Build menu)</p>
-<p>Goal: Make tests for each function in your package We will talk more about making packages next week</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># put your test in a file</span></span>
-<span id="cb21-2"><a href="#cb21-2"></a><span class="kw">test_file</span>(<span class="st">&quot;tests/test_compute_NPV.R&quot;</span>)</span>
-<span id="cb21-3"><a href="#cb21-3"></a></span>
-<span id="cb21-4"><a href="#cb21-4"></a></span>
-<span id="cb21-5"><a href="#cb21-5"></a><span class="co"># run all tests</span></span>
-<span id="cb21-6"><a href="#cb21-6"></a><span class="kw">test_dir</span>(<span class="st">&quot;tests&quot;</span>)</span></code></pre></div>
+<p>To run all tests in a directory,use <em>test_dir</em> (you can also
+do this from Build menu)</p>
+<p>Goal: Make tests for each function in your package We will talk more
+about making packages next week</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;../R/compute_NPV.R&quot;</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># put your test in a file</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">test_file</span>(<span class="st">&quot;../tests/test_compute_NPV.R&quot;</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co"># run all tests</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="fu">test_dir</span>(<span class="st">&quot;../tests&quot;</span>)</span></code></pre></div>
+</div>
+<div id="spring-summary-function" class="slide section level1">
+<h1>Spring Summary Function</h1>
+<p>A more complex function examples - a function that extracts
+information about spring temperature from a long time series of daily
+climate data</p>
+<p>Review the tests and <em>spring_summary</em> function for next class
+These are in</p>
+<p><a href="https://github.com/naomitague/ESM_262_Examples">ESM_262_Examples</a></p>
+<p>PLEASE pull most recent version - I had to make some changes to
+<em>spring_summary</em></p>
+</div>
+<div id="more-on-testing" class="slide section level1">
+<h1>More on Testing</h1>
 <p>A good source for more expectation code and ways to do testing</p>
 <p><a href="https://testthat.r-lib.org/reference/index.html">testing</a></p>
+</div>
+<div id="assignment" class="slide section level1">
+<h1>Assignment</h1>
+<p>For this assignment work in <em>pairs</em> - and submit as a
+group</p>
+<ul>
+<li><p>Design a function - you can pick any subject and you can even
+make up the equations as long as they conceptually make sense</p>
+<ul>
+<li>Make sure it has at least 2 inputs and 1 parameter (ideally more)
+and at least 2 outputs</li>
+<li>Code your function in R, save as a R file in subdirectory called
+R</li>
+<li>Make sure you include documentation (both at the top as we’ve shown
+in past examples, and inline)</li>
+<li>Include some error checking</li>
+</ul></li>
+<li><p>In an Rmarkdown file, generate some data for 2 of the function
+inputs</p>
+<ul>
+<li>use a <em>for</em> loop to run the function for the data</li>
+<li>repeat the “looping” using something from the “purrr” package</li>
+<li>Graph results (you can decide what the most interesting way to graph
+- you just need to make one graph)</li>
+</ul></li>
+<li><p>Write at least 2 tests for your function; store in a separate
+test file</p></li>
+<li><p>Put this in a git repo that includes an R subdirectory a tests
+subsdirectory and an Rmarkdown file and submit the link on Gauchospace
+(or you can put all of this in a new git repo or a subdirectory of an
+existing git repo)</p></li>
+</ul>
+<p>Submit the link to repo (and name of subdirectory if part of a larger
+git project) as a group with your partner,</p>
+<p>You will have to fill out the group select on Gauchospace first
+before you submit</p>
+<p><em>Grading Rubric</em></p>
+<ul>
+<li>Created a function
+<ul>
+<li>at least 2 inputs, 1 parameter and 2 outputs (it can have more)
+(5pts)</li>
+<li>includes error checking (5 pts)</li>
+</ul></li>
+<li>Rmarkdown that generates test data and runs the function
+<ul>
+<li>data generation ( 5pts)</li>
+<li>run function multiple times with a loop (5 pts)</li>
+<li>run function multiple times with something from <em>purr</em> (pmap)
+(5pts)</li>
+<li>Graphs results (5 pts)</li>
+</ul></li>
+<li>Test file
+<ul>
+<li>a file with two tests (10pts)</li>
+</ul></li>
+</ul>
+<p>Good programming practices (10 pts) Total 50pts</p>
+<p>Also review spring_summary.R and tests of that function from <a href="https://github.com/naomitague/ESM_262_Examples">ESM_262_Examples</a></p>
 </div>
 
   <!-- dynamically load mathjax for compatibility with self-contained -->

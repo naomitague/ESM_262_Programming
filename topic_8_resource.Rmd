@@ -2,35 +2,48 @@
 title: 'Assignment '
 ---
 
+
 # Assignment 
 
-You can complete this assignment on your own OR in pairs!
+For this assignment work in *pairs* - and submit as a group
 
-Create a function that computes a level of risk associated with a extreme temperature events. 
+* Design a function - you can pick any subject and you can even make up the equations as long as they conceptually make sense
+  * Make sure it has at least 2 inputs and 1 parameter (ideally more) and at least 2 outputs
+  * Code your function in R, save as a R file in subdirectory called R
+  * Make sure you include documentation (both at the top as we've shown in past examples, and inline)
+  * Include some error checking
 
-You can decide who/what the risk is to - for example risk of heat related illness for urban dwellers, or risk of heat related mortality for a particular type of tree
+* In an Rmarkdown file, generate some data for 2 of the function inputs
+  * use a *for*  loop to run the function for the data
+  * repeat the "looping" using something from the "purrr" package 
+  * Graph results (you can decide what the most interesting way to graph - you just need to make one graph)
+
+* Write at least 2 tests for your function; store in a separate test file
+
+* Put this in a git repo that includes an R subdirectory a tests subsdirectory and an Rmarkdown file and submit the link on Gauchospace (or you can put all of this in a new git repo or a subdirectory of an existing git repo)
+
+Submit the link to repo (and name of subdirectory if part of a larger git project) as a group with your partner,
+
+You will have to fill out the group select on Gauchospace first before you submit
+
+*Grading Rubric*
+
+* Created a function 
+  * at least 2 inputs, 1 parameter and 2 outputs (it can have more) (5pts)
+  * includes error checking (5 pts)
 
 
-You function should take as input daily temperature data - from this data you should estimate how often extremes occur - 
+* Rmarkdown that generates test data and runs the function
+  * data generation ( 5pts)
+  * run function multiple times with a loop (5 pts)
+  * run function multiple times with something from *purr* (pmap) (5pts)
+  * Graphs results (5 pts)
 
-What is an extreme temperature? you should include a threshold to define extremes as one of the input parameters.  You can be flexible here - if you want you can think of extremes as only occurring when you have temperature above a threshold for a sequence several days (and the number of days would be another parameter) or something simpler - just any temperature above a threshold; if you want you could have different thresholds to define different "severity" of extremes.
+* Test file
+  * a file with two tests (10pts)
 
-What is risk? You will develop the equation for risk on your own!
-Be creative here - what might make sense? how might temperature extremes translate into risk; would it be a linear equation- something else?   What might be some of the parameters that influence risk (incomes, tree species, age? (include at least two parameters)
-How many categories of risk will you have
+Good programming practices (10 pts)
+Total 50pts
 
-Have your function return both the risk associated with the input temperature sequence AND then number of extremes
-
-Code your function in R
-Make sure you document well
-
-
-Create an Rmarkdown to demonstrate the use of your function with tmax.txt - which
-is under Data on ESM_262_Examples
-
-[Data on ESM_262_Examples]{https://github.com/naomitague/ESM_262_Examples/blob/main/Data/clim.txt}
-
-
-Submit the link to the R function code and your Rmarkdown on Gauchospace
-
-# Review Testing.Rmd
+Also review spring_summary.R and tests of that function from 
+[ESM_262_Examples](https://github.com/naomitague/ESM_262_Examples)
