@@ -1,7 +1,7 @@
 ---
 title: 'Packages'
 author: "Naomi Tague"
-date: "January, 2022"
+date: "January, 2023"
 output:
   slidy_presentation:
    highlight: pygments
@@ -56,7 +56,9 @@ from CRAN, but can be downloaded (or sent as a zip file) and loaded into R
 packages are now on git, so we can use devtools::install_github
 
 You can load my package *ESM262Examples* by
-      
+
+This won't include Rmarkdowns, but will load all the functions into your workspace
+
   
   
   * *devtools::install_github("naomitague/ESM_262_Examples")*
@@ -98,12 +100,12 @@ First lets review the format for writing functions
      
       * mine will be **ESM262Examples**
 
-* Create repository for this package on **git**
+* Create repository for this package on **github**, each package needs its own repository - where you store only material for the package
 
 * Back in Rstudio, start a new project, using the same name for the project as your package name
     * choose the option in package creation to **create a package**
     
-    * make sure you click the box that also creates a local *git* respository
+    * make sure you click the box that also creates a local *git* repository
     
     * If you already have an R function (you do!) you can add it here
       * make sure your function is named *something.R* and follows the format for functions that we have been using 
@@ -196,7 +198,7 @@ in your package
 
 
 You can and should edit the following in the **DESCRIPTION** file
-Authors, Descirpition, Title
+Authors, Description, Title
 
   
 # <span style="color:orange">Documentation</span>
@@ -255,3 +257,6 @@ eg *esm237examples\/R\/compute_NPV.R*
 
 * try adding another small function - something simple with documentation
 
+# For Wednesday
+
+* create a package with at least one function, include documentation that creates a help page for that function
