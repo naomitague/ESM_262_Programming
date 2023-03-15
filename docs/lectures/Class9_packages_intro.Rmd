@@ -100,7 +100,6 @@ First lets review the format for writing functions
      
       * mine will be **ESM262Examples**
 
-* Create repository for this package on **github**, each package needs its own repository - where you store only material for the package
 
 * Back in Rstudio, start a new project, using the same name for the project as your package name
     * choose the option in package creation to **create a package**
@@ -116,23 +115,14 @@ First lets review the format for writing functions
     
     * first thing to do once you've created the package
     
-    * before you commit - link to your **Github** repository
-   
-        * make sure you are in the project directory 
-        
-        * in your project, in a *terminal* window execute the following commands
-        
-            * *git remote add origin 'http link from git' * 
-        
-            * *git pull origin main*
-            
-        * now in Rstudio, checkout a new branch called *main*, it will ask you if you want to checkout existing branch - say yes
-        
-          * commit the package files you have so far
-          
-          * push to **github** as usual
-
+    * commit your package 
     
+* Create repository for this package on **github**, each package needs its own repository - where you store only material for the package - name should be your package name
+
+    * link to your **Github** repository following
+    directions on **github** for linking to an existing repository
+   
+  
 
 * Install libraries **devtools** and **roxygen2** from CRAN
 
@@ -257,6 +247,3 @@ eg *esm237examples\/R\/compute_NPV.R*
 
 * try adding another small function - something simple with documentation
 
-# For Wednesday
-
-* create a package with at least one function, include documentation that creates a help page for that function

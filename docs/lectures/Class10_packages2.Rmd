@@ -2,7 +2,7 @@
 ---
 title: 'More on packages'
 author: "Naomi Tague"
-date: "January, 2022"
+date: "January, 2023"
 output:
   slidy_presentation:
    highlight: pygments
@@ -145,6 +145,34 @@ Alternatively if your users are used to *github* you can use
 
 This can be a good way to share the package with yourself :)
 
+
+#  <span style="color:orange">Final Assignment</span>
+
+Create a package that includes at least 1 function and 1 data set, make sure you create help pages for both.  You can use functions that you created for the last assignment or generate new ones.
+
+Work with the same partner.
+
+Turn in link to package repository.
+
+*Grading*
+
+Creation of a package
+
+* has at least one function (5pts)
+* has a least one data set (5pts)
+* package works (e.g you can run library(packagename)) (5pts)
+
+Documentation
+
+* help pages for function 
+     * clearly describes inputs/output with units (5pts)
+    * explains what the function does (5pts)
+* help pages for data set
+    * clearly describes the dataset (5pts)
+    * clearly describes variables (5pts)
+* documentation in the functions themselves (5pts)
+  
+Total 40 pts
 
 # <span style="color:orange">Vignettes</span>
 
