@@ -178,7 +178,7 @@ Contract
 
 *Output*: Instantaneous power generation (W/s)  (as a single value or value for each reservoir height and flow rate combination)
 
-*Parameters*: KEfficiency, ρ (density of water), g (acceleration due to gravity)
+*Parameters*: KEff, ρ (density of water), g (acceleration due to gravity)
 
 What the function will do - compute power using the following equation - *body* of the function 
 
@@ -232,7 +232,7 @@ With your group, think of an example program that you might want to design that 
 * create a diagram that shows how these modules would be put together to go from inputs to output for the overall program (you can use diagram.net OR any other software - your choice!)
 
 
--  <span style="color: maroon;">Add the link to your remote repository and name of this Rmarkdown file on Gauchospace as GROUP submission for Assignment 1b </span>
+-  <span style="color: maroon;">Add the link to your remote repository and name of this Rmarkdown file on Canvas as GROUP submission for Assignment 1b </span>
 
 # Important - First Review Task
 

@@ -1,0 +1,67 @@
+---
+title: "ESM 262 Computing for Environmental Science"
+author: "Naomi Tague"
+date: "January, 2025"
+output:
+  html_document: default
+  pdf_document: default
+description: Introduction to computing for data management and analysis for environmental
+  applications. The course provides MESM students with the basic computing and programming
+  skills used in data science.
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, out.width = "40%", out.height="35%",fig.cap = "Growing skills"}
+
+
+knitr::include_graphics("img/tree_me.jpeg")
+```
+
+## Course description
+
+<div style="font-size: 22px;">
+
+ESM 262 is an introduction to computing for environmental applications. The course provides practical training in software design best practices. 
+
+Topics include programming language concepts; modular program design; data structures and flow control, version control, testing, documentation and reproducibility. 
+
+The course features **R** for programming, **Git** for version control, **Markdown** for workflow, and **GitHub** for collaboration and publishing, but many concepts would be applicable in other software design tools. 
+
+Class will include a mix of lectures and hands-on examples, using students' own computers. There will be weekly assignments designed to help learn skills through practice.
+
+## Learning objectives
+
+-   3 *BIG* concepts in programming are *modularity*, *data structure*, *looping*. This course is designed to help student gains skills related to all three of these concepts.
+
+-   Students will also learn and practice some coding/programming best practices (that will doing data science easier)
+
+    -   documentation
+    -   testing
+    -   partner coding/collaboration
+
+-   Student will learn *R* skills that are helpful for a wide variety of data science applications
+
+## Where and when
+** MW 8:00 AM - 9:15 AM (Bren Hall 1510)
+
+## Teaching team
+
+**Instructor:** Naomi Tague 
+
+-   **Office hours:** By appointment
+-   **email** ([tague\@ucsb.edu](mailto:tague@ucsb.edu){.email})
+-   **git user id** naomitague
+-   to learn more about me see 
+[my website](https://tagueteamlab.org) (tagueteamlab.org)
+
+**Teaching assistant:** Ojas Sarup
+
+-   **Office hours:** Tuesday / Thursday 3pm-4pm
+-   **email** ([ojassarup\@ucsb.edu](mailto:ojassarup@ucsb.edu){.email} )
+-   **git user id** osarup
+
+
+</div>

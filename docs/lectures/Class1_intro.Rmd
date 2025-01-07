@@ -24,13 +24,26 @@ knitr::opts_chunk$set(echo = FALSE)
 
 * Support each other 
   * when working in groups, pay attention to your partner, if they are not at your skill level, help them learn - recognize that we all have different backgrounds
+  * always treat each other with respect - everyone is learning
   
+* Break tasks down in steps - start with what you can do
 
 * If you are really struggling, reach out to Ojas or myself, we can help
 (or if you just want to chat about something ) 
 
+# Getting help
 
+Ask - each other, in class, in office hours....
 
+**ChatGPT**
+
+* really useful tool, but much more useful if you ask good questions - so you need to have the basic framework/idea in your head
+
+* trying to code yourself, builds that framework
+
+* encourage you to use for syntax (e.g in *ggplot* how do I change the axis font), but not for whole assignment (e.g. write a function to estimate population growth)
+
+* always read through answer and make sure it *makes sense* (does what you were asking)
 
 
 # What we will learn - some  more details
@@ -59,6 +72,12 @@ The course features **R** for programming, **Git** for version control, **Markdo
     + scripts that you save in R-Markdown
     + instructions to analyze relationships in census data and visualize them
     + a model of global climate
+
+# BREAKOUT GROUP TASK:
+ 
+* If you haven't already, download climate.csv and load into R
+* In an R-markdown document, write R code that does something interesting with the data (this is your first program in the course)
+
  
 # Programming Languages
 
@@ -66,7 +85,7 @@ The course features **R** for programming, **Git** for version control, **Markdo
 * Languages expect instructions in a particular form (syntax) and then translate them to be readable by the computer
 * Languages have evolved to make it help users write programs that are easy to understand, re-use, extend, test, run quickly, use lots of data...
 
-## Programming Fundamentals - "Big Ideas"
+# Programming Fundamentals - "Big Ideas"
 
 * Data structures (simple variables, arrays, lists...) - how do we organize data
 *  Basic Operations (=,+,-,...concatenate, copy)  to Control structures (if then, loops) - how do we manipulate data
@@ -79,7 +98,7 @@ These concepts common to all languages through the syntax may be different
 
 # BREAKOUT GROUP TASK:
   Based on whatever programming/coding experience you have had - come up with what you think are 4 best practices
-  Write them into an Rmarkdown document
+ 
 
   
 # Best Practices for Software Development 
