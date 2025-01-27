@@ -1,0 +1,43 @@
+---
+title: "Reproducibility with Github"
+output:
+  slidy_presentation: default
+  ioslides_presentation: default
+  beamer_presentation: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# <span style="color:orange"> Git and what to do with it </span>
+
+Local Git
+
+* keep track of your changes on your computers
+* when necessary, go back to early versions
+
+GitHub
+
+* access your code from different places
+* collaborate with others
+  * other who will use your code
+  * coding together
+  
+# The Basics
+
+Commit
+* **saves** the current version; 
+  each commit has a label so you can backtrack if needed
+  * you can look at what changes between commits
+  a
+Now that you've installed *Git*
+# <span style="color:orange"> Review Two Rmarkdowns </span>
+
+Before next class, review these two Rmarkdowns in 
+https://github.com/naomitague/ESM_262_Examples
+
+If you've already cloned this, you will find them in the Rmarkdown subdirectory
+
+* Sampling_example.Rmd
+* Error_checking.Rmd
