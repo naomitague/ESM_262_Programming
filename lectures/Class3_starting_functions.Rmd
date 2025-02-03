@@ -75,7 +75,7 @@ If you overwrite a *base* package R function - you should rename your function -
 
 You can also use *package_name*:: to get to a function that is hidden in the current workspace
 
-#
+
 ```{r hidden, echo=TRUE, include=TRUE, error=TRUE}
 
 
