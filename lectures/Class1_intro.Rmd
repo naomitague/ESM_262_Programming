@@ -44,39 +44,7 @@ knitr::opts_chunk$set(echo = FALSE)
   * collaboration
   * project management
 
-[Learning to code or coding to learn? A systematic review, Popat and Starkey, 2019] (https://www.sciencedirect.com/science/article/pii/S0360131518302768?casa_token=627kIJVKiUkAAAAA:QJvPu4by9dRLrueB8yLf769wWcnrJFwdn2IzZI5pzCViFRjzG5Ilj5tFSEQZ4ujDWnc2VGs)
-
-# ChatGPT and other AI-tools
-
-
-
-[Interesting Paper on AI-tools in Computing Education](https://dl.acm.org/doi/pdf/10.1145/3624720)
-
-Tools 
-* Github Copilot (most widely used by programmers)
-* ChatGPT
-(both built from CODEX by OpenAI)
-
-In 2020, test CODEX scored 78% on intro to computing test, in 2023 it scored 98%
-Other studies show less accuracy...depends on the problem
-
-"Metacognition, or “thinking
-about thinking”, is a key aspect of
-computational thinking (and problem-solving in general)"...."Relying
-too heavily on code-generation tools
-may hinder the development of these
-crucial metacognitive skills" (Denny et al, 2024)
-
-# So ...what should your strategy be
-
-* AI-tools great resources but effective use requires understanding computing/problem solving
-
-* Use this course to build that understanding, think about the meta concepts. Ask yourself - What are situations you might apply a technique/idea/concept;
-
-* For assignments/practice
-  - make the outline/basic idea yourself; but use AI-tools for syntax
-  - AI-tools to explain codes (including class examples)
-  - AI-tools to help interpret error messages
+[Learning to code or coding to learn? A systematic review, Popat and Starkey, 2019](https://www.sciencedirect.com/science/article/pii/S0360131518302768?casa_token=627kIJVKiUkAAAAA:QJvPu4by9dRLrueB8yLf769wWcnrJFwdn2IzZI5pzCViFRjzG5Ilj5tFSEQZ4ujDWnc2VGs)
 
 
 # What is a program
@@ -96,6 +64,104 @@ crucial metacognitive skills" (Denny et al, 2024)
 * Programs can be written in many different languages (all have their strengths and weakness)
 * Languages expect instructions in a particular form (syntax) and then translate them to be readable by the computer
 * Languages have evolved to make it help users write programs that are easy to understand, re-use, extend, test, run quickly, use lots of data...
+
+# Programming Fundamentals - "Big Ideas"
+
+* Data structures (simple variables, arrays, lists...) - how do we organize data
+*  Basic Operations (=,+,-,...concatenate, copy)  to Control structures (if then, loops) - how do we manipulate data
+* Modules...Functions - how do we make all this efficient - especially when we want to similar types of things over an over
+
+These concepts common to all languages through the syntax may be different
+
+
+
+
+# ChatGPT and other AI-tools
+
+
+
+[Interesting Paper on AI-tools in Computing Education](https://dl.acm.org/doi/pdf/10.1145/3624720)
+
+Tools 
+
+* Github Copilot (most widely used by programmers)
+* ChatGPT
+
+(both built from CODEX by OpenAI)
+
+In 2020, test CODEX scored 78% on intro to computing test, in 2023 it scored 98%
+
+Other studies show less accuracy...depends on the problem
+
+# Learning to code/programming helps you think about data science
+
+"Metacognition, or “thinking
+about thinking”, is a key aspect of
+computational thinking (and problem-solving in general)"
+
+"Relying
+too heavily on code-generation tools
+may hinder the development of these
+crucial metacognitive skills" (Denny et al, 2024)
+
+# So ...what should your strategy be
+
+* AI-tools great resources but effective use requires understanding computing/problem solving
+
+* Use this course to build that understanding, think about the meta concepts. Ask yourself - What are situations you might apply a technique/idea/concept;
+
+* You gain skills by <span style="color:red">  Practicing 
+
+* For assignments/practice
+  - make the outline/basic idea yourself; but use AI-tools for syntax
+  - AI-tools to explain codes (including class examples)
+  - AI-tools to help interpret error messages
+
+
+
+  
+# Best Practices for Software Development 
+
+
+* Wilson G, Aruliah DA, Brown CT, Chue Hong NP, Davis M, et al. (2014) Best Practices for Scientific Computing. PLoS Biol 12(1): e1001745. doi:10.1371/journal.pbio.1001745
+
+*  Blanton, B and Lenhardt, C 2014. A Scientist’s Perspective on Sustainable Scientific Software. Journal of Open Research Software 2(1):e17, DOI: http://dx.doi.org/10.5334/jors.ba
+
+[Alternative View](http://simpleprogrammer.com/2013/02/17/principles-are-timeless-best-practices-are-fads/)
+
+# Summary of Best Practices
+
+[Wilson et al, Summary Box](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745#pbio-1001745-box001)
+  
+
+# Common Coding/Software Engineering Issues
+
+* Unreadable code (hard to understand, easy to forget how it works, hard to find errors, hard to expand)
+* Overly complex, disorganized code (hard to find errors; hard to modify-expand)
+* Insufficient testing (both during development and after)
+* Not tracking code changes (multiple versions, which is correct?)
+
+
+# Automated Tools for Best Practices in Software Engineering
+
+Automated tools (really useful for more complex code development
+( note that GP’s often create programs > 100 lines of code)
+
+Automated documentation
+
+http://www.stack.nl/~dimitri/doxygen/
+
+http://roxygen.org/roxygen2-manual.pdf 
+
+Automated test case development
+
+http://r-pkgs.had.co.nz/tests.html
+
+
+Automated code evolution tracking (Version Control)
+https://github.com/
+
+
 
 # Inclass task
 
@@ -149,8 +215,12 @@ name it "yourname.Rmd"
 
 Pair and share - 
 
-# Here's my example - note a) providing detailed comments b) how I use ChatGPT
-```{r}
+# Here's my example 
+
+a) providing detailed comments 
+b) how I use ChatGPT
+
+```{r, echo=TRUE}
 
 library(tidyverse)
 # read in the data - call it something meaningful
@@ -159,12 +229,13 @@ provwater = read.csv("../data/p301,csv", header=T)
 # always check to make sure you read it in correctly
 # looking at header, first and last lines can help
 names(provwater)
-head(provwater)
-tail(provwater)
+#head(provwater)
+#tail(provwater)
+```
 
 
-
-# since plant require sunlight, lets see how NPP varies with solar radiation (will focus on direct first) - when looking at relationships between variables, simply plotting as points with x-y type graphs is helpful (dependent variable on y-axis - here with think NPP is dependent on solar radiation)
+Since plant require sunlight, lets see how NPP varies with solar radiation (will focus on direct first) - when looking at relationships between variables, simply plotting as points with x-y type graphs is helpful (dependent variable on y-axis - here NPP is dependent on solar radiation)
+```{r, echo=T}
 
 ggplot(provwater, aes(direct_solar, NPP))+geom_point()
 
@@ -195,63 +266,3 @@ ggplot(provwater_wy,aes(wy, tmin), col="blue")+geom_point()
 summary(lm(data=provwater_wy, tmin~wy))
 
 ```
-
-
-## Programming Fundamentals - "Big Ideas"
-
-* Data structures (simple variables, arrays, lists...) - how do we organize data
-*  Basic Operations (=,+,-,...concatenate, copy)  to Control structures (if then, loops) - how do we manipulate data
-* Modules...Functions - how do we make all this efficient - especially when we want to similar types of things over an over
-
-These concepts common to all languages through the syntax may be different
-
-
-
-
-# BREAKOUT GROUP TASK:
-  Based on whatever programming/coding experience you have had - come up with what you think are 4 best practices
-  Write them into an Rmarkdown document
-
-  
-# Best Practices for Software Development 
-
-
-* Wilson G, Aruliah DA, Brown CT, Chue Hong NP, Davis M, et al. (2014) Best Practices for Scientific Computing. PLoS Biol 12(1): e1001745. doi:10.1371/journal.pbio.1001745
-
-*  Blanton, B and Lenhardt, C 2014. A Scientist’s Perspective on Sustainable Scientific Software. Journal of Open Research Software 2(1):e17, DOI: http://dx.doi.org/10.5334/jors.ba
-
-[Alternative View](http://simpleprogrammer.com/2013/02/17/principles-are-timeless-best-practices-are-fads/)
-
-# Summary of Best Practices
-
-[Wilson et al, Summary Box](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745#pbio-1001745-box001)
-  
-
-# Common Coding/Software Engineering Issues
-
-* Unreadable code (hard to understand, easy to forget how it works, hard to find errors, hard to expand)
-* Overly complex, disorganized code (hard to find errors; hard to modify-expand)
-* Insufficient testing (both during development and after)
-* Not tracking code changes (multiple versions, which is correct?)
-
-
-# Automated Tools for Best Practices in Software Engineering
-
-Automated tools (really useful for more complex code development
-( note that GP’s often create programs > 100 lines of code)
-
-Automated documentation
-
-http://www.stack.nl/~dimitri/doxygen/
-
-http://roxygen.org/roxygen2-manual.pdf 
-
-Automated test case development
-
-http://r-pkgs.had.co.nz/tests.html
-
-
-Automated code evolution tracking (Version Control)
-https://github.com/
-
-
