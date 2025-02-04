@@ -10,7 +10,7 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# <span style="color:orange"> Git and what to do with it </span>
+# <span style="color:green"> Git and what to do with it </span>
 
 Local Git
 
