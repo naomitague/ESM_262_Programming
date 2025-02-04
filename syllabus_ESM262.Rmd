@@ -45,7 +45,7 @@ Class will include a mix of lectures and hands-on examples, using students' own 
 -   Student will learn *R* skills that are helpful for a wide variety of data science applications
 
 ## Where and when
-** MW 8:00 AM - 9:15 AM (Bren Hall 1510)
+**T/TH 8:00 AM - 9:15 AM (Bren Hall 1510)
 
 ## Teaching team
 
