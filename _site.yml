@@ -15,17 +15,19 @@ navbar:
           href: lectures/Class2_modularity.html
         - text: "Topic 3: Creating Functions"
           href: lectures/Class3_starting_functions.html
-        - text: "Topic 4: Using Functions with Data"
+        - text: "Topic 4: Reproducible Code with Git"
+          href: lectures/Class3b_Git.html
+        - text: "Topic 5: Using Functions with Data"
           href: lectures/Class4_Using_functions_with_data.html
-        - text: "Topic 5: Looping"
+        - text: "Topic 6: Looping"
           href: lectures/Class5_Looping.html
-        - text: "Topic 6: Control Structure"
+        - text: "Topic 7: Control Structure"
           href: lectures/Class6_controlstructures.html
-        - text: "Topic 7: Testing"
+        - text: "Topic 8: Testing"
           href: lectures/Class8_Testing.html
-        - text: "Topic 8: Packages"
+        - text: "Topic 9: Packages"
           href: lectures/Class9_packages_intro.html
-        - text: "Topic 9: More on Packages"
+        - text: "Topic 10: More on Packages and Wrap UP"
           href: lectures/Class10_packages2.html
 #        - text: "Wrap-Up"
 #          href: lectures/Wrap_Up.html
