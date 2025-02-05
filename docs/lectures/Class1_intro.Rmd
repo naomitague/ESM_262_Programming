@@ -9,9 +9,13 @@ output:
     df_print: paged
 ---
 
-```{r setup, include=FALSE}
+```{r setup2, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+# note start with index.Rmd
 ```
+
+
+
 
 # Protocols and Guidance on how to best use this class
 
@@ -24,43 +28,55 @@ knitr::opts_chunk$set(echo = FALSE)
 
 * Support each other 
   * when working in groups, pay attention to your partner, if they are not at your skill level, help them learn - recognize that we all have different backgrounds
-  * always treat each other with respect - everyone is learning
   
-* Break tasks down in steps - start with what you can do
 
 * If you are really struggling, reach out to Ojas or myself, we can help
 (or if you just want to chat about something ) 
 
-# Getting help
-
-Ask - each other, in class, in office hours....
-
-**ChatGPT**
-
-* really useful tool, but much more useful if you ask good questions - so you need to have the basic framework/idea in your head
-
-* trying to code yourself, builds that framework
-
-* encourage you to use for syntax (e.g in *ggplot* how do I change the axis font), but not for whole assignment (e.g. write a function to estimate population growth)
-
-* always read through answer and make sure it *makes sense* (does what you were asking)
 
 
-# What we will learn - some  more details
 
-* Modular programming: Designing building blocks or functions
+# Why learn to code
 
-* Data structures, operations and flow control (general programmings skills we use for manipulating data inside each block)
+* some evidence that computational thinking enhances
+  * problem solving
+  * critical thinking
+  * collaboration
+  * project management
 
-* Automated (or semi-automated) Tools for good programming practice
-  * testing
-  * documentation
-  * workflow for sharing programs/packages with others
-  
+[Learning to code or coding to learn? A systematic review, Popat and Starkey, 2019] (https://www.sciencedirect.com/science/article/pii/S0360131518302768?casa_token=627kIJVKiUkAAAAA:QJvPu4by9dRLrueB8yLf769wWcnrJFwdn2IzZI5pzCViFRjzG5Ilj5tFSEQZ4ujDWnc2VGs)
 
-The course features **R** for programming, **Git** for version control, **Markdown** for workflow, and **GitHub** for collaboration and publishing, but many concepts would be applicable in other software design tools.
+# ChatGPT and other AI-tools
 
 
+
+[Interesting Paper on AI-tools in Computing Education](https://dl.acm.org/doi/pdf/10.1145/3624720)
+
+Tools 
+* Github Copilot (most widely used by programmers)
+* ChatGPT
+(both built from CODEX by OpenAI)
+
+In 2020, test CODEX scored 78% on intro to computing test, in 2023 it scored 98%
+Other studies show less accuracy...depends on the problem
+
+"Metacognition, or “thinking
+about thinking”, is a key aspect of
+computational thinking (and problem-solving in general)"...."Relying
+too heavily on code-generation tools
+may hinder the development of these
+crucial metacognitive skills" (Denny et al, 2024)
+
+# So ...what should your strategy be
+
+* AI-tools great resources but effective use requires understanding computing/problem solving
+
+* Use this course to build that understanding, think about the meta concepts. Ask yourself - What are situations you might apply a technique/idea/concept;
+
+* For assignments/practice
+  - make the outline/basic idea yourself; but use AI-tools for syntax
+  - AI-tools to explain codes (including class examples)
+  - AI-tools to help interpret error messages
 
 
 # What is a program
@@ -72,20 +88,116 @@ The course features **R** for programming, **Git** for version control, **Markdo
     + scripts that you save in R-Markdown
     + instructions to analyze relationships in census data and visualize them
     + a model of global climate
-
-# BREAKOUT GROUP TASK:
  
-* If you haven't already, download climate.csv and load into R
-* In an R-markdown document, write R code that does something interesting with the data (this is your first program in the course)
+* A key skill is being able to break tasks down into tasks (this also makes using AI-tools much easier **prompt engineering**
 
- 
 # Programming Languages
 
 * Programs can be written in many different languages (all have their strengths and weakness)
 * Languages expect instructions in a particular form (syntax) and then translate them to be readable by the computer
 * Languages have evolved to make it help users write programs that are easy to understand, re-use, extend, test, run quickly, use lots of data...
 
-# Programming Fundamentals - "Big Ideas"
+# Inclass task
+
+Download and read in "sagedata.txt" from Canvas
+In an Rmarkdown document, do something with this data
+Whatever is interesting for you
+
+Try to do something that is at least a two-step process (e.g manipulating the data in some way then graphing)
+
+**Add comments to your Rmarkdown to explain what you are doing, why - so that someone else could follow your code **
+
+# The data
+
+**p301.csv**
+
+Climate and estimates of water and forest carbon information from USFS experimental watershed  in the Southern California Sierra (above Fresno )
+
+Upload your Rmarkdown to our class shared drive
+name it "yourname.Rmd"
+
+
+# What the variables are (metadata)
+
+* month
+
+* year
+
+* day
+
+* wy  (Water Year - a hydrologic way of counting years that goes from Oct-Sept (instead of Jan-Dec))
+
+* tmax  Maximum daily Temperature in degrees C
+
+* tmin  Minimum daily Temperature in degrees C
+
+* precip Depth of precipitation in mm
+
+* transpiration  Estimated forest transpiration (m/m2/day)
+* evaporation  Estimated evaporation (e.g ET would be transpiration + evaporation) (m/m2/day)
+
+* NPP Estimated net carbon uptake by trees (kgC/m2/day)
+
+* plant_carbon Estimate standing biomass in units of carbon (kg/m2)
+
+* streamflow (m/m2/day) Streamflow (per watershed area)
+
+* snowpack (m/m2) Amount of snow on the ground (in units of water)
+
+* direct solar (kJ/m2/day) Incoming direct solar radiation
+* diffuse solar (kJ/m2/day) Incoming diffuse solar radiation
+
+Pair and share - 
+
+# Here's my example - note a) providing detailed comments b) how I use ChatGPT
+```{r}
+
+library(tidyverse)
+# read in the data - call it something meaningful
+provwater = read.csv("../data/p301,csv", header=T)
+
+# always check to make sure you read it in correctly
+# looking at header, first and last lines can help
+names(provwater)
+head(provwater)
+tail(provwater)
+
+
+
+# since plant require sunlight, lets see how NPP varies with solar radiation (will focus on direct first) - when looking at relationships between variables, simply plotting as points with x-y type graphs is helpful (dependent variable on y-axis - here with think NPP is dependent on solar radiation)
+
+ggplot(provwater, aes(direct_solar, NPP))+geom_point()
+
+# make the graph prettier/more informative by adding labels
+# also add a trend line since it looks like there is a relationship - non-liner 
+
+# Ask ChatGPT - how I add a non-linear best fit line to a ggplot graph
+ggplot(provwater, aes(direct_solar, NPP))+geom_point(size=2, col="green")+labs(x="Incoming direct radiation (kJ/m2/day", y="NPP (plant caron flux) kgC/m2/day")+geom_smooth(method="gam")
+
+# lets look at how minimum daily temperature is changing through time
+ggplot(provwater, aes(wy, tmin))+geom_point()
+
+#kind of messy, because of day to day variation; maybe hides long term trends
+
+# lets aggregate to annual; while I'm doing it I'm adding some other variables in case I want to look at them later
+
+# ask ChatGPT - how do I average variables by  water year a data frame that includes water year as a variable
+provwater_wy = provwater %>% group_by(wy) %>% summarize(tmax=mean(tmax), tmin=mean(tmin), precip=sum(precip), streamflow = sum(streamflow), peakSWE=max(snowpack))
+
+# plot summarizes through time to look for trends
+ggplot(provwater_wy,aes(wy, tmin), col="blue")+geom_point()
+
+# maybe there is a trend (e.g linear trend in tmin with water year)
+# test if its statistically significant
+
+# ask ChatGPT
+# what is the format in R for using a linear model to test if a slope is significant 
+summary(lm(data=provwater_wy, tmin~wy))
+
+```
+
+
+## Programming Fundamentals - "Big Ideas"
 
 * Data structures (simple variables, arrays, lists...) - how do we organize data
 *  Basic Operations (=,+,-,...concatenate, copy)  to Control structures (if then, loops) - how do we manipulate data
@@ -98,7 +210,7 @@ These concepts common to all languages through the syntax may be different
 
 # BREAKOUT GROUP TASK:
   Based on whatever programming/coding experience you have had - come up with what you think are 4 best practices
- 
+  Write them into an Rmarkdown document
 
   
 # Best Practices for Software Development 
