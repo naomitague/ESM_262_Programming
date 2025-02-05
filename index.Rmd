@@ -41,7 +41,9 @@ The course features **R** for programming, **Git** for version control, **Markdo
 
 Class will include a mix of lectures and hands-on examples, using students' own computers.
 
--   **Lectures:** MW 9:30 AM - 10:45 AM (Bren Hall 1510)
+## Where and when
+**T/TH 8:00 AM - 9:15 AM (Bren Hall 1510)
+
 
 ## Teaching team
 
@@ -98,16 +100,5 @@ You learn to code by doing - not so much by watching others do!
 
 ## Assignments
 
-There will be 6 short assignment (more or less one for each class). You will usually have time to work on the assignment in class and most will be in groups. We'll evaluate your assignments by pulling the GitHub repository that they live in.
-
-To set this up:
-
-1. Create a single private git hub repo to hold all of your assignments (and nothing else!).
-2. Invite Ojas ('osarup`) and Naomi (`naomitague`) to collaborate on this repo.
-
-Then, for each assignment:
-
-1. Put your solution, and all the files needed to run it, in its own folder within the repo.
-2. Submit the URL of the folder on Canvas
-
+There will be 6 short assignment (more or less one for each week). You will usually have time to work on the assignment in class and most will be in groups. 
 
