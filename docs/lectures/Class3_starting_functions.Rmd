@@ -75,7 +75,7 @@ If you overwrite a *base* package R function - you should rename your function -
 
 You can also use *package_name*:: to get to a function that is hidden in the current workspace
 
-#
+
 ```{r hidden, echo=TRUE, include=TRUE, error=TRUE}
 
 
@@ -222,13 +222,19 @@ Also include the comments in the Rmarkdown that you are using to run the functio
 I'm not going to grade this - but everyone should do it and we will go over at the beginning of next class
 Remember you learn by doing. AND
 
-# <span style="color:orange"> PART 2: Review Two Rmarkdowns </span>
+# <span style="color:orange"> PART 2: Review  Rmarkdown </span>
 
-Before next class, review these two Rmarkdowns in 
-https://github.com/naomitague/ESM_262_Examples
+# A brief intro to Git 
 
-If you've already cloned this, you will find them in the Rmarkdown subdirectory
+Reproducbility and Collaboration are central parts of a good programming practice
 
-* Sampling_example.Rmd
-* Error_checking.Rmd
+For decades programmers have been using something called *git* to keep help collaborate on code, keep track of changes etc. 
+
+Git a lot like using a google doc - but for code and data
+
+To use this tool requires some set up
+
+# Set up
+Please read and try each of the steps in
+**git_setup.RMD**
 

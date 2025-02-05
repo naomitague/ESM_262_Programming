@@ -10,6 +10,34 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+# My code for our AutoPower Function
+ Code
+
+```{r powerexample}
+
+#' Power Required by Speed
+#'
+#' This function determines the power required to keep a vehicle moving at 
+#' a given speed
+#' @param cdrag coefficient due to drag default=0.3 
+#' @param crolling coefficient due to rolling/friction default=0.015
+#' @param v vehicle speed (m/2)
+#' @param m vehicle mass (kg)
+#' @param A area of front of vehicle (m2)
+#' @param g acceleration due to gravity (m/s) default=9.8
+#' @param pair (kg/m3) default =1.2
+#' @return power (W)
+
+autopower = function(V, m, A, cdrag=0.3, crolling=0.015,pair=1.2,g=9.8) {
+  P = crolling*m*g*V + 1/2*A*pair*cdrag*V**3
+  return(P)
+}
+
+```
+
+I've also stored the autopower.R function as a file = using the recommended naming convention
+
+**autopower.R**
 
 # <span style="color:orange"> Git and what to do with it </span>
 
@@ -103,7 +131,7 @@ Now that you've installed *Git*
 2. Add it to your repo, in the same *R* directory where you included the function from last class
 3. Commit your changes
 4. Push your changes to your Github Repo
-5. Submit the link to your Github Repo, for Assignment 3 on Canvas
+5. Submit the link to your Github Repo, for Assignment 2 on Canvas
 
 
 # <span style="color:orange"> Review Two Rmarkdowns </span>

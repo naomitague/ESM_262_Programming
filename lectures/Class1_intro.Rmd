@@ -113,9 +113,9 @@ crucial metacognitive skills" (Denny et al, 2024)
 * You gain skills by <span style="color:red">  Practicing 
 
 * For assignments/practice
-  - make the outline/basic idea yourself; but use AI-tools for syntax
-  - AI-tools to explain codes (including class examples)
-  - AI-tools to help interpret error messages
+  - **Always** write the code yourself -  but you use AI-tools to help find syntax
+  - Use AI-tools to explain other peoples code (including class examples)
+  - Use AI-tools to help interpret error messages
 
 
 
