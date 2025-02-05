@@ -19,7 +19,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          Rscript -e 'install.packages(c("rmarkdown", "knitr"))'
+          Rscript -e 'install.packages(c("rmarkdown", "knitr","distill"))'
 
       - name: Render RMarkdown site
         run: |
