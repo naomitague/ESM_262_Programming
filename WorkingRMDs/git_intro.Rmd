@@ -86,9 +86,10 @@ use_git_config(user.name = "Jane Doe", user.email = "jane@example.org")
 2. Go to `Tools > Project Options > Git/SVN`.
 3. Select **Git** as the version control system and click **OK**. This will initialize Git for the project.
 
-Once Git is enabled, the **Git** tab will appear in the top-right pane of RStudio. You can use this tab to manage version control without needing to use command lines.
+Once Git is enabled, the **Git** tab will appear in the top-right pane of RStudio
 
-We will cover this in class
+Remember this Project, add your Automobile power function and Rmarkdown to it
+We will cover next steps in class
 
 
 ## Troubleshooting 

@@ -35,24 +35,42 @@ autopower = function(V, m, A, cdrag=0.3, crolling=0.015,pair=1.2,g=9.8) {
 
 ```
 
-I've also stored the autopower.R function as a file = using the recommended naming convention
+I've also stored the autopower.R function as a file 
+
+(note  the recommended naming convention)
 
 **autopower.R**
 
+#  <span style="color:orange">Reproducibility with Git and Github </span>
+
+* Why reproducibility and what does it mean?
+
+* What is a workflow?
+  * not usually linear
+  * often involves iterative steps
+  * often involves multiple people 
+
 # <span style="color:orange"> Git and what to do with it </span>
 
-Local Git
+<span style="color:green">Local Git</span>
 
 * keep track of changes to your code on your computer
 * when necessary, go back to early versions
 
-GitHub
+<span style="color:green">GitHub</span>
 
 * access your code from different places
 * collaborate with others
   * others who will use your code
   * coding together
-  
+ 
+
+![git](../img/gitandgithub.jpg)
+
+
+# <span style="color:orange"> Example </span>
+
+[GitHub Repository that I'll use in the course](https://github.com/naomitague/ESM_262_Examples)
 
 # <span style="color:orange"> The Basics </span>
 
@@ -82,36 +100,60 @@ GitHub
 
 * go back to last commit
 
+
+
 # Lets try
 
 Steps
 
-1. In *GitHub* create a new repository, you will use this for an assignment so name appropriately
-  * make it a public repo
-  * get the link for cloning
-  
+1. In *GitHub*, create a new repository; you will use this for an assignment, so name it appropriately.
+
+    1.1. Make it a public repo.
+    
+    1.2. Get the link for cloning.
+    
 2. In *Rstudio* create a new project; 
-  * put it in a new directory 
-  * make sure you enable *git* in project set up (if you miss this go to Project Options) 
-  * set your link to *GitHub* repository
+
+    2.1. put it in a new directory 
+  
+    2.2. make sure you enable *git* in project set up (if you miss this go to Project Options) 
+  
+    2.3. set your link to *GitHub* repository
+  
 3. Add a new file
-  * start with your R code for your function from last class
-  * create a subdirectory called *R*
-  * move/copy to this subdirectory
+
+    3.1. start with your R code for your function from last class
+  
+    3.2. create a subdirectory called *R*
+  
+    3.3. move/copy to this subdirectory
+  
 4. Go to Git, 
-  * add this file
-  * commit the addition (add a comment)
+
+    4.1. add this file
+  
+    4.2. commit the addition (add a comment)
+  
 5. Now changes something in your R code; you could just add a comment
-  * see how this shows up in git diff
-  * see how this now has an *M* for modified
-6) Once you like what you changed, commit it
-7) Send changes to *github*
 
+    5.1. see how this shows up in git diff
+  
+    5.2. see how this now has an *M* for modified
+  
+6. Once you like what you changed, commit it
 
+    6.1. add a comment
+  
+    6.2. commit
+  
+7. Send changes to *github* by pushing
+
+8. Repeat 
   
 # Getting access another *GitHub* Repositories
 
 You can get access to other peoples code on *GitHub*
+
 * you can have different status, which determines whether you can *push* your commits (e.g change code)
 * but many code repos you can just download
 
@@ -123,7 +165,7 @@ lets get a repository, that I have created with useful R code
 1. Start a new R project
 2. Go to a directory where 
 
-Now that you've installed *Git*
+
 # <span style="color:orange"> Assignment </span>
 
 1. Create a new function (it can do whatever you think might be interesting)
@@ -131,15 +173,7 @@ Now that you've installed *Git*
 2. Add it to your repo, in the same *R* directory where you included the function from last class
 3. Commit your changes
 4. Push your changes to your Github Repo
-5. Submit the link to your Github Repo, for Assignment 2 on Canvas
+5. Submit the link to your Github Repo, for Assignment 2 on Canvas, Due Feb 27
 
 
-# <span style="color:orange"> Review Two Rmarkdowns </span>
 
-Before next class, review these two Rmarkdowns in 
-https://github.com/naomitague/ESM_262_Examples
-
-If you've already cloned this, you will find them in the Rmarkdown subdirectory
-
-* Sampling_example.Rmd
-* Error_checking.Rmd

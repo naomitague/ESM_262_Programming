@@ -231,8 +231,11 @@ With your group, think of an example program that you might want to design that 
 * break the program in to modules (naming them appropriately), write a contract for each one
 * create a diagram that shows how these modules would be put together to go from inputs to output for the overall program (you can use diagram.net OR any other software - your choice!)
 
+Create a document that includes the diagram and the contract for the overall program and each of the modules in the diagram. Submit as a pdf
 
--  <span style="color: maroon;">Add the link to your remote repository and name of this Rmarkdown file on Canvas as GROUP submission for Assignment 1b </span>
+-  <span style="color: maroon;">Submit on Canvas as GROUP submission for Assignment 1 </span>
+
+**Due Monday Feb 17th**
 
 # Important - First Review Task
 
