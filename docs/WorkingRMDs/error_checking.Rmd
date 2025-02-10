@@ -1,7 +1,7 @@
 ---
 title: 'Error Checking '
 author: "Naomi Tague"
-date: "January, 2021"
+date: "January, 2025"
 output:
   slidy_presentation:
    highlight: pygments
@@ -34,7 +34,7 @@ e.g. **power_gen_orig.R**
 
 * keep organized by keeping all functions in a subdirectory called *R*
 
-*  Eventually we will want our function to be part of a package (a library of many functions) - to create a package you must use this convention (name.R) place all function in a directory called “R”
+*  Eventually we may want our function to be part of a package (a library of many functions) - to create a package you must use this convention (name.R) place all function in a directory called “R”
 
 
 
