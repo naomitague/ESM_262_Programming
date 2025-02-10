@@ -4,17 +4,18 @@ description: Introduction to computing for data management and analysis for envi
   applications. The course provides MESM students with the basic computing and programming
   skills used in data science.
 site: distill::distill_website
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
 ---
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-## Welcome ESM 262
-
-A bit about me
+## A bit about me
 
 
 ```{r, out.width = "90%", out.height="90%",fig.cap = "Growing skills"}
@@ -26,7 +27,7 @@ knitr::include_graphics("img/whoIam.jpeg")
 
 
 
-## Course description
+##  <span style="color:orange">Course description</span>
 
 ESM 262 is an introduction to computing for environmental applications. The course provides practical training in software design best practices. 
 
@@ -42,12 +43,11 @@ The course features **R** for programming, **Git** for version control, **Markdo
 
 Class will include a mix of lectures and hands-on examples, using students' own computers.
 
-## Where and when
+## <span style="color:orange">Course where and when</span>
 
 **T/TH** 8:00 AM - 9:15 AM (Bren Hall 1510)
 
-
-## Teaching team
+ Teaching Team
 
 **Instructor:** Naomi Tague (www.tagueteamlab.org)
 
@@ -64,7 +64,7 @@ Class will include a mix of lectures and hands-on examples, using students' own 
 
 
 
-## Learning objectives
+## <span style="color:orange">Learning objectives</span>
 
 - 3 *BIG* concepts in programming are *modularity*, *data structure*, *looping* - we will learn skills related to all three of these
 
@@ -77,17 +77,14 @@ Class will include a mix of lectures and hands-on examples, using students' own 
 - practice partner coding
 
 
-## Course requirements
+## <span style="color:orange">Computing set up</span>
 
-### Computing
 
 -   Make sure you have installed git, R, R-studio
 
 -   Please bring your laptop to class
 
--   Make sure you have a Github account
-
-## Course materials and how we will work
+## <span style="color:orange">Course materials and how we will work</span>
 
 All lecture materials will be available on this course website as well as assignments. (But you will submit assignments on Canvas)
 
@@ -102,7 +99,7 @@ You learn to code by doing - not so much by watching others do!
 
 
 
-## Topics
+## <span style="color:orange">Topics</span> 
 
 |Week| Topic  | Date  | 
 |----|--------|---------|
@@ -118,9 +115,11 @@ You learn to code by doing - not so much by watching others do!
 | 5 |Testing and Packages   | 2025-03-13 |  
 
 
-## Assignments
+## <span style="color:orange">Assignments</span> 
 
 There will be 5  assignments (more or less one for each week). You will usually have time to work on the assignment in class and most will be in groups. 
+
+
 # Assignment materials and dates
 
 |Week| Name | Assigned   | Due date   | Group (G) | 
