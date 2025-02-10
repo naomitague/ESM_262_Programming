@@ -1,0 +1,66 @@
+---
+title: "fish_assigmment_notused"
+output: html_document
+date: "2025-02-10"
+---
+# Assignment 
+
+Write a function that takes a vector of fish names and always returns three items
+
+* the most common fish, 
+* the rarest fish
+* the total number of fish
+
+Create an Rmarkdown to demonstrate the use of your function with fish.txt - which
+is under Data on ESM_262_Examples
+
+[Data on ESM_262_Examples]{https://github.com/naomitague/ESM_262_Examples/blob/main/Data/fish.txt}
+
+Turn in on Gauchospace what your function returns when you run with fish.txt!
+
+*Challenge*: What if we had multiple catches - how would you run your summary function for all of those catches - see below for an example to generate multiple catches
+You don't have to run this one in but we will go over in class
+
+```{r  challenge}
+# generate some data if we had 10 different fishing days
+# some examples of using the purr family of functions
+
+possible.fish = c("salmon","steelhead","shark","tuna","cod")
+
+# lets generate random sample of the number of fish caught on each day
+ndays=10
+catches = round(runif(min=3, max=400, n=ndays))
+
+# now for each fishing day (and its number of fish caught) - use sample to genreate the fish
+catches_res = list(catches) %>% pmap(sample, x=possible.fish, replace=TRUE)
+# look at the sample catches
+catches_res[[1]]
+catches_res[[10]]
+
+# ok so how do we get the summary (rarest fish, number of fish for all catches in catch_res)?
+
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

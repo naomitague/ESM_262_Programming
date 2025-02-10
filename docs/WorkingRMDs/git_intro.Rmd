@@ -1,0 +1,100 @@
+---
+title: "git_setup"
+output: "html"
+date: "2025-01-24"
+author: "Naomi Tague"
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(purrr)
+
+```
+
+# Introduction to Setting Up Git for Use with RStudio
+
+Version control is essential for managing changes to your work and collaborating. Git is the most popular version control system and yay! integrates seamlessly with RStudio
+
+I'm going to give you some basic instructions to get started...want more details?
+This is a great reference
+
+[Happy Git](https://happygitwithr.com/)
+
+## Setup
+
+## Step 1 GitHub
+
+*Github* is an online server that manages the version control system - by using *Github* you can access your code from anywhere. 
+
+Usually, code development is done locally using *Git* (in our case *Git* integrated with Rstudio), but by coordinating with the centralized *Github* , you can keep track of changes from anywhere; and allow multiple to work on the code at the same time (each on their local computers) - Believe it or now it works :)
+
+To access *Github* you need to set up an account
+
+Step 1: Set up your account (remember your username)
+
+[Link to github](https://github.com)
+
+# Step 2: Installing *git* on your computer (for use with Rstudio)
+
+Happy git 
+does a really nice job of taking you through this, so I'm going to refer you to that chapter for some step by step instructions
+
+[Happy Git](https://happygitwithr.com/)
+
+Note if you don't know what a shell (or Terminal window in R) is also look at Appendix A.
+
+[Install GIT](https://happygitwithr.com/install-git)
+
+**Verify Git Installation**: To check if Git is installed, open RStudio and go to `Tools > Shell...`. In the shell window that opens, type:
+
+   ```
+   git --version
+   ```
+Press Enter. If Git is installed, you should see a version number (e.g., `git version 2.x.x`). If not, check to make sure you've completed the process
+
+Ask for help if you can't make this work
+
+# Tell R about Git 
+
+
+1. Open RStudio and go to `Tools > Global Options > Git/SVN`.
+2. Check the box labeled **Enable version control interface for RStudio projects**.
+3. If Git is not automatically detected, specify the path to the Git executable:
+   - On Windows: The path is usually `C:\Program Files\Git\bin\git.exe` or similar.
+   - On macOS/Linux: Use the Finder or File Explorer to locate where Git is installed, or ask for assistance.
+4. Click **Apply** or **OK** to save your settings.
+
+Let your local *Git* know who you are (GitHub user name and password)
+```{r eval=FALSE}
+library(usethis)
+# substitute your user name before running
+use_git_config(user.name = "Jane Doe", user.email = "jane@example.org")
+```
+
+## Step 3: Create or Link a Git Repository in RStudio
+
+### Option 1: Create a New Project with Git
+
+1. Go to `File > New Project > New Directory > New Project`.
+2. Check the box labeled **Create a Git repository**.
+3. Complete the setup by selecting a folder and naming your project.
+4. Click **Create Project**. RStudio will initialize a Git repository for the project.
+
+### Option 2: Link an Existing Project to Git
+
+1. Open an existing project in RStudio.
+2. Go to `Tools > Project Options > Git/SVN`.
+3. Select **Git** as the version control system and click **OK**. This will initialize Git for the project.
+
+Once Git is enabled, the **Git** tab will appear in the top-right pane of RStudio
+
+Remember this Project, add your Automobile power function and Rmarkdown to it
+We will cover next steps in class
+
+
+## Troubleshooting 
+
+- If the **Git** tab doesn’t appear, check that Git is enabled under `Global Options`.
+- Ensure that Git is installed and correctly configured in RStudio.
+- If you encounter issues, try restarting RStudio or reinstalling Git.
+

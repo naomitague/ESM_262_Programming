@@ -2,7 +2,7 @@
 ---
 title: 'Looping'
 author: "Naomi Tague"
-date: "January, 2022"
+date: "January, 2025"
 
 ---
 
@@ -13,8 +13,88 @@ library(tidyverse)
 library(purrr)
 library(ggpubr)
 ```
+# Other examples where you might need a *for* loop
+
+# Another Example
+
+Recall our annual yield of a crop function:
+
+
+$$ yield =  1.8*fertilizer^2 - 0.5*fertilizer  + 0.1*TP $$
+
+
+and TP is mean precipitation in cm
+
+
+ Use a *for* loop to estimate the total yield after 10 years if
+
+  * fertilizer is normally distributed with mean of 5 and standard deviation of 0.5
+  * TP is 20cm
+  
+  
+Task 2: Compare results using a function to compute yield (I've provided it for you) 
+
+Task 3: modify your function so that it returns total yield if the user inputs a vector of fertilizer and a vector of precipitation
+
+Check that function returns the same result as your original *for* loop
+
+
+# Do on your own first before you check with this
+
+```{r cropyield}
+
+fert = rnorm(n=10, mean=5, sd=0.5)
+TP = 20
+
+crop = data.frame(fert=fert)
+crop$yield = NA
+for (yr in 1:10) {
+  crop$yield[yr] = 1.8*fert[yr]^2 - 0.5*fert[yr]  + 0.1*TP
+}
+
+sum(crop$yield)
+ggplot(crop, aes(fert, yield))+geom_point()+labs(y="yield", x="fertilizer")
+
+# as a function
+
+compute_yield = function(fert, TP) {
+  yield = 1.8*fert^2-0.5* fert + 0.1*TP
+  return(yield)
+}
+
+# apply function
+compute_yield(fert, TP)
+sum(compute_yield(fert, TP))
+
+# a different function that includes annual sum
+compute_total_yield = function(fert, TP) {
+  yield = 1.8*fert^2-0.5* fert + 0.1*TP
+  ty = sum(yield)
+  return(ty)
+}
+
+compute_total_yield(fert, TP)
+
+# useful error checking
+compute_total_yield = function(fert, TP) {
+  
+  fert = ifelse(fert < 0, return("fertilizer cannot be negative"), fert)
+   
+  
+  yield = 1.8*fert^2-0.5* fert + 0.1*TP
+  ty = sum(yield)
+  return(ty)
+}
+```
+
+
+
+
+
 
 # A more complex example of looping in R
+
+Just read through this (preview) and try to understand - We will go through in class!
 
 Lets **scale** up from a single car to a group of cars on a highway
 and use our **autopower** function to estimate a distribution of power 

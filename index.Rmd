@@ -4,6 +4,7 @@ description: Introduction to computing for data management and analysis for envi
   applications. The course provides MESM students with the basic computing and programming
   skills used in data science.
 site: distill::distill_website
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
@@ -16,7 +17,7 @@ knitr::opts_chunk$set(echo = FALSE)
 A bit about me
 
 
-```{r, out.width = "80%", out.height="70%",fig.cap = "Growing skills"}
+```{r, out.width = "90%", out.height="90%",fig.cap = "Growing skills"}
 
 
 knitr::include_graphics("img/whoIam.jpeg")
@@ -42,7 +43,8 @@ The course features **R** for programming, **Git** for version control, **Markdo
 Class will include a mix of lectures and hands-on examples, using students' own computers.
 
 ## Where and when
-**T/TH 8:00 AM - 9:15 AM (Bren Hall 1510)
+
+**T/TH** 8:00 AM - 9:15 AM (Bren Hall 1510)
 
 
 ## Teaching team
@@ -98,7 +100,43 @@ Why structure it this way?
 You learn to code by doing - not so much by watching others do!
 
 
+
+
+## Topics
+
+|Week| Topic  | Date  | 
+|----|--------|---------|
+| 1 |Intro | 2025-02-11 | 
+| 1 |Modular Design | 2025-02-13 | 
+| 2 |Building Functions   | 2025-02-18 |
+| 2 |Functions, Data and Error Checking   | 2025-02-20 |
+| 3 |Git-Reproducibility   | 2025-02-25 |
+| 3 |Git-Conflictss   | 2025-02-27 |
+| 4 |Looping    | 2025-03-4 |
+| 4 |Control Structures   | 2025-03-6 |
+| 5 |Data Structures   | 2025-03-11 |  
+| 5 |Testing and Packages   | 2025-03-13 |  
+
+
 ## Assignments
 
-There will be 6 short assignment (more or less one for each week). You will usually have time to work on the assignment in class and most will be in groups. 
+There will be 5  assignments (more or less one for each week). You will usually have time to work on the assignment in class and most will be in groups. 
+# Assignment materials and dates
+
+|Week| Name | Assigned   | Due date   | Group (G) | 
+|----|--------|------------|------------|-------|
+| 1 |Modular Design | 2025-02-13 | 2025-02-17 | G |
+| 2 |Making a function   | 2025-02-18 | 2025-02-24 | I |
+| 3 |Using Git with your function   | 2025-02-25 | 2025-03-03 | I |
+| 4 |Looping   | 2025-03-4 | 2025-03-10 | I |
+| 5 |Functions  and testing | 2025-3-11| 2025-3-18 | G |
+
+
+# Assignment expectations and grading
+
+- All assignments submitted on Canvas
+- Late Assignments 10% each day. Try to submit on time as we build on the concepts and materials covered in each assignment
+- Style counts; So make sure your follow good programming practices including adding documentation and using informative variable names
+- You can use AI (ChatGPT etc) to help you learn syntax, but write the code yourself; this is how you learn
+- You can resubmit your assignment for additional feedback and we will upgrade your grade. Please do so with in one week of getting the assignment back
 
