@@ -24,11 +24,11 @@ library(tidyverse)
 
 <span style="color: cyan;"> Conceptual Design </span>
 
-* What is the goal
-* How can you break this goal into sub-task
+* What is the goal?
+* How can you break this goal into sub-task?
 * For the overall project and each sub-task
-  * What are the inputs
-  * What are the outputs
+  * What are the inputs?
+  * What are the outputs?
 
 
 # Modularity
@@ -67,7 +67,7 @@ EXAMPLES
 
 # Designing Modularity
 
-Modules often become ‘black boxes’ which hides detail that might make understanding the program overly complex
+Modules often become ‘black boxes’ which hide details that might make understanding the program overly complex
 
 Most languages have lots of black boxes already written and most allow you to write your own
 
@@ -75,7 +75,7 @@ Most languages have lots of black boxes already written and most allow you to wr
 
 # STEPS IN Program Design for Each Module and Overal Program Design
 
-1. Clearly define your goal in words/figures as precisely as possible, what do you want your program to do
+1. Clearly define your goal in words/figures as precisely as possible: what do you want your program to do?
      
       * input/output of the entire program
       + modules
@@ -132,7 +132,7 @@ head(result)
 
 In this example, parameters are **decreasing** and **method**
 
-output is a sorted version of saved to “result”
+output is a sorted version of "BOD", saved to “result”
 ---
 
 # Another Example
@@ -140,7 +140,7 @@ output is a sorted version of saved to “result”
 An phone app for calculating car mileage
 
 * inputs are location, price,  gallons and odometer readings at each fill up
-* graph of is miles/gallon over time
+* graph is of miles/gallon over time
 * parameters control units (could be km/liter, output couple be presented as a graph or an average value)
 
 [Gas Mileage App](https://www.igeeksblog.com/jerrycan-iphone-app/)
@@ -161,7 +161,7 @@ basic modules are called **functions** in R
 
 **CONTRACT**
 
-* if the users gives you A, the function with return B
+* if the user gives you A, the function with return B
 * specify A and B as precisely as you can (units, time/space scale, parameters, options)
 
 # A simple function example - just one module
@@ -194,9 +194,9 @@ Lets think about a more complex program...
 
 # A more complex one
 
-* Goal  - Calculate profit from a reservoir feed by river, if a minimum reservoir volume must be maintained and otherwise reservoir is operated at a flow rate, that is set by the user
+* Goal  - Calculate profit from a reservoir fed by river, if a minimum reservoir volume must be maintained, otherwise the reservoir is operated at a flow rate that is set by the user
 
-*Input*  Stream gage data (m3/sec)
+*Input*  Stream gauge data (m3/sec)
 
 *Parameters* Efficiency, ρ (density of water), g (acceleration due to gravity), Maximum Reservoir Capacity $(m^3)$, Minimum Reservoir Volume $(m^3)$, Set flow rate $(m^3/sec)$, Price of power $($/W)$
 
