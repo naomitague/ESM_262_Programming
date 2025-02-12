@@ -1,34 +1,30 @@
 ---
-title: 'Modularity'
-author: "Naomi Tague"
-date: "January, 2022"
+title: "Modular Design and Programming"
 output:
-  slidy_presentation:
-    highlight: pygments
-  html_document: default
-  beamer_presentation:
-    highlight: pygments
-  pdf_document: default
-  ioslides_presentation:
-    highlight: pygments
+  slidy_presentation: default
+  ioslides_presentation: default
+  beamer_presentation: default
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo =TRUE)
-knitr::opts_chunk$set(error=TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 ```
 
 
-# Programming Always Starts with 
+# First Step in Programming 
 
-<span style="color: cyan;"> Conceptual Design </span>
+**Always Starts With Detailing What Exactly You Want the Program to Do**
+
 
 * What is the goal?
-* How can you break this goal into sub-task?
+* How can you break this goal into sub-tasks?
 * For the overall project and each sub-task
   * What are the inputs?
   * What are the outputs?
+
+
+Be as specific/detailed as possible
 
 
 # Modularity
@@ -36,8 +32,7 @@ library(tidyverse)
 * Programs are made up of building blocks
 * A **main program** that controls the flow and **calls** functions/modules/building blocks
 
-[Modular Housing](https://images.app.goo.gl/moGdSXVHWiRvHm3X8/)
-
+![Modularity](../img/modularhood.jpg)
 
 # Modules take you from inputs to outputs in pieces
 
@@ -56,9 +51,9 @@ library(tidyverse)
 
 # Designing Modularity
 
-Breaking your instructions down into individual pieces
+1. Breaking your instructions down into individual pieces
 
-identifying instructions that can be reused
+2. Identifying instructions that can be reused
  
 EXAMPLES
 
@@ -129,11 +124,9 @@ result = sort(BOD[,"demand"], decreasing=TRUE, method="quick")
 head(result)
 ```
 
-
 In this example, parameters are **decreasing** and **method**
 
 output is a sorted version of "BOD", saved to “result”
----
 
 # Another Example
 
@@ -150,7 +143,7 @@ An phone app for calculating car mileage
 # Designing Modularity
 
 Breaking your instructions down into individual pieces
-identifying instructions that can be reused
+Identifying instructions that can be reused
 
 basic modules are called **functions** in R 
 
@@ -178,40 +171,47 @@ Contract
 
 *Output*: Instantaneous power generation (W/s)  (as a single value or value for each reservoir height and flow rate combination)
 
-*Parameters*: KEff, ρ (density of water), g (acceleration due to gravity)
+*Parameters*:  $K_{Eff}$;, ρ (density of water), g (acceleration due to gravity)
 
 What the function will do - compute power using the following equation - *body* of the function 
 
-P = ρ * h * r * g * KEff;
+P = ρ * h * r * g * $K_{Eff}$;
 
-P is Power in watts, ρ is the density of water (~1000 kg/m3), h is height in meters, r is flow rate in cubic meters per second, g is acceleration due to gravity of 9.8 m/s2, KEff is a coefficient of efficiency ranging from 0 to 1.
+P is Power in watts
+
+ρ is the density of water (~1000 kg/m3),
+
+h is height in meters,
+
+r is flow rate in cubic meters per second, 
+
+g is acceleration due to gravity of 9.8 m/s2,  
+
+$K_{Eff}$; is a coefficient of efficiency ranging from 0 to 1.
 
 
 Lets think about a more complex program...
----
 
-
-
-# A more complex one
+# A more complex example
 
 * Goal  - Calculate profit from a reservoir fed by river, if a minimum reservoir volume must be maintained, otherwise the reservoir is operated at a flow rate that is set by the user
 
-*Input*  Stream gauge data (m3/sec)
+*Input*  Stream gage data (m3/sec)
 
-*Parameters* Efficiency, ρ (density of water), g (acceleration due to gravity), Maximum Reservoir Capacity $(m^3)$, Minimum Reservoir Volume $(m^3)$, Set flow rate $(m^3/sec)$, Price of power $($/W)$
+*Parameters* Efficiency ($K_{Eff}$), ρ (density of water), g (acceleration due to gravity), Maximum Reservoir Capacity $(m^3)$, Minimum Reservoir Volume $(m^3)$, Set flow rate $(m^3/sec)$, Price of power $(\$/W)$ 
 
 *Output* Profit ($)
 
 *Modules*
 
-* Compute Power from a given reservoir height and flow rate (compute_power)
-* Keep track of reservoir volume given inflow and output (reservoir_state)
-* Determine flow rate, given operator desiered flow rate but need for minium capacity (determine_flow_rate)
-* Compute profit from power (compute_profit)
+* Compute Power from a given reservoir height and flow rate <span style="color:orange">( Compute_power )
+* Keep track of reservoir volume given inflow and output <span style="color:orange"> ( Track_reservoir )
+* Determine flow rate, given operator desired flow rate but requirements for minimum capacity <span style="color:orange">( Estimate_flow )
+* Compute profit from power  <span style="color:orange">( Compute_profit )
 
 Each module would have its own inputs, parameters and output
 
-Flow control diagrm - puts the modules together
+Flow control diagram - puts the modules together
 
 # Making Diagrams
 
@@ -221,7 +221,6 @@ I like  this free one accessible online from chrome
 
 [Diagram.net](https://www.diagrams.net/)
 
-[Example](https://drive.google.com/file/d/1UaDyKDgf0RQCjicMWUXA7gr4l1QK-X1y/view?usp=sharing)
 
 # Your Task
 
