@@ -1,0 +1,1 @@
+Rendering quarto files creates a folder for that file called filename_files with subfolders and files related to the rendering of that file. It can cause RStudio to hang, probably because of git trying to index everything at once. Would recommend deleting those folders before trying to use git via RStudio (at least the GUI).
