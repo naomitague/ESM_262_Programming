@@ -224,7 +224,7 @@ b) how I use ChatGPT
 
 library(tidyverse)
 # read in the data - call it something meaningful
-provwater = read.csv("../data/p301,csv", header=T)
+provwater = read.csv("../data/p301.csv", header=T)
 
 # always check to make sure you read it in correctly
 # looking at header, first and last lines can help
