@@ -136,7 +136,7 @@ An phone app for calculating car mileage
 * graph is of miles/gallon over time
 * parameters control units (could be km/liter, output couple be presented as a graph or an average value)
 
-[Gas Mileage App](https://www.igeeksblog.com/jerrycan-iphone-app/)
+[Gas Mileage App](https://apps.apple.com/us/app/fuelly-mpg-service-tracker/id295905460)
 
 *examples a)  simple (single box); b)  more complex (3 boxes)*
 

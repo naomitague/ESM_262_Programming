@@ -24,9 +24,35 @@ power_gen_orig
 
 ```
 
-# Questions? Starting_functions.html
+# Questions on Starting_functions.html?
 
-* scoping
+* scoping 
+
+Recall our function definition
+```{r eval=TRUE, echo=TRUE  }
+
+# function definition
+source("../R/power_gen_orig.R")
+power_gen_orig
+
+
+
+```
+
+What will height, result, Keff be after you run the following code?
+
+Write what you think the answer is before we check
+
+```{r, eval=FALSE}
+
+height=10
+power_gen_orig(height=12, flow=2)
+Keff
+height
+result
+
+```
+
 
 # Some insights into inputs
 
