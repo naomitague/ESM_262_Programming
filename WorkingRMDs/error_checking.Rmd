@@ -23,9 +23,8 @@ library(tidyverse)
 
 * We are using functions as a way to design modular programs (that might involve many functions that are linked together)
 
-* We always start with clearly defininng our goal for the whole program and each piece (and diagramming this if needed for programs made of multiple functions)
+* We always start with clearly defining our goal for the whole program and each piece (and diagramming this if needed for programs made of multiple functions)
 
-* Always write your function in a text editor and then copy into R
 
 * By convention we name files with functions in them by the name of the function.R
 e.g. **power_gen_orig.R**

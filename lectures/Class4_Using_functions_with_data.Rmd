@@ -186,7 +186,7 @@ Next week we will focus on *Git*
 
 To use this tool requires some set up
 
-# For next class (2 itemse)
+# For next class (2 items)
 
 1.  Please read and complete each of the steps in
 **git_setup.RMD**
