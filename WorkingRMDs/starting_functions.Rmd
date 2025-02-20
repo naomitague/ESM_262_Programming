@@ -87,7 +87,7 @@ ALWAYS USE Meaningful names for your function, its parameters and variables calc
 
 # function definition
 power_gen_orig = function(height, flow, rho=1000, g=9.8, Keff=0.8) {
-result = rho * height * flow * g * Keff
+result = rho * height * flow * g * Keff 
 return(result)
 }
 ```
