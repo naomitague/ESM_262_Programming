@@ -43,7 +43,7 @@ What will height, result, Keff be after you run the following code?
 
 Write what you think the answer is before we check
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, echo=TRUE}
 
 height=10
 power_gen_orig(height=12, flow=2)

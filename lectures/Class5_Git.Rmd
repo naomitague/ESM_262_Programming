@@ -129,32 +129,60 @@ Steps
     
     
   
-4. Go to Git, 
+4. Tell Git (local) about your new file 
 
-    4.1. add this file
+    4.1. go to the commit section
+    
+    4.2. you new file will have a ?, check the box it
+      will turn to A for add
   
-    4.2. commit the addition (add a comment)
+    4.2. add a commit message; somethink like "added a function to do X to the project"
+    
+    4.4 click commit
   
-5. Now change something in your R code; you could just add a comment
+5. Now change something in your R code; you could just add a comment ,then go to the Git tab
 
-    5.1. see how this shows up in git diff
+    
+    5.1. add your change and save the file
+    
+    5.2. see how this shows up in git diff
   
-    5.2. see how this now has an *M* for modified
+    
   
 6. Once you like what you changed, commit it
 
-    6.1. add a comment
+    6.1 your file should have an *M* for modified, check this to "stage" your changes for commit
+    
+    6.2 add a message briefly describing what you changed
   
-    6.2. commit
+    6.3. commit
   
 7. Send changes to *github* by pushing
 
 8. Go to *github* and check to see if your file and recent changes are there
 
-8. Repeat 
 
 
+# Add another file
+
+1. Create a new file - maybe a Quatro file that will do something with your R function - add 1-2 lines
+
+2. Save it into the appropriate directory
+( using organized directory structures is good programming practice )  
+
+3. Add it to Git local
+  3.1 go to Git and then commit 
+  3.2 find your file, should have a "?", check so that it becomes an "A"
+  3.3 add a commit message
+  3.4 commit
   
+4. Continue to edit your file but this time add something you don't want
+  4.1 make a changes that you won't want, and save
+  4.2. go to your file and look at the changes
+  4.3 click revert to get rid of the changes that you don't want
+  4.4 look at file to make sure  unwanted edit is not there
+
+
 # Getting access another *GitHub* Repositories
 
 You can get access to other peoples code on *GitHub*
