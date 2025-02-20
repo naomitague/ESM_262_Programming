@@ -240,12 +240,13 @@ You can use this to download course files going forward
 
 # <span style="color:orange"> Assignment Due next class Feb 27! </span>
 
-1. Using the repo that you created in class, add the automobile function in the same *R* directory where you included your function from class (so now there are two files)
+1. Using the repo that you created in class, add the automobile function in the same *R* directory where you included your function from class 
 2. Add it to your repo
 3. Commit your changes
 4. Push your changes to your Github Repo
 5. Add naomitague and ojassarup as Collaborators
 5. Submit the link to your Github Repo, for Assignment 3 on Canvas, Due Feb 27
 
+Note there should be at least 2 files in your Github Repo
 
 
