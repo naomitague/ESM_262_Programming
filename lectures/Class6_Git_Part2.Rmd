@@ -50,8 +50,14 @@ There are several ways - we will cover the most common
     * They will get an email and need to accept
   
 2. Clone your partner's repository on your computer
+    * Start a new project from an existing git repository
+    * Use the web link from your partner's GitHub repository
 
 3. Make a change and push it back to the repository
+    * edit one of the files
+    * commit the change
+    * push to GitHub
+    * check to make sure each other's changes are in GitHub
 
 # <span style="color:orange"> How conflicts occur </span>
 
@@ -99,14 +105,18 @@ What to do!
 # What if I commited my changes to a file, can I get it back
 
 
-  5.1 make a change and save
-  5.2 commit the change
-  5.3 go to 'history' in the 'git' window
+1. make an "incorrect" change and save
+
+2. commit the change
+
+3.  go to 'history' in the 'git' window
     Notice that every commit has a unique "SHA"
-  5.4 find the commit that you want to go back to
-  5.5 check that its what you want by looking at the changes
-  5.5 view the file
-  5.6 view its history
+
+4.  find the commit that you want to go back to before the mistake
+
+5. check that its what you want by looking at the changes
+
+6. 
 
 
 # <span style="color:orange"> For next class: Re-submit Assignment </span>

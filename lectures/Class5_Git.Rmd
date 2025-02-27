@@ -10,10 +10,10 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# My code for our AutoPower Function
+# <span style="color:orange">My code for our AutoPower Function</span>
  Code
 
-```{r powerexample}
+```{r powerexample, echo=TRUE}
 
 #' Power Required by Speed
 #'
@@ -102,60 +102,60 @@ I've also stored the autopower.R function as a file
 
 
 
-# Lets try
+# <span style="color:orange">Lets try</span>
 
 Steps
 
 1. In *GitHub*, create a new repository; you will use this for an assignment, so name it appropriately.
 
-    1.1. Make it a public repo.
+    * Make it a public repo.
     
-    1.2. Get the link for cloning.
+    * Get the link for cloning.
     
 2. In *Rstudio* create a new project; 
 
-    2.1. put it in a new directory 
+    * put it in a new directory 
   
-    2.2. make sure you enable *git* in project set up (if you miss this go to Project Options) 
+    * make sure you enable *git* in project set up (if you miss this go to Project Options) 
   
-    2.3. set your link to *GitHub* repository
+    * set your link to *GitHub* repository
   
 3. Add a new file
 
   
-    3.1. create a subdirectory called *R*
+    * create a subdirectory called *R*
   
-    3.3. move/copy your function from the last assignment to this subdirectory
+    * move/copy your function from the last assignment to this subdirectory
     
     
   
 4. Tell Git (local) about your new file 
 
-    4.1. go to the commit section
+    * go to the commit section
     
-    4.2. you new file will have a ?, check the box it
+    * you new file will have a ?, check the box it
       will turn to A for add
   
-    4.2. add a commit message; somethink like "added a function to do X to the project"
+    * add a commit message; somethink like "added a function to do X to the project"
     
-    4.4 click commit
+    * click commit
   
 5. Now change something in your R code; you could just add a comment ,then go to the Git tab
 
     
-    5.1. add your change and save the file
+    * add your change and save the file
     
-    5.2. see how this shows up in git diff
+    * see how this shows up in git diff
   
     
   
 6. Once you like what you changed, commit it
 
-    6.1 your file should have an *M* for modified, check this to "stage" your changes for commit
+    * your file should have an *M* for modified, check this to "stage" your changes for commit
     
-    6.2 add a message briefly describing what you changed
+    * add a message briefly describing what you changed
   
-    6.3. commit
+    * commit
   
 7. Send changes to *github* by pushing
 
@@ -163,7 +163,7 @@ Steps
 
 
 
-# Add another file
+# <span style="color:orange">Add another file</span>
 
 1. Create a new file - maybe a Quatro file that will do something with your R function - add 1-2 lines
 
@@ -171,20 +171,25 @@ Steps
 ( using organized directory structures is good programming practice )  
 
 3. Add it to Git local
-  3.1 go to Git and then commit 
-  3.2 find your file, should have a "?", check so that it becomes an "A"
-  3.3 add a commit message
-  3.4 commit
+
+    * go to Git and then commit
+    
+    * find your file, should have a "?", check so that it becomes an "A"
+    * add a commit message
+    * commit
   
 4. Continue to edit your file but this time add something you don't want 
-  4.1 make a change and save
-  4.2. go to your file and look at the changes
-  4.3 click revert to get rid of the changes that you don't want
-  4.4 look at file to make sure  unwanted edit is not there
+
+    * make a change and save
+    
+    * go to your file and look at the changes
+    
+    * click revert to get rid of the changes that you don't want
+    * look at file to make sure  unwanted edit is not there
 
 We will talk about how to get something back *after* you've committed it next class
 
-# Terminal Git - what is used by other programs?
+# <span style="color:orange">Terminal Git - what is used by other programs?</span>
 
 
 
@@ -200,7 +205,7 @@ Try
 
 
 
-# Getting access another *GitHub* Repositories
+# <span style="color:orange">Getting access another *GitHub* Repositories</span>
 
 You can get access to other peoples code on *GitHub*
 
@@ -230,7 +235,7 @@ Files will be downloaded there
 3. IF the files are actually an **R package** and you just want the files (so you won't be able to modify them and push/pull with the repo)
 
 you can use
-```{r}
+```{r eval=FALSE}
 library(devtools)
  install_github("naomitague/ESM_262_Examples")
 ```
