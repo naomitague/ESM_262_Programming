@@ -114,6 +114,8 @@ What to do!
 
 4.  find the commit that you want to go back to before the mistake
 
+Here's my mistake
+
 5. check that its what you want by looking at the changes
 
 6. 
