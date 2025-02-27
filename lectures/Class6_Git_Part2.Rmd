@@ -73,8 +73,7 @@ I'll show you in my own work flow then I'll have you try with a partner
 * You can have multiple copies of your *repo* (e.g on different computers); *github* will be the centralized *repo*, all push and pulls go through there
 
 
-
-
+Add a new idea here!
 
 # <span style="color:orange"> Resolving conflicts </span>
 
