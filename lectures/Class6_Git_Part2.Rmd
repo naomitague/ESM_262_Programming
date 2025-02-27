@@ -10,7 +10,10 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+
 New idea goes here
+Write something different
+
 
 # <span style="color:orange"> Git and what to do with it </span>
 
