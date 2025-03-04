@@ -19,8 +19,15 @@ library(purrr)
 library(ggpubr)
 ```
 
-Any questions on 
-# Looping (or repetition) 
+Fixing Git when trying to pull from partner's repo
+
+In terminal
+
+*git config pull.rebase false*
+
+Has to do with default settings
+
+# <span style="color:orange">Looping (or repetition) 
 
 Repeating something is a fundamental concept in programming
 
@@ -28,12 +35,10 @@ We usually call this *looping*
 
 All programming languages have ways to do this - sometimes hidden
 
-# Looping 
-
 
 Lets start with the basics of how you do repetition 
 
-# For loops
+# <span style="color:orange">For loops
 
  **for** statement 
   
@@ -42,9 +47,9 @@ Lets start with the basics of how you do repetition
 * the counter - could be any variable (we often use *i*) but you could
   use what ever variable you want
   
-* the loop is  the commands between the *{* and *}* after the *for* keyword
+* repeats the commands between the *{* and *}* after the *for* keyword and loop definition
   
-* these commands are repeated each time you go through the loop (following the definition)
+* these commands are repeated until counter conditions is TRUE
 
 ```{r loop }
 
@@ -70,10 +75,15 @@ a = sum(seq(from=1, to=5))
 a
 ```
 
-# Try a loop on your own 
+# <span style="color:orange">Try a loop on your own 
 
 Make a loop that computes the mean/average of a set of numbers, use *runif* to
 generate a test/example set of 100 random numbers
+
+Generating test data is a helpful way to check your code
+Take advantage of built in R functions to sample from distributions *normal*, *uniform*, ...
+
+[Nice list of options](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Distributions.html)
 
 ```{r}
 testnumbers = runif(min=0, max=20, n=100)
@@ -81,7 +91,7 @@ testnumbers = runif(min=0, max=20, n=100)
 
 Check if your loop is correct using *mean*
 
-# My answer
+# <span style="color:orange">My answer
 
 ```{r}
 testnumbers = runif(min=0, max=20, n=100)
@@ -96,7 +106,7 @@ total/nvalues
 mean(testnumbers)
 ```
 
-# Another example
+# <span style="color:orange">Another example
 
 Calculating net income from revenue minus expenses
 
@@ -146,7 +156,7 @@ for (n in 1:10) {
 head(account)
 ```
 
-# Why loop
+# <span style="color:orange">Why loop
 
 While *sum* and *mean* are functions created by R community, what if you were doing something more complex to each row
 
@@ -155,6 +165,8 @@ What if we wanted to use data from multiple rows for each calculations?
 For example, we want to carry forward net from the previous year (info from a different row)
 
 So carry forward net income is current year's net income plus last year's net
+
+
 
 ```{r loop2 }
 
@@ -191,34 +203,40 @@ max(speeds)
 
 
 ```
-# Add some complexity
+# <span style="color:orange">Add some complexity
 
-Lets imagine that these are running speeds of a creature we 
+Lets imagine that we have data on running speeds of a creature we 
 are trying to develop a conservation plan for - 
-To understand how often they are hunting, we want to know 
-how often  recorded speeds above 75
+
+We think that when the creature is running at 35 km/hr and about they are hunting. We want to estimate how often they are hunting
+
 Build a for loop to do this (there are other ways to get there with R but we want to practice looping)
+
+As before, generate some test data using functions in R that allow you to generate data by sampling from distributions with known parameters 
 
 # My answer
 ```{r}
 
 # make up sample data
 
-speeds = runif(min=0, max=150, n=300)
+speeds = runif(min=0, max=50, n=300)
 
 # note how its useful to set a variable for our threshold hunting speed
 # makes it easy to change and helps improve code readibility
-hunting_speed = 75
+hunting_speed = 35
 num_hunting_speeds=0
 for ( i  in 1:length(speeds)) {
   num_hunting_speeds = num_hunting_speeds + ifelse(speeds[i] >= hunting_speed, 1, 0)
 }
 
 num_hunting_speeds
+
+# as a percent of recorded speeds
+num_hunting_speeds/length(speeds)*100
 ```
 
 
-# Steps for running function over multiple inputs 
+#  <span style="color:orange"> Steps for running function over multiple inputs 
 
 
 1. design a data structure to store results: sometimes this is automatic but not always
@@ -228,7 +246,7 @@ num_hunting_speeds
   * more generally looping (*for*, *while*, ...others)
   
 
-#  <span style="color:blue"> A bit more on Looping 
+#  <span style="color:orange"> A bit more on Looping 
 
 Loops can be "nested" with one loop inside the other
 
@@ -246,12 +264,48 @@ useful for "doing" something to each row and each column
 }}
 
 
+
 In nested loops, the inner loop (last **FOR** in the sequences, gets done first)
 
 So the loop above will all columns for the first row and then go to the next row
 
+# <span style="color:orange"> Simple Example
 
-# Example
+Imagine we have a running speeds from our creature for different locations - stored in a array where rows are locations and columns are observations
+
+Find number of times hunting occured across all locations
+
+```{r}
+
+# create some sample data
+nobs = 100
+nlocation = 15
+# matrix function in R lets you initialize with data
+creatureobs = matrix(runif(nobs*nlocation, min=0, max=100), nrow=nlocation)
+# check to see that it a matrix with rows and columns
+str(creatureobs)
+
+
+# nested for loop example, use o as counter for observation; l as a counter for locatin
+# outer loop for location
+hunting_speed = 35
+num_hunting_speeds=0
+for (l in 1:nlocation) {
+  # inner loop for observations 
+  for (o in 1:nobs) {
+     num_hunting_speeds = num_hunting_speeds + ifelse(creatureobs[l,o] >= hunting_speed, 1, 0)
+  }
+}
+
+num_hunting_speeds
+# as percent
+num_hunting_speeds/(nobs*nlocation)*100
+    
+```
+
+
+# <span style="color:orange"> More Complex Example
+Example
 
 Calculate NPV for
 
@@ -269,7 +323,7 @@ Calculate NPV for
 
 Try it first...
 
-# Rcode
+# <span style="color:orange">Rcode
 ```{r npvfor, echo=TRUE, error=FALSE}
 
 # write a function to compute npv
@@ -423,7 +477,7 @@ for (x in 1:nrow(ocean)) {
 
 You can either clone the following repository or just go to the repo on github and download the file
 
-[Example/Review Repo](https://github.com/naomitague/ESM_262_Examples.git")
+[Example/Review Repo](https://github.com/naomitague/ESM_262_Examples.git)
 
 "git clone https://github.com/naomitague/ESM_262_Examples.git"
 
