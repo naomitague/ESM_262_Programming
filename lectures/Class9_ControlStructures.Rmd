@@ -1,7 +1,7 @@
 ---
 title: "Control Structures"
 author: "Naomi Tague"
-date: "January, 2023"
+date: "January, 2025"
 output:
   slidy_presentation:
     highlight: pygments
@@ -21,49 +21,6 @@ library(tidyverse)
 library(purrr)
 ```
 
-#  Questions from Looping.RMD
-
-# Some other types of loops
-
-* while
-  useful for repeating until a condition is met
-
-Example
-if a metal toxin in a lake increases by 1% per year, how many years will it take for the metal level to be greater than 30 units, if toxin is current at 5 units
-
-
-```{r} 
-
-# accumulate pollutant until a threshold - how many years does it take
-
-# initial conditions
-yr=1
-pollutant_level = 5
-
-# loop
-while ((pollutant_level < 30) &&(yr < 1000))  {
-  # increase pollutant
-pollutant_level = pollutant_level + 0.01* pollutant_level 
-# keep track of time
-yr = yr + 1
-}
-
-pollutant_level
-yr
-
-# while loop dangers
-# what if it doesn't end....
-
-# see below - I left it commented out -because it will run for ever :)
-# you can use controlC to stop
-
-#while ((pollutant_level < 30))  {
-  # increase pollutant
-#pollutant_level = pollutant_level - 0.01* pollutant_level 
-#}
-
-
-```
 
 
 # Flow Control (think of steering your program)
@@ -233,40 +190,6 @@ temperature = rep(25, times=30)
 classify_lake(temperature=temperature, nutrient=nutrient)
 ```
 
-
-
-# What we've learned
-
-* how to write a function (and add error checking)
-* how to generate data
-* how to repeat in code  (different types of looping)
-* how to make choices (flow control)
-
-
-
-# Assignment 4
-
-For this assignment you will write a new Rmarkdown document based on the analysis of power required for different *possible_cars* from looping.RMD; You will
-
-* Add an additional super light car with mass 5,000 kg and a surface area 10m2
-
-* Compute the mean and maximum power for Cars A, B, C and for your new car, assuming that average highway speed is 80 km/hr with a standard deviation of 10km/hr;  Use 2 different methods to compute the mean and maximum power for each car type; a) **FOR** loop and b) the **pmap** function from **purr**
-
-* Create two boxplots (one for each method (**FOR** and **pmap**)) that show the range of power consumption (across sampled speeds) for each car type.
-
-Put the Rmarkdown in your assignment github and submit a link on Gauchospace for Assignment 3 when its ready to be graded
-
-**Grading Rubric**
-
-1. Correct R code for adding the super light car (5pts)
-2. Values for mean and maximum power for all 4 cars are in expected ranges (remember you are sampling so values will differ slightly) (5pts)
-3. Used both methods (**FOR** and **pmap**) correctly (4pts)
-4. Boxplots (6pts)
-  a) correctly show range of power consumption for each car type for the two methdos
-  b) good presentation (e.g axis labels, colors)
-5. Good coding practice (e.g Adequate documentation throughout) (5pts)
-
-Total out of 25pts
 
 
 
