@@ -151,7 +151,7 @@ Mean highway speed is 100 km/hr
 
 ```{r sampling2, eval=TRUE, echo=TRUE}
 
-source("../R/autopower.R")
+#source("../R/autopower.R")
 # generate a structure to store info on our possible cars
 possible_cars = data.frame(name = c("A","B","C"),mass=c(10000,65000,38000), area = c(22,30,22))
 
@@ -376,6 +376,7 @@ For this assignment you will write a new Quartro document based on the analysis 
 
 * Compute the mean and maximum power for Cars A, B, C and for your new car, assuming that average highway speed is 80 km/hr with a standard deviation of 10km/hr;  Use 2 different methods to compute the mean and maximum power for each car type; a) **FOR** loop and b) the **pmap** function from **purr**
 
+* Assume normal distribution of speeds
 * Create two boxplots (one for each method (**FOR** and **pmap**)) that show the range of power consumption (across sampled speeds) for each car type.
 
 Put the Quatro in your assignment github and submit a link on Canvas for Assignment 4 when its ready to be graded
