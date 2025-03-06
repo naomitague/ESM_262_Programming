@@ -385,7 +385,7 @@ An alternative (R specific) is to use functions from the **purr** package
 Specifically *pmap* - which applies a function over multiple inputs 
 
 ```{r}
- # we could also do the repetition with map_dfc from the purr family of functions
+ # we could also do the repetition with pmap from the purr family of functions
 
 # use damages and discount rates from above
 
@@ -441,7 +441,7 @@ To illustrate
 
 # lets ocean be a 3 dimensional array - space (x,y) and time
 # lets say is a 2 by 3 spatial maps (2 units across, 3 units down), and 2 time steps
-ocean = array(dim=c(2,3,2))
+ocean = array(dim=c(20,30,10))
 
 ocean
 
@@ -459,7 +459,9 @@ ocean[2,1,1] = runif(n=1, min=0, max=1)
 for (x in 1:nrow(ocean)) {
   for (y in 1:ncol(ocean)) {
     for (t in 1:dim(ocean)[3]) {
-      ocean[x,y, t] = runif(n=1, min=0, max=1)
+      ocean[x,y, t] = rnorm(mean=16+t, sd=2, n=1)
+      # imagine running a model to estimate ocean temperature
+      # then feeding it into a model that uses that temperature to impact corals
     }}}
 
 

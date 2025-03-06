@@ -124,7 +124,7 @@ pollutant_level = pollutant_level - 0.01* pollutant_level
 * how to write a function (and add error checking)
 * how to generate data
 * how to repeat in code  (different types of looping)
-* how to make choices (flow control)
+
 
 
 # A more complex example of looping in R
@@ -174,7 +174,7 @@ ggplot(possible_cars, aes(x=mass, y=power, fill=as.factor(area)))+geom_col()+lab
 
 # Building a highway
 
-What could be the total power consumed if there are 100 cars on this highway each hour,
+What could be the total power consumed if there are 200 cars on this highway each hour,
 they are travelling at a range of speeds - mean is 100km/hr and speeds tend to
 be log-normally distributed)
 
@@ -283,11 +283,12 @@ head(powerall2)
 
 # how many cars area there
 nrow(possible_cars)
+ncol(powerall2)
 # for loops use an index - in this case "i" but you could use anything - it repeats
 # anything between the {} for each values of i between 1 and nrow(possible_car) (which is 3 in our case)
 
 # index in to a matrix (like powerall3) is by row and column powerall3[2,5] is 2nd row and 5th column
-for (i in 1:nrow(possible_cars)) {
+for (i in 1:ncol(powerall2)) {
   powerall2[,i] = autopower(A=possible_cars$area[i], m=possible_cars$mass[i], V=speeds)
 }
 
