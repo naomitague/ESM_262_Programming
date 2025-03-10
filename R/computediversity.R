@@ -1,7 +1,7 @@
-#' Describe diversity based on a list of species 
-#' 
+#' Describe diversity based on a list of species
+#'
 #' Compute a species diversity index
-#' @param species list of species (names, or code) 
+#' @param species list of species (names, or code)
 #' @return list with the following items
 #' \describe{
 #' \item{num}{ Number of distinct species}
@@ -17,9 +17,12 @@ computediversity = function(species) {
 
 species = as.factor(species)
 
-# use simple simpson form
+# use simple simpson form (alternative approach)
 tmp = (summary(species)/sum(summary(species))) ** 2
 diversity = 1.0-sum(tmp)
+
+# or call the function
+diversity = compute_simpson_index(species)
 
 # number of species
 nspecies = length(summary(species))
