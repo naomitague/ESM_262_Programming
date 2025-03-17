@@ -1,7 +1,7 @@
 ---
 title: 'Testing'
 author: "Naomi Tague"
-date: "January, 2023"
+date: "January, 2025"
 output:
   slidy_presentation:
    highlight: pygments
@@ -23,37 +23,27 @@ library(testthat)
 
 ```
 
-# Questions on Datatypes.Rmd
-DataTypes.Rmd
-
-Two key "take homes"
+# Datatypes
 
 * working with *factors*
-* how to return multiple items from a function using *list*
+* how to return multiple items from a function using *list*s
 
-How do you figure out the rarest fish in our simulated ocean?
+# <span style="color:orange"> Types of Testing
 
-Try it - generate a simulated ocean by sampling; and then uses summary to find the rarest fish
+Many types ...
 
+# <span style="color:orange">Unit Testing</span>
 
-# Answer
-```{r answer}
+**Unit testing**
 
-possible.fish = c("salmon","steelhead","shark","tuna","cod")
-catch1 = base::sample(possible.fish, size=20, replace=T)
-rarestfish = names(which.min(summary(as.factor(catch1))))
-rarestfish
+* test each unit
+    * function
+    * box in your flow chart  
 
-plottitle = sprintf("The rarest fist is %s", rarestfish)
-ggplot(data.frame(catch1=catch1), aes(catch1, fill=catch1))+geom_histogram(stat="count")+labs(title=plottitle)
+* mostly focused on does each piece work!
 
-```
-
-# <span style="color:orange">Testing</span>
 
 Top 12 Reasons to Write Unit Tests - Burke and Coyner (Java programmers)
-
-
 
 * Tests reduce bugs in new features
 * Tests reduce bugs in existing features
@@ -76,8 +66,10 @@ In R, *testthat* library
 Install and add this library
 
 
-* need devtools and “testthat” libraries
+* need *devtools* and *testthat* libraries
+
 * test_dir(“name”) :runs all tests in the “name” subdirectory  (all files beginning with the word “test”
+
 * test_file(“name”): runs all  the tests in a file called “name”
 
 What is a test?
@@ -86,7 +78,7 @@ Testing in R uses expectation
 
 # <span style="color:orange">Expectation</span>
 
-functions that you can use to make sure your code is working the way you think it should be working
+Functions that you can use to make sure your code is working the way you think it should be working
 
 * expect_true(condition)
 * expect_equal(value, value)
@@ -95,6 +87,9 @@ functions that you can use to make sure your code is working the way you think i
 * expect_length(object, n)
 
 
+A good source for more expectation code and ways to do testing
+
+[testing](https://testthat.r-lib.org/reference/index.html)
 
 ```{r testingsimple, eval=TRUE, error=TRUE}
 
@@ -131,6 +126,16 @@ We can use expectation with functions
 Quickly and repeatedly test that they are working as expected 
 as you develop code
 
+# <span style="color:orange">Try it</span>
+
+Source *compute_NPV.R*
+
+use *expect_true* to test whether this function works
+
+What might be good tests?
+
+* positive values
+* zero conditions (no money)
 
 ```{r testfunctions}
 
@@ -138,12 +143,13 @@ source("../R/compute_NPV.R")
 
 futurevalue = 100
 expect_true(compute_NPV(value=futurevalue, time=10, discount=0.01) > 0)
+
 futurevalue = -100
 expect_true(compute_NPV(value=futurevalue, time=10, discount=0.01) > 0)
 
 
 # what if function returns a list?
-# we can use the buit in summary function to see how this works
+# we can use the built in summary function to see how this works
 testdata = rnorm(mean=25, sd=3, n=100)
 summary(testdata)
 # it is actually returning a list, but what are the names?
@@ -155,8 +161,17 @@ summary(testdata)["Max."]
 
 expect_true((summary(testdata)["Max."]-summary(testdata)["Min."]) > 0)
 ```
+# <span style="color:orange">Testing</span>
 
-# More on testing functions 
+The *art* of testing is in creating the test
+
+* known inputs - known outputs
+* what happens if user gives you garbage data
+* what inputs would test "functionality"
+
+Examples?
+
+# <span style="color:orange"> More on testing functions 
 
 Lets create a function with an error 
  
@@ -164,12 +179,19 @@ We want a function that computes total rainfall and total recharge from a daily 
  
 Daily recharge of water to soil after rain is:
 
-recharge = daily rainfall - interception 
+$ recharge = daily rainfall - interception $
 
-inputs: time series of daily  rainfall (mm), single value interception (default 1mm)
+*inputs*: 
 
-outputs: totalrainfall (mm), totalrecharge (mm)
+  * time series of daily  rainfall (mm), 
+  * single value interception (default 1mm)
 
+*outputs*: 
+
+  * totalrainfall (mm), 
+  * totalrecharge (mm)
+
+What are some tests we should do?
 
 
 ```{r testfunctions2}
@@ -178,23 +200,90 @@ outputs: totalrainfall (mm), totalrecharge (mm)
 source("../R/compute_recharge.R")
 
 # lets do some simple tests
-# if it never rains for 730 days then both total rainfall and recharage # should be zero
+# if it never rains for 730 days then both total rainfall and recharge  should be zero
 
+# notice how we access the list items from multiple returns
 raindata = rep(0, times=730)
-expect_that(effective_rain(raindata)$totalrain, equals(0))
+expect_that(compute_recharge(raindata)$totalrain, equals(0))
 # so far so good, now for recharge
 
 raindata = rep(0, times=730)
-expect_that(effective_rain(raindata)$totalrecharge, equals(0))
+expect_that(compute_recharge(raindata)$totalrecharge, equals(0))
 
 # what went wrong???
 
 
 ```
 
+Fix and retry
+
+```{r}
+
+source("../R/compute_recharge_corrected.R")
+raindata = rep(0, times=730)
+expect_that(compute_recharge(raindata)$totalrecharge, equals(0))
+```
 
 
-# <span style="color:orange">The art of testing</span>
+# <span style="color:orange">Testing in R</span>
+
+
+A **test** runs a bunch of **expectation** functions and returns a message
+
+You can also include data!
+
+
+Format
+
+test_that(description, series of expectations)
+
+*Returns*
+
+Information about how many expectations (tests) passed or failed
+
+We usually store these in a subdirectory called **tests**
+
+Example *test_compute_recharge.R*
+
+```{r trytesting}
+source("../R/compute_recharge.R")
+test_file("../tests/test_compute_recharge.R")
+
+# see what happens if we go back to old file
+source("../R/compute_recharge_corrected.R")
+test_file("../tests/test_compute_recharge.R")
+```
+
+
+# <span style="color:orange">Using tests </span>
+
+What we really want is to have tests that we **always** run, everytime we change something
+
+
+Store multiple test in a *name.R* file  store these in these in the *tests* directory
+
+Two options
+
+* To run all tests in a file, use *test_file*
+
+
+* To run all tests in a directory,use *test_dir*  (you can also do this from Build menu)
+
+
+*Goal*: Make tests for each function that might be part of a larger project
+
+```{r testing, eval=FALSE}
+
+source("../R/compute_NPV.R")
+# put your test in a file
+test_file("../tests/test_compute_NPV.R")
+
+
+# run all tests
+test_dir("../tests")
+```
+
+# <span style="color:orange">A bit more on testing</span>
 
 
 It is good practice to create tests for functions (especially
@@ -208,71 +297,29 @@ You need to be creative here - test for things you know will work (quick way to 
 
 Usually we want to run multiple tests..
 
-# <span style="color:orange">Testing in R</span>
 
+# <span style="color:orange"> Stepping back - What we've covered in this course
 
-A **test** runs a bunch of **expectation** functions and returns a message
+* Data Science starts with clearly defining your goal
 
-Format
+* Turning goals into program
+  * clearly defined pathway from inputs to output
+  * modularity - breaking it in to steps
+  * flow chart first - having a plan
+  
+* Core concepts
+  * function
+  * data types and structures
+  * looping
+  
+* Best (and common!) Practices
+  * git and git hub for collaborating and tracking
+  * Documenting as you go 
+  * Testing as you go
 
-test_that(description, series of expectations)
+Thank you!
 
-We usually store these in a subdirectory called **tests**
-
-Example *test_compute_NPV.R*
-
-
-
-# <span style="color:orange">Using tests </span>
-
-What we really want is to have tests that we **always** run, everytime we change something
-
-
-Store multiple test in a *name.R* file  store these in these in the *tests/testthat* directory
-
-Two options
-
-To run all tests in a file, use *test_file*
-
-
-To run all tests in a directory,use *test_dir*  (you can also do this from Build menu)
-
-
-Goal: Make tests for each function in your package 
-We will talk more about making packages next week
-
-```{r testing, eval=FALSE}
-
-source("../R/compute_NPV.R")
-# put your test in a file
-test_file("../tests/test_compute_NPV.R")
-
-
-# run all tests
-test_dir("../tests")
-```
-
-# Spring Summary Function
-
-A more complex function examples - a function that extracts information
-about spring temperature  from a long time series of daily
-climate data
-
-Review the tests and *spring_summary* function for next class
-These are in 
-
-[ESM_262_Examples](https://github.com/naomitague/ESM_262_Examples)
-
-PLEASE pull most recent version - I had to make some changes to *spring_summary*
-
-# More on Testing
-
-A good source for more expectation code and ways to do testing
-
-[testing](https://testthat.r-lib.org/reference/index.html)
-
-
-# Assignment 
+# Last Assignment! 
 
 For this assignment work in *pairs* - and submit as a group
 
@@ -282,18 +329,18 @@ For this assignment work in *pairs* - and submit as a group
   * Make sure you include documentation (both at the top as we've shown in past examples, and inline)
   * Include some error checking
 
-* In an Rmarkdown file, generate some data for 2 of the function inputs
+* In an Quatro file, generate some data for 2 of the function inputs
   * use a *for*  loop to run the function for the data
   * repeat the "looping" using something from the "purrr" package 
   * Graph results (you can decide what the most interesting way to graph - you just need to make one graph)
 
 * Write at least 2 tests for your function; store in a separate test file
 
-* Put this in a git repo that includes an R subdirectory a tests subsdirectory and an Rmarkdown file and submit the link on Gauchospace (or you can put all of this in a new git repo or a subdirectory of an existing git repo)
+* Put this in a git repo that includes an R subdirectory, a tests subsdirectory and your Quatro file and submit the link on Canvas (you can put all of this in a new git repo or a subdirectory of an existing git repo)
 
-Submit the link to repo (and name of subdirectory if part of a larger git project) as a group with your partner,
+Submit the link to repo on Canvas (and name of subdirectory if part of a larger git project) as a group with your partner,
 
-You will have to fill out the group select on Gauchospace first before you submit
+
 
 *Grading Rubric*
 
@@ -301,8 +348,7 @@ You will have to fill out the group select on Gauchospace first before you submi
   * at least 2 inputs, 1 parameter and 2 outputs (it can have more) (5pts)
   * includes error checking (5 pts)
 
-
-* Rmarkdown that generates test data and runs the function
+* Quatro file that generates test data and runs the function
   * data generation ( 5pts)
   * run function multiple times with a loop (5 pts)
   * run function multiple times with something from *purr* (pmap) (5pts)
@@ -314,5 +360,3 @@ You will have to fill out the group select on Gauchospace first before you submi
 Good programming practices (10 pts)
 Total 50pts
 
-Also review spring_summary.R and tests of that function from 
-[ESM_262_Examples](https://github.com/naomitague/ESM_262_Examples)

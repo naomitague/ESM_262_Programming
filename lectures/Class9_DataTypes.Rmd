@@ -197,7 +197,9 @@ compute_simpson_index(catch2)
 
 
 Sometimes you don't want factors and R thinks something should be
-How to change back? **as.numeric** makes sense ...but
+
+
+How can we change back? **as.numeric** makes sense ...but
 
 
 
@@ -218,9 +220,16 @@ b
 sum(b)
 ```
 
-# <span style="color:orange">Making strings with different data types
+# <span style="color:orange">Sprintf Command - Making strings with different data types
 
 some useful syntax if you want to generate strings
+
+```{r}
+
+tmp = "percent"
+sprintf("Makes a string that includes text and data, For example  %d %s", 100, tmp)
+
+```
 
 * **%s** replace with a string
 * **%d** replace with an integer value
@@ -351,20 +360,48 @@ compute_season_flow(str, kind="max")
 * returning multiple items from a function
 
 
-# <span style="color:orange">Ungraded Assignment - Group
-
-Write a function that takes a vector of fish names and always returns three items
-* the most common fish, 
-* the rarest fish
-* the total number of fish
-AND
- include an option (defaulted to FALSE) that if TRUE also returns a histogram of the number of each fish type, with a title giving the total number of fish caught.  Remember that you can save a graph as a variable.
-
-Create an Rmarkdown to demonstrate the use of your function with fish.txt
-
-I'll go over in Wednesday's class
-
 # REVIEW for next class
 
 * testing.RMD
+
+# Last Assignment! 
+
+For this assignment work in *pairs* - and submit as a group
+
+* Design a function - you can pick any subject and you can even make up the equations as long as they conceptually make sense
+  * Make sure it has at least 2 inputs and 1 parameter (ideally more) and at least 2 outputs
+  * Code your function in R, save as a R file in subdirectory called R
+  * Make sure you include documentation (both at the top as we've shown in past examples, and inline)
+  * Include some error checking
+
+* In an Quatro file, generate some data for 2 of the function inputs
+  * use a *for*  loop to run the function for the data
+  * repeat the "looping" using something from the "purrr" package 
+  * Graph results (you can decide what the most interesting way to graph - you just need to make one graph)
+
+* Write at least 2 tests for your function; store in a separate test file
+
+* Put this in a git repo that includes an R subdirectory, a tests subsdirectory and your Quatro file and submit the link on Canvas (you can put all of this in a new git repo or a subdirectory of an existing git repo)
+
+Submit the link to repo on Canvas (and name of subdirectory if part of a larger git project) as a group with your partner,
+
+
+
+*Grading Rubric*
+
+* Created a function 
+  * at least 2 inputs, 1 parameter and 2 outputs (it can have more) (5pts)
+  * includes error checking (5 pts)
+
+* Quatro file that generates test data and runs the function
+  * data generation ( 5pts)
+  * run function multiple times with a loop (5 pts)
+  * run function multiple times with something from *purr* (pmap) (5pts)
+  * Graphs results (5 pts)
+
+* Test file
+  * a file with two tests (10pts)
+
+Good programming practices (10 pts)
+Total 50pts
 

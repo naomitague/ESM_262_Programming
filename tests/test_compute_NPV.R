@@ -1,3 +1,4 @@
+
 test_that("compute_NPV_works", {
 
 expect_equal(compute_NPV(value=0,time=100,discount=0.1), 0)
